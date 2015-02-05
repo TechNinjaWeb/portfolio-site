@@ -1,0 +1,29 @@
+{
+  "name": "tech_ninja_portfolio_site",
+  "version": "1.0.0",
+  "description": "Portfolio site made with HTML5",
+  "main": "app.js",
+  "scripts": {
+    "test": "\"TN-Delta Loaded Successfully\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phreelyfe/portfolio-site.git"
+  },
+  "keywords": [
+    "HTML5",
+    "Tech",
+    "Ninja",
+    "Web",
+    "IT",
+    "Mobile",
+    "Apps"
+  ],
+  "author": "4UmNinja",
+  "license": "Private",
+  "bugs": {
+    "url": "https://github.com/phreelyfe/portfolio-site/issues"
+  },
+  "homepage": "https://github.com/phreelyfe/portfolio-site",
+  "private": true
+}

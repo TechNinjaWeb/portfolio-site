@@ -1,0 +1,31 @@
+{
+  "name": "tech_ninja_portfolio_site",
+  "version": "1.0.0",
+  "homepage": "https://github.com/phreelyfe/portfolio-site",
+  "authors": [
+    "4umninja"
+  ],
+  "description": "Portfolio site made with HTML5",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "HTML5",
+    "Tech",
+    "Ninja",
+    "Web",
+    "IT",
+    "Mobile",
+    "App"
+  ],
+  "license": "Private",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
