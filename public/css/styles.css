@@ -15,6 +15,7 @@ body { padding-top: 56px; padding-bottom:50px; } /* navigation covers top portio
 /* NAVIGATION */
 #navigation .navbar { margin-bottom:0; }
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
+.collapsed {}
 #signin { margin-top: 3px; margin-bottom: 0; }
 a.not-a-member { text-decoration: none !important; font-size: 10px; }
 
@@ -39,4 +40,5 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 	-moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 	box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 }
-#copyright-label { padding-top: 15px; }
+.toolbelt { font-size: 30px; }
+#copyright-label, #copyright-label a { padding-top: 15px; text-decoration: none !important; }

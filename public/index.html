@@ -2,8 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+	<meta charset="utf-8" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
 
     <title>Tech Ninja | Web &amp; IT</title>
     <meta name="description" content="Tech Ninja | Web &amp; IT Advanced Web Applications" />
@@ -24,6 +24,9 @@
 <body>
     <div id="currentHeight"></div>
     <section id="navigation">
+    	<!-- W3C VALIDATION FIX -->
+    	<h6 class="navigation hidden">navigation</h6>
+    	<!-- END W3C VALIDATION FIX -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,6 +60,9 @@
         </nav>
     </section>
     <section id="content">
+    	<!-- W3C VALIDATION FIX -->
+    	<h6 class="content hidden">content</h6>
+    	<!-- END W3C VALIDATION FIX -->
         <div class="page-container">
             <div class="build"></div>
             <div id="teaser-window" class="container-fluid test text-center xxl-pad">MAIN CONTENT</div>
@@ -66,7 +72,23 @@
                     <div class="col-sm-6">NO COOKIE CUTTER More Content Should Be Centered</div>
                 </div>
             </div>
-            <div class="container-fluid test text-center xl-pad">MAIN CONTENT TOOLBELT
+            <div id="toolbelt" class="container-fluid">
+            	<ul class="row md-pad list-unstyled">
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-android"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-ios"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-cordova"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-joomla"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-magento"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-jquery"></i></a></li>
+            	</ul>
+            	<ul class="row md-pad list-unstyled">
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-github"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-nodejs"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-parse"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-angularjs"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-mongodb"></i></a></li>
+            		<li class="col-xs-6 col-sm-4 col-md-2"><a href="#"><i class="toolbelt icon-vtiger"></i></a></li>
+            	</ul>
             </div>
             <div class="container-fluid text-center test xxl-pad">
                 <div class="row">
@@ -134,6 +156,9 @@
         <div class="container-fluid test text-center xl-pad">MAIN CONTENT GET CONSULTATION</div>
     </section>
     <section id="footer">
+    	<!-- W3C VALIDATION FIX -->
+    	<h6 class="footer hidden">footer</h6>
+    	<!-- END W3C VALIDATION FIX -->
         <div id="links" class="container-fluid text-center test lg-pad">
             <div class="row">
                 <div class="col-sm-7">LINKS GO HERE</div>
@@ -145,6 +170,9 @@
         </div>
     </section>
     <section id="copyright">
+    	<!-- W3C VALIDATION FIX -->
+    	<h6 class="copyright hidden">copyright</h6>
+    	<!-- END W3C VALIDATION FIX -->
         <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
             <div class="text-center row">
                 <div id="copyright-label" class="col-sm-12">
@@ -159,6 +187,11 @@
 
     <!-- Parallax Scrollr Library -->
     <script type="text/javascript" src="vendor/parallax/parallax.min.js"></script>
+    <script type="text/javascript" src="../bower_components/scrollme/jquery.scrollme.js"></script>
+	<!-- Tech Ninja Custom Icons -->
+    <link rel="stylesheet" href="vendor/tn-icons/css/fontello.css">
+    <link rel="stylesheet" href="vendor/tn-icons/css/animation.css">
+    <!--[if IE 7]><link rel="stylesheet" href="vendor/tn-icons/css/fontello-ie7.css"><![endif]-->
 </body>
 
 </html>
