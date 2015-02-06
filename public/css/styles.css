@@ -1,8 +1,10 @@
 /* GLOBAL PRIMARY STYLES */
-html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent; }
-body { padding-top: 56px; } /* navigation covers top portion of body */
+html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent;  overflow-x: hidden; }
+body { padding-top: 56px; padding-bottom:50px; } /* navigation covers top portion of body */
 
 /* HELPER STYLES */
+.tech { color: #fff; }
+.ninja { color: inherit; }
 .test { border:1px solid black;}
 .sm-pad { padding-top: 20px; padding-bottom: 20px; }
 .md-pad { padding-top: 50px; padding-bottom: 50px; }
@@ -11,22 +13,25 @@ body { padding-top: 56px; } /* navigation covers top portion of body */
 .xxl-pad { padding-top: 400px; padding-bottom: 400px; }
 
 /* NAVIGATION */
-#navigation .navbar {margin-bottom:0; }
+#navigation .navbar { margin-bottom:0; }
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
 #signin { margin-top: 3px; margin-bottom: 0; }
 a.not-a-member { text-decoration: none !important; font-size: 10px; }
 
 /* MAIN CONTENT */
-.fixedBg {
-	height:500px;
-	background: url('http://lorempixel.com/1400/370/sports/6') no-repeat fixed;
-	background-position: center top;
+/*#contact-us { padding-bottom: 100px; }*/
+#teaser-window {
+	/*max-height: 500px;*/
+	background: url('http://lorempixel.com/1400/700/sports/6') no-repeat fixed;
+	color: white;
+	/*background-position: center top;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 }
 .parallax {
+	color: white!important;
 	position:relative;
 	z-index:1;
 	height:450px;
@@ -34,3 +39,4 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 	-moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 	box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 }
+#copyright-label { padding-top: 15px; }

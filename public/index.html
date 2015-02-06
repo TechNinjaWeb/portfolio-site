@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
     <title>Tech Ninja | Web &amp; IT</title>
     <meta name="description" content="Tech Ninja | Web &amp; IT Advanced Web Applications" />
@@ -21,6 +22,7 @@
 </head>
 
 <body>
+    <div id="currentHeight"></div>
     <section id="navigation">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
@@ -32,16 +34,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">TECH NINJA <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
+                    <a class="navbar-brand" href="#"><span class="tech">TECH</span><span class="ninja"> NINJA</span> <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="tn-nav-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">About <span class="sr-only">(current)</span></a>
+                        <li class="active"><a href="./template/html/about.html">About <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class=""><a href="#">Portfolio <span class="sr-only">(current)</span></a>
+                        <li class=""><a href="./template/html/portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class=""><a href="#">Support <span class="sr-only">(current)</span></a>
+                        <li class=""><a href="./template/html/support.html">Support <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class=""><a href="./template/html/contact.html">Contact <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                     <div id="nav-login" class="text-center navbar-right">
@@ -54,30 +58,106 @@
     </section>
     <section id="content">
         <div class="page-container">
-        	<div class="build"></div>
-            <div class="container-fluid test fixedBg parallax xxl-pad">MAIN CONTENT</div>
-            <div class="container-fluid test xxl-pad">MAIN CONTENT</div>
-            <div class="container-fluid test xxl-pad">MAIN CONTENT</div>
-            <div class="container-fluid test xxl-pad">MAIN CONTENT</div>
+            <div class="build"></div>
+            <div id="teaser-window" class="container-fluid test text-center xxl-pad">MAIN CONTENT</div>
+            <div class="container-fluid text-center test xxl-pad">
+                <div class="row">
+                    <div class="col-sm-6">More Content Should Be Centered</div>
+                    <div class="col-sm-6">NO COOKIE CUTTER More Content Should Be Centered</div>
+                </div>
+            </div>
+            <div class="container-fluid test text-center xl-pad">MAIN CONTENT TOOLBELT
+            </div>
+            <div class="container-fluid text-center test xxl-pad">
+                <div class="row">
+                    <div class="col-sm-6">More Content Should Be Centered</div>
+                    <div class="col-sm-6">REPORT EVERYTHING More Content Should Be Centered</div>
+                </div>
+            </div>
+            <div class="container-fluid text-center test xxl-pad">
+                <div class="row">
+                    <div class="col-sm-6">More Content Should Be Centered</div>
+                    <div class="col-sm-6">SCALE WITH YOUR BUSINESS More Content Should Be Centered</div>
+                </div>
+            </div>
+            <div id="portfolio" class="container-fluid test xl-pad">
+                <div class="row">
+                    <div class="col-sm-6 text-center">WHY CHOOSE US?</div>
+                    <div class="col-sm-6">
+                        PORTFOLIO More Content Should Be Centered</div>
+                </div>
+            </div>
+            <div id="testimony" class="container-fluid text-center test xl-pad">
+                <h3>TESTIOMONY</h3>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="container-fluid test text-center xl-pad">MAIN CONTENT GET CONSULTATION</div>
     </section>
     <section id="footer">
-        
+        <div id="links" class="container-fluid text-center test lg-pad">
+            <div class="row">
+                <div class="col-sm-7">LINKS GO HERE</div>
+                <div class="col-sm-4">
+                    <div id="contact-us" class="">MAIN CONTENT CONTACT US
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="copyright">
-    	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
             <div class="text-center row">
-                <div class="col-sm-12">
-              		<a href="#"><small>Copyright 2014 Tech Ninja | Web &amp; IT®</small></a>      
+                <div id="copyright-label" class="col-sm-12">
+                    <a href="#"><small>Copyright 2015 Tech Ninja | Web &amp; IT®</small></a>
                 </div>
             </div>
         </nav>
     </section>
 
-	<!-- Tech Ninja Custom Script -->
+    <!-- Tech Ninja Custom Script -->
     <script src="js/main.js"></script>
-	
-	<!-- Parallax Scrollr Library -->
+
+    <!-- Parallax Scrollr Library -->
     <script type="text/javascript" src="vendor/parallax/parallax.min.js"></script>
 </body>
 
