@@ -1,3 +1,8 @@
+var userName = "Jeff Coleman";
+var user, icons;
+	icons = "<i class='icon-ios'></i>",
+	user = "<div id='support-admin'>Rahim: Admin" + icons + "</div>";
+
 $(document).ready(function() {
     // GLOBAL FUNCTIONS
 
@@ -96,26 +101,45 @@ $(document).ready(function() {
         var message = $('#message');
 
         var chatWindow = document.getElementById('chat');
-        var usersOnline = document.getElementById('users');
+        var usersOnlineContainer = document.getElementById('users');
+        var usersOnline = "<div class='user'>"+ user + "</div>"
+
+        var modalBtn = $("<a class='modal-btn' href='#' data-toggle='modal' data-target='#user-modal'></a>");
+        
+        modalBtn.on('click', function(e){
+        	var userName = e.target.innerText;
+
+        	var modalTitle = $('.modal-title');
+	        var modalBody = $('.modal-body');
+	        var modalFooter = $('.modal-footer');
+
+	        modalTitle.html(userName);
+	        modalBody.html("<div>USER FEATURES COMMING SOON!</div>")
+	        
+	        // console.warn("Title", modalTitle, "\nBody", modalBody, "\nFooter", modalFooter);
+        })
+
+        $(modalBtn).append(usersOnline);
+        $(usersOnlineContainer).append(modalBtn)
 
         if (browser.value == "safari") {
             chatWindow.style.height = "573px";
-            usersOnline.style.height = "573px";
+            usersOnlineContainer.style.height = "573px";
             chatWindow.style.maxHeight = "573px";
             // console.log("Safari Detected! Changing window height to:" + chatWindow.style.height)
         } else if (browser.value == "chrome") {
             chatWindow.style.height = "540px";
-            usersOnline.style.height = "540px";
+            usersOnlineContainer.style.height = "540px";
             chatWindow.style.maxHeight = "540px";
             // console.log("Chrome Detected! Changing window height to:" + chatWindow.style.height)
         } else if (browser.value == "firefox") {
             chatWindow.style.height = "530px";
-            usersOnline.style.height = "530px";
+            usersOnlineContainer.style.height = "530px";
             chatWindow.style.maxHeight = "530px";
             // console.log("Firefox Detected! Changing window height to:" + chatWindow.style.height)
         } else {
             chatWindow.style.height = "570px";
-            usersOnline.style.height = "570px";
+            usersOnlineContainer.style.height = "570px";
             chatWindow.style.maxHeight = "570px";
             // console.log("No Browser Detected! Changing window height to:" + chatWindow.style.height)
         }
@@ -130,11 +154,16 @@ $(document).ready(function() {
 
         sendBtn.on('click', function() {
             var message = $('#message').val();
+            var bit, supportUserName;
 
             if (message === null || message === undefined || message === "") {
                 console.warn("Please Enter a Message");
             } else {
-	            $('#chat').append("Guest: " + message + "\n" + "<br />");
+            	supportUserName = userName; // FAKE USER NAME
+            	supportUserName = supportUserName.toLowerCase().capitalize();
+            	bit = "<div class='"+ supportUserName +"bit'>"+ supportUserName +": " + message + "</div>";
+	            
+	            $('#chat').append(bit);
 	            $('#message').val('');
 	            $(chatWindow)[0].scrollTop = $(chatWindow)[0].scrollHeight;
 	            $('#message').focus();

@@ -16,11 +16,13 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 	RESPONSIVE MEDIA QUERIES
 */
 @media (max-width: 768px) { 		/* TARGET PHONE ONLY */
-	.full { margin-top: 5px; }
+	.container-small { margin-left: 30px; margin-right: 30px; }
+	.full { margin-top: -30px; }
 	#support-page { margin-top: 36px; }
 	#portfolio-page { margin-top: 36px; }
 }
 @media (min-width: 768px) { 		/* LARGER THAN PHONE */
+	.container-small { margin-left: 150px; margin-right: 150px; }
 	#support-page { overflow-x: hidden; margin-top:42px; }
 }
 
@@ -29,14 +31,14 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 */
 .tech { color: #fff; }
 .ninja { color: inherit; }
-.test { border:1px solid black;}
+/*.test { border:1px solid black;}*/
 .sm-pad { padding-top: 20px; padding-bottom: 20px; }
 .md-pad { padding-top: 50px; padding-bottom: 50px; }
 .lg-pad { padding-top: 100px; padding-bottom: 100px; }
 .xl-pad { padding-top: 200px; padding-bottom: 200px; }
 .xxl-pad { padding-top: 400px; padding-bottom: 400px; }
-.parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); } /* PARALLAX EFFECT */
 .full { width: 100%; position:fixed; z-index:1; padding-bottom:20px; background-color:white;}
+.parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); } /* PARALLAX EFFECT */
 
 /* 
 	NAVIGATION 
@@ -215,7 +217,6 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 /* 	
 	SUPPORT PAGE 
 */
-
 #message-box, #chat, #users { border: 1px solid black; }
 #users { overflow-y: hidden; }
 #chat { margin-bottom: 86px; overflow-y: scroll; }
@@ -223,3 +224,11 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 #message-box .btn, #message-box input { border-radius: 0; }
 #main { height: 530px; }
 #copyright-label { padding-bottom: 15px!important; }
+#users { margin: 0 auto; padding: 0;}
+.user { cursor: pointer; background-color: #333; color: white; width: 100%; margin: 0 auto; padding-top: 5px; padding-bottom: 5px; border: 1px solid black; }
+.user > .icon > i { color: black; }
+
+/* 	
+	CONTACT PAGE 
+*/
+#contact-page { padding-bottom: 62px; }
