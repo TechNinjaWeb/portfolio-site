@@ -15,11 +15,13 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 /*
 	RESPONSIVE MEDIA QUERIES
 */
-@media (max-width: 768px) { 		/* TARGET MOBILE ONLY */
+@media (max-width: 768px) { 		/* TARGET PHONE ONLY */
 	.full { margin-top: 5px; }
-	#support-page { margin-top: -6px; }
+	#support-page { margin-top: 36px; }
+	#portfolio-page { margin-top: 36px; }
 }
-@media (min`-width: 768px) { 		/* LARGER THAN MOBILE */
+@media (min-width: 768px) { 		/* LARGER THAN PHONE */
+	#support-page { overflow-x: hidden; margin-top:42px; }
 }
 
 /*
@@ -72,10 +74,6 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 .toolbelt:hover { background-color: blue; }
 .toolbelt a:hover { color: white; }
 .toolbelt-icon { font-size: 30px; }
-/*#toolbelt .row { margin-left: 10px; margin-right: 10px; }*/
-/*#toolbelt > ul > li:nth-child(1) > a { padding-left: 20px; }*/
-/*#toolbelt > ul > li:nth-child(7) { padding-left: 20px; }*/
-
 /* 	
 	PORTFOLIO SECTION 
 */
@@ -152,8 +150,6 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
-    /*width: 23%;
-    margin: 1%;*/
     display: none;
     float: left;
     overflow: hidden;
@@ -219,7 +215,7 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 /* 	
 	SUPPORT PAGE 
 */
-#support-page { overflow-x: hidden; margin-top:42px; }
+
 #message-box, #chat, #users { border: 1px solid black; }
 #users { overflow-y: hidden; }
 #chat { margin-bottom: 86px; overflow-y: scroll; }
