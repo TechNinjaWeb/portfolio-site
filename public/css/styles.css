@@ -1,8 +1,16 @@
-/* GLOBAL PRIMARY STYLES */
-html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent;  overflow-x: hidden; }
-body { padding-top: 56px; padding-bottom:50px; } /* navigation covers top portion of body */
-
-/* HELPER STYLES */
+/* 
+	GLOBAL PRIMARY STYLES 
+*/
+html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent; }
+body { padding-top:56px }
+/* FIXED NAVIGATION FIX */
+/*body { padding-top: 56px; padding-bottom:50px; } /* navigation covers top portion of body */*/
+#portfolio-page, #support-page, #about-page, #contact-page { padding-top:56px!important; }
+#home-page { margin-top:-56px; }
+/*.page-content { overflow-x:hidden; }*/
+/*
+	HELPER STYLES 
+*/
 .tech { color: #fff; }
 .ninja { color: inherit; }
 .test { border:1px solid black;}
@@ -11,34 +19,174 @@ body { padding-top: 56px; padding-bottom:50px; } /* navigation covers top portio
 .lg-pad { padding-top: 100px; padding-bottom: 100px; }
 .xl-pad { padding-top: 200px; padding-bottom: 200px; }
 .xxl-pad { padding-top: 400px; padding-bottom: 400px; }
+/* PARALLAX EFFECT */
+.parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); }
 
-/* NAVIGATION */
-#navigation .navbar { margin-bottom:0; }
+/* 
+	NAVIGATION 
+*/
+#navigation .navbar { margin-bottom:0; border-radius:0;}
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
-.collapsed {}
+.collapsed {  }
 #signin { margin-top: 3px; margin-bottom: 0; }
 a.not-a-member { text-decoration: none !important; font-size: 10px; }
 
-/* MAIN CONTENT */
-/*#contact-us { padding-bottom: 100px; }*/
+/* HOME PAGE */
+
+/* 	
+	TESER SECTION 
+*/
 #teaser-window {
-	/*max-height: 500px;*/
-	background: url('http://lorempixel.com/1400/700/sports/6') no-repeat fixed;
 	color: white;
-	/*background-position: center top;
+	background: url(../assets/bg/baseball.jpeg) no-repeat fixed;
+	width:100%;
+	height: 700px!important; 
+	background-position: center top;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;*/
+	background-size: cover;
 }
-.parallax {
-	color: white!important;
-	position:relative;
-	z-index:1;
-	height:450px;
-	-webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
-	box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
-}
+/* 	
+	TOOLBELT SECTION
+*/
 .toolbelt { font-size: 30px; }
+/* 	
+	PORTFOLIO SECTION 
+*/
+section#portfolio-page { margin-bottom: 70px; }
+#portfolio-left {
+	/*background: url(../assets/bg/motorcycle.jpeg) no-repeat fixed;*/
+	color:white;
+	background:rgba(108, 181, 232, 1);
+	background-size: 100% 100%;
+	background-position: top left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/* 	
+	TESTIMONY SECTION 
+*/
+#testimony {
+
+}
+/* 	
+	CONSULTATION SECTION 
+*/
+#consultation {
+	color:white;
+	background: url(../assets/bg/surf.jpeg) no-repeat fixed;
+	background-size: 100% 100%;
+	background-position: top left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#footer { background-color: #333; color: white; }
 #copyright-label, #copyright-label a { padding-top: 15px; text-decoration: none !important; }
+
+/* 	PORTFOLIO PAGE */
+#portfolio-page .container-fluid {
+    position: relative;
+    margin: 0 auto;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+#portfolio-page #filters {
+    list-style: none;
+}
+#portfolio-page #filters li {
+    float: left;
+}
+#portfolio-page #filters li span {
+    display: block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #666;
+    cursor: pointer;
+}
+#portfolio-page #filters li span.active {
+    background: black;
+    color: #fff;
+}
+#portfolio-page #portfoliolist .portfolio {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    /*width: 23%;
+    margin: 1%;*/
+    display: none;
+    float: left;
+    overflow: hidden;
+}
+.portfolio { padding-bottom: 20px; }
+#portfolio-page .portfolio-wrapper {
+    overflow: hidden;
+    position: relative !important;
+    background: #666;
+    cursor: pointer;
+}
+#portfolio-page .portfolio img {
+    max-width: 100%;
+    position: relative;
+}
+#portfolio-page .portfolio .label {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -40px;
+}
+#portfolio-page .portfolio .label-bg {
+    background: #e95a44;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#portfolio-page .portfolio .label-text {
+    color: #fff;
+    position: relative;
+    z-index: 500;
+    padding: 5px 8px;
+}
+#portfolio-page .portfolio .text-category {
+    display: block;
+    font-size: 9px;
+}#portfolio-page 
+
+.container:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#portfolio-page .clearfix:before, .clearfix:after, .row:before, .row:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+#portfolio-page .row:after, .clearfix:after {
+    clear: both;
+}
+#portfolio-page .row, .clearfix {
+    zoom: 1;
+}
+/* 	
+	SUPPORT PAGE 
+*/
+#messages, #chat, #users { border: 1px solid black; }
+#chat, #users { height: 600px; }
+#messages { padding-left: 15px; padding-right: 15px; }
+#messages .btn, #messages input { border-radius: 0; }
+#main { height: 530px; }
+#copyright-label { padding-bottom: 15px!important; }
