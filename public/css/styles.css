@@ -158,9 +158,9 @@ section#portfolio-page { margin-bottom: 70px; }
 #portfolio-page .portfolio .text-category {
     display: block;
     font-size: 9px;
-}#portfolio-page 
-
-.container:after {
+}
+#portfolio-page .page-container { margin-bottom: 60px; }
+#portfolio-page .container:after {
     content: "\0020";
     display: block;
     height: 0;
@@ -180,6 +180,10 @@ section#portfolio-page { margin-bottom: 70px; }
 }
 #portfolio-page .row, .clearfix {
     zoom: 1;
+}
+.full { width: 100%; position:fixed; z-index:1; padding-bottom:20px; background-color:white;}
+@media (max-width: 768px) {
+	.full { margin-top: -10px; }
 }
 /* 	
 	SUPPORT PAGE 

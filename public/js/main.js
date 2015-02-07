@@ -46,4 +46,28 @@ $(document).ready(function() {
         // console.log("Chaning to this pos:",parseInt(x / 5) + 'px');
         $('#teaser-window').css('background-position', 'center -' + parseInt(x / 2) + 'px');
     });
+
+    $('.modal-btn').on('click', function(e){
+    	// console.log("Clicked", e);
+    	e.preventDefault();
+
+    	var modal = $('.modal-dialog');
+    	var modalTitle = $('.modal-title');
+    	var modalBody = $('.modal-body');
+    	var modalFooter = $('.modal-footer');
+
+    	var img = new Image();
+    	var imageTitle = e.target.attributes.alt.value;
+
+    	$(img).addClass('img-responsive');
+    	img.onload = function(e){/*console.log("I'm Loaded");*/}
+    	img.src = e.target.src;
+    	
+    	modalTitle.html(imageTitle);
+    	modalBody.html(img);
+    	modalFooter.html("<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>");
+    	
+
+    	// console.log(modalBody)
+    });
 });

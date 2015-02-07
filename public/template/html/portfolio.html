@@ -11,11 +11,11 @@
 
     <link rel="stylesheet" href="../../css/styles.css?v=1.0" />
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css" />
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-	<!-- PORTFOLIO PAGE SCRIPT -->
+    <!-- PORTFOLIO PAGE SCRIPT -->
     <!-- <link rel="stylesheet" href="css/normalize.css"> -->
 
     <!--[if lt IE 9]>
@@ -79,7 +79,7 @@
 
 <body>
     <div id="currentHeight"></div>
-    <section id="navigation">
+    <div id="navigation">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -111,12 +111,12 @@
                 </div>
             </div>
         </nav>
-    </section>
-    <section id="portfolio-page" class="content">
+    </div>
+    <div id="portfolio-page" class="content">
         <div class="page-container">
             <div class="container-fluid">
 
-                <ul id="filters" class="clearfix">
+                <ul id="filters" class="full">
                     <li><span class="filter active" data-filter="app card icon logo web">All</span>
                     </li>
                     <li><span class="filter" data-filter="app">App</span>
@@ -131,328 +131,372 @@
                     </li>
                 </ul>
 
-                <div id="portfoliolist" class="col-sm-12">
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/5.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Bird Document</a>
-                                    <span class="text-category">Logo</span>
+                <div id="portfoliolist" class="col-sm-12" style="padding-top:50px;">
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/5.jpg" alt="logo #5" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Bird Document</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 app" data-cat="app">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/app/1.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Visual Infography</a>
-                                    <span class="text-category">APP</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 app" data-cat="app">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/app/1.jpg" alt="app #1" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Visual Infography</div>
+                                        <span class="text-category">APP</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/4.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Sonor's Design</a>
-                                    <span class="text-category">Web design</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 web" data-cat="web">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/4.jpg" alt="web #4" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Sonor's Design</div>
+                                        <span class="text-category">Web design</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/1.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Typography Company</a>
-                                    <span class="text-category">Business card</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 card" data-cat="card">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/1.jpg" alt="card #1" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Typography Company</div>
+                                        <span class="text-category">Business card</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 app" data-cat="app">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/app/3.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Weatherette</a>
-                                    <span class="text-category">APP</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 app" data-cat="app">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/app/3.jpg" alt="app #3" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Weatherette</div>
+                                        <span class="text-category">APP</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/4.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">BMF</a>
-                                    <span class="text-category">Business card</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 card" data-cat="card">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/4.jpg" alt="card #4" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">BMF</div>
+                                        <span class="text-category">Business card</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/5.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Techlion</a>
-                                    <span class="text-category">Business card</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 card" data-cat="card">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/5.jpg" alt="card #5" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Techlion</div>
+                                        <span class="text-category">Business card</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/1.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">KittyPic</a>
-                                    <span class="text-category">Logo</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/1.jpg" alt="logo #1" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">KittyPic</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 app" data-cat="app">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/app/2.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Graph Plotting</a>
-                                    <span class="text-category">APP</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 app" data-cat="app">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/app/2.jpg" alt="app #2" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Graph Plotting</div>
+                                        <span class="text-category">APP</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/2.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">QR Quick Response</a>
-                                    <span class="text-category">Business card</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 card" data-cat="card">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/2.jpg" alt="card #2" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">QR Quick Response</div>
+                                        <span class="text-category">Business card</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/6.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Mobi Sock</a>
-                                    <span class="text-category">Logo</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/6.jpg" alt="logo #6" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Mobi Sock</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/7.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Village Community Church</a>
-                                    <span class="text-category">Logo</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/7.jpg" alt="logo #7" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Village Community Church</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/4.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Domino's Pizza</a>
-                                    <span class="text-category">Icon</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 icon" data-cat="icon">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/4.jpg" alt="icon #4" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Domino's Pizza</div>
+                                        <span class="text-category">Icon</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/3.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Backend Admin</a>
-                                    <span class="text-category">Web design</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 web" data-cat="web">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/3.jpg" alt="web #3" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Backend Admin</div>
+                                        <span class="text-category">Web design</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/1.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Instagram</a>
-                                    <span class="text-category">Icon</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 icon" data-cat="icon">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/1.jpg" alt="icon #1" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Instagram</div>
+                                        <span class="text-category">Icon</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/2.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Student Guide</a>
-                                    <span class="text-category">Web design</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 web" data-cat="web">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/2.jpg" alt="web #2" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Student Guide</div>
+                                        <span class="text-category">Web design</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/2.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Scoccer</a>
-                                    <span class="text-category">Icon</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 icon" data-cat="icon">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/2.jpg" alt="icon #2" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Scoccer</div>
+                                        <span class="text-category">Icon</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/5.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">3D Map</a>
-                                    <span class="text-category">Icon</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 icon" data-cat="icon">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/5.jpg" alt="icon #5" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">3D Map</div>
+                                        <span class="text-category">Icon</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/1.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Note</a>
-                                    <span class="text-category">Web design</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 web" data-cat="web">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/web/1.jpg" alt="web #1" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Note</div>
+                                        <span class="text-category">Web design</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/3.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Native Designers</a>
-                                    <span class="text-category">Logo</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/3.jpg" alt="logo #3" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Native Designers</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/4.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Bookworm</a>
-                                    <span class="text-category">Logo</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/4.jpg" alt="logo #4" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Bookworm</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/3.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Sandwich</a>
-                                    <span class="text-category">Icon</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 icon" data-cat="icon">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/icon/3.jpg" alt="icon #3" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Sandwich</div>
+                                        <span class="text-category">Icon</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/3.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Reality</a>
-                                    <span class="text-category">Business card</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 card" data-cat="card">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/card/3.jpg" alt="card #3" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Reality</div>
+                                        <span class="text-category">Business card</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="portfolio col-sm-3 logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                            <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/2.jpg" alt="" />
-                            <div class="label">
-                                <div class="label-text">
-                                    <a class="text-title">Speciallisterne</a>
-                                    <span class="text-category">Logo</span>
+                    </a>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio col-sm-4 col-sm-3 col-lg-2 logo" data-cat="logo">
+                            <div class="portfolio-wrapper">
+                                <img src="http://www.queness.com/resources/html/simple-portfolio-page/img/portfolios/logo/2.jpg" alt="logo #2" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">Speciallisterne</div>
+                                        <span class="text-category">Logo</span>
+                                    </div>
+                                    <div class="label-bg"></div>
                                 </div>
-                                <div class="label-bg"></div>
                             </div>
                         </div>
-                    </div>
-
+                    </a>
 
                 </div>
 
             </div>
             <!-- container -->
         </div>
-    </section>
-    <section id="footer"></section>
-    <section id="copyright">
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="image-modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="image-modalLabel">HEADER TITLE</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="footer"></div>
+    <div id="copyright">
         <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
             <div class="text-center row">
                 <div id="copyright-label" class="col-sm-12">
@@ -460,7 +504,7 @@
                 </div>
             </div>
         </nav>
-    </section>
+    </div>
 
     <!-- Tech Ninja Custom Script -->
     <script src="../../js/main.js"></script>
