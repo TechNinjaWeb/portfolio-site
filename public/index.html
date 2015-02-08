@@ -10,62 +10,58 @@
     <meta name="author" content="4UmNinja" />
 
     <link rel="stylesheet" href="css/styles.css?v=1.0" />
-    <link  href="http://fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css" >
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css">
     <!-- Tech Ninja Custom Icons -->
     <link rel="stylesheet" href="vendor/tn-icons/css/fontello.css">
     <link rel="stylesheet" href="vendor/tn-icons/css/animation.css">
     <!--[if IE 7]><link rel="stylesheet" href="vendor/tn-icons/css/fontello-ie7.css"><![endif]-->
-
+	
+	<!-- FLEXSLIDER -->
+	<link rel="stylesheet" href="vendor/flexslider/flexslider.css" />
+	<!-- BOOTSTRAP -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
+
 <body>
     <div id="home-page" class="content page">
         <div class="page-container">
             <div id="teaser-window" class="container-fluid test text-center xl-pad">MAIN CONTENT</div>
-            <!-- ALTERNATE IMAGE LOAD METHOD DEPRICATED -->
-            <!-- <div class="teaser-content">MAIN CONTENT</div>
-			<div class="teaser-img"><img src="assets/bg/baseball.jpeg"/></div> -->
             <div id="navigation">
                 <nav id="navbar" class="navbar navbar-inverse" role="navigation">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tn-nav-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="#"><span class="tech">TECH</span><span class="ninja"> NINJA</span> <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="tn-nav-collapse">
-                            <ul class="nav navbar-nav">
-                                <li><a href="./template/html/about.html">About <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class=""><a href="./template/html/portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class=""><a href="./template/html/support.html">Support <span class="sr-only">(current)</span></a>
-                                	<!-- <script>
-                                	$(this).on('click', function(){
-                                		$(this).load('./template/html/support.html', function(e){console.log(
-	                                		"loaded external file"
-	                                	)})	
-                                	})
-                                </script> -->
-                                </li>
-                                <li class=""><a href="./template/html/contact.html">Contact <span class="sr-only">(current)</span></a>
-                                </li>
-                            </ul>
-                            <div id="nav-login" class="text-center navbar-right">
-                                <button id="signin" type="button" class="btn btn-sm btn-success navbar-btn">Sign in </button>
-                                <br /><a class="navbar-link not-a-member">Not A Member?</a>
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tn-nav-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#"><span class="tech">TECH</span><span class="ninja"> NINJA</span> <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="tn-nav-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="./template/html/about.html">About <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class=""><a href="./template/html/portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class=""><a href="./template/html/support.html">Support <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class=""><a href="./template/html/contact.html">Contact <span class="sr-only">(current)</span></a>
+                                    </li>
+                                </ul>
+                                <div id="nav-login" class="text-center navbar-right">
+                                    <button id="signin" type="button" class="btn btn-sm btn-success navbar-btn">Sign in </button>
+                                    <br /><a class="navbar-link not-a-member">Not A Member?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,8 +73,8 @@
                     <div class="col-sm-6">NO COOKIE CUTTER More Content Should Be Centered</div>
                 </div>
             </div>
-            <div id="toolbelt" class="container-fluid">
-                <ul class="row list-unstyled">
+            <div id="toolbelt" class="container-fluid scrollme">
+                <ul class="row list-unstyled animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatex="400">
                     <li class="toolbelt col-xs-6 col-sm-4 col-md-2 md-pad"><a href="#"><i class="toolbelt-icon icon-android"></i></a>
                     </li>
                     <li class="toolbelt col-xs-6 col-sm-4 col-md-2 md-pad"><a href="#"><i class="toolbelt-icon icon-ios"></i></a>
@@ -120,11 +116,34 @@
             <div id="portfolio" class="container-fluid test">
                 <div class="row">
                     <div id="portfolio-left" class="col-sm-6 text-center xl-pad">WHY CHOOSE US?</div>
-                    <div id="portfolio-right" class="col-sm-6 text-center xl-pad">
-                        PORTFOLIO More Content Should Be Centered</div>
+                    <div id="portfolio-right" class="col-sm-6">
+                        <h2 id="portfolio-heading" class="text-center sm-pad">PORTFOLIO More Content Should Be Centered</h2>
+						<div id="portfolio-slideshow" class="flexslider">
+							<ul class="slides">
+								<li class="portfolio-slide list-unstyled"><img src="http://lorempixel.com/400/200/technics/1" alt="IMAGE TITLE TO BE REPLACED"></li>
+								<li class="portfolio-slide list-unstyled"><img src="http://lorempixel.com/400/200/technics/2" alt="IMAGE TITLE TO BE REPLACED"></li>
+								<li class="portfolio-slide list-unstyled"><img src="http://lorempixel.com/400/200/technics/3" alt="IMAGE TITLE TO BE REPLACED"></li>
+								<li class="portfolio-slide list-unstyled"><img src="http://lorempixel.com/400/200/technics/4" alt="IMAGE TITLE TO BE REPLACED"></li>
+								<li class="portfolio-slide list-unstyled"><img src="http://lorempixel.com/400/200/technics/5" alt="IMAGE TITLE TO BE REPLACED"></li>
+								<li class="portfolio-slide list-unstyled"><img src="http://lorempixel.com/400/200/technics/6" alt="IMAGE TITLE TO BE REPLACED"></li>
+							</ul>
+						</div>
+						<div id="testimony-slideshow" class="flexslider">
+							<ul class="slides">
+								<li class="testimony-slide list-unstyled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in tellus mauris. Nullam rhoncus finibus convallis. Cras sed gravida quam. Phasellus ut vehicula magna. Morbi in nisi a magna varius.</li>
+								<li class="testimony-slide list-unstyled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in tellus mauris. Nullam rhoncus finibus convallis. Cras sed gravida quam. Phasellus ut vehicula magna. Morbi in nisi a magna varius.</li>
+								<li class="testimony-slide list-unstyled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in tellus mauris. Nullam rhoncus finibus convallis. Cras sed gravida quam. Phasellus ut vehicula magna. Morbi in nisi a magna varius.</li>
+								<li class="testimony-slide list-unstyled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in tellus mauris. Nullam rhoncus finibus convallis. Cras sed gravida quam. Phasellus ut vehicula magna. Morbi in nisi a magna varius.</li>
+								<li class="testimony-slide list-unstyled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in tellus mauris. Nullam rhoncus finibus convallis. Cras sed gravida quam. Phasellus ut vehicula magna. Morbi in nisi a magna varius.</li>
+								<li class="testimony-slide list-unstyled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in tellus mauris. Nullam rhoncus finibus convallis. Cras sed gravida quam. Phasellus ut vehicula magna. Morbi in nisi a magna varius.</li>
+							</ul>
+						</div>
+						<button id="more-portfolio" class="col-sm-4 col-sm-offset-4 btn btn-primary">See More</button>
+						<div class="clearfix md-pad"></div>
+                    </div>
                 </div>
             </div>
-            <div id="testimony" class="container-fluid text-center test xl-pad">
+            <!-- <div id="testimony" class="container-fluid text-center test xl-pad">
                 <h3>TESTIOMONY</h3>
                 <div class="container">
                     <div class="col-sm-3">
@@ -169,7 +188,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div id="consultation" class="container-fluid test text-center xl-pad">MAIN CONTENT GET CONSULTATION</div>
     </div>
     <div id="footer">
@@ -193,12 +212,18 @@
         </nav>
     </div>
 
+	<!-- BOOTSTRAP -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- Tech Ninja Custom Script -->
     <script src="js/prototype.js"></script>
     <script src="js/main.js"></script>
-
+	<!-- FLEXSLIDER -->
+	<script type="text/javascript" src="vendor/flexslider/jquery.flexslider.js"></script>
+	<!-- SCROLLME -->
+	<script type="text/javascript" src="vendor/flexslider/jquery.flexslider.js"></script>
     <!-- Parallax Scrollr Library -->
     <script type="text/javascript" src="vendor/parallax/parallax.min.js"></script>
     <script type="text/javascript" src="../bower_components/scrollme/jquery.scrollme.js"></script>
 </body>
+
 </html>

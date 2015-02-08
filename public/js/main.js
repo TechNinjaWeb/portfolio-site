@@ -1,7 +1,7 @@
 var userName = "Jeff Coleman";
 var user, icons;
-	icons = "<i class='icon-ios'></i>",
-	user = "<div id='support-admin'>Rahim: Admin" + icons + "</div>";
+icons = "<i class='icon-ios'></i>",
+    user = "<div id='support-admin'>Rahim: Admin" + icons + "</div>";
 
 $(document).ready(function() {
     // GLOBAL FUNCTIONS
@@ -66,34 +66,63 @@ $(document).ready(function() {
     var loginBtn = $('#signin');
     var createAccount = $('.not-a-member');
     loginBtn.on('click', function() {
-    	alert('Login Comming Soon!')
+        alert('Login Comming Soon!')
     });
-    createAccount.on('click', function(e){
-    	alert("Creat Account Comming Soon!")
+    createAccount.on('click', function(e) {
+        alert("Creat Account Comming Soon!")
     })
 
-    // PROFILE PAGE MODAL
-    $('.modal-btn').on('click', function(e) {
-        // console.log("Clicked", e);
-        e.preventDefault();
+    if (document.getElementById('portfolio-page')) {
+        // PROFILE PAGE MODAL
+        $('.modal-btn').on('click', function(e) {
+            // console.log("Clicked", e);
+            e.preventDefault();
 
-        var modalTitle = $('.modal-title');
-        var modalBody = $('.modal-body');
-        var modalFooter = $('.modal-footer');
+            var modalTitle = $('.modal-title');
+            var modalBody = $('.modal-body');
+            var modalFooter = $('.modal-footer');
 
-        var img = new Image();
-        var imageTitle = e.target.attributes.alt.value;
+            var img = new Image();
+            var imageTitle = e.target.attributes.alt.value;
 
-        $(img).addClass('img-responsive');
-        img.onload = function() { /*console.log("I'm Loaded");*/ };
-        img.src = e.target.src;
+            $(img).addClass('img-responsive');
+            img.onload = function() { /*console.log("I'm Loaded");*/ };
+            img.src = e.target.src;
 
-        modalTitle.html(imageTitle);
-        modalBody.html(img);
-        modalFooter.html("<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>");
+            modalTitle.html(imageTitle);
+            modalBody.html(img);
+            modalFooter.html("<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>");
 
-        // console.log(modalBody)
-    });
+            // console.log(modalBody)
+        });
+    }
+
+    // HOMEPAGE CONTENT
+    if (document.getElementById('home-page')) {
+        var testimonial = $('.testimony-slide');
+        var elipsis = 35;
+        testimonial.each(function(pos, item){
+        	item.innerHTML = item.innerHTML.substr(0, elipsis) + "...";
+        })
+
+        // PORTFOLIO SLIDER
+        $('#portfolio-slideshow').flexslider({
+            animation: "slide",
+            itemWidth: 200,
+            itemMargin: 1,
+            minItems: 3,
+            maxItems: 9,
+            move: 0,
+        });
+        $('#testimony-slideshow').flexslider({
+            animation: "slide",
+            itemWidth: 200,
+            itemMargin: 1,
+            minItems: 3,
+            maxItems: 9,
+            move: 2,
+        });
+    }
 
     // SUPPORT PAGE CHATBOX
     if (document.getElementById('support-page')) {
@@ -102,21 +131,21 @@ $(document).ready(function() {
 
         var chatWindow = document.getElementById('chat');
         var usersOnlineContainer = document.getElementById('users');
-        var usersOnline = "<div class='user'>"+ user + "</div>"
+        var usersOnline = "<div class='user'>" + user + "</div>"
 
         var modalBtn = $("<a class='modal-btn' href='#' data-toggle='modal' data-target='#user-modal'></a>");
-        
-        modalBtn.on('click', function(e){
-        	var userName = e.target.innerText;
 
-        	var modalTitle = $('.modal-title');
-	        var modalBody = $('.modal-body');
-	        var modalFooter = $('.modal-footer');
+        modalBtn.on('click', function(e) {
+            var userName = e.target.innerText;
 
-	        modalTitle.html(userName);
-	        modalBody.html("<div>USER FEATURES COMMING SOON!</div>")
-	        
-	        // console.warn("Title", modalTitle, "\nBody", modalBody, "\nFooter", modalFooter);
+            var modalTitle = $('.modal-title');
+            var modalBody = $('.modal-body');
+            var modalFooter = $('.modal-footer');
+
+            modalTitle.html(userName);
+            modalBody.html("<div>USER FEATURES COMMING SOON!</div>")
+
+            // console.warn("Title", modalTitle, "\nBody", modalBody, "\nFooter", modalFooter);
         })
 
         $(modalBtn).append(usersOnline);
@@ -159,16 +188,20 @@ $(document).ready(function() {
             if (message === null || message === undefined || message === "") {
                 console.warn("Please Enter a Message");
             } else {
-            	supportUserName = userName; // FAKE USER NAME
-            	supportUserName = supportUserName.toLowerCase().capitalize();
-            	bit = "<div class='"+ supportUserName +"bit'>"+ supportUserName +": " + message + "</div>";
-	            
-	            $('#chat').append(bit);
-	            $('#message').val('');
-	            $(chatWindow)[0].scrollTop = $(chatWindow)[0].scrollHeight;
-	            $('#message').focus();
+                supportUserName = userName; // FAKE USER NAME
+                supportUserName = supportUserName.toLowerCase().capitalize();
+                bit = "<div class='" + supportUserName + "bit'>" + supportUserName + ": " + message + "</div>";
+
+                $('#chat').append(bit);
+                $('#message').val('');
+                $(chatWindow)[0].scrollTop = $(chatWindow)[0].scrollHeight;
+                $('#message').focus();
             }
         });
         // console.log("Chat Window Height", document.getElementById('chat').style)
+    }
+
+    if (document.getElementById('contact-page')) {
+
     }
 });

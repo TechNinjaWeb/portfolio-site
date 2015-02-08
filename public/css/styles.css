@@ -4,6 +4,7 @@
 html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent; }
 body { padding-top:14px }
 p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
+
 /* NAVIGATION FIX */
 #about-page, #contact-page { padding-top:42px; } 
 #portfolio-page { padding-top: 28px; } 
@@ -29,9 +30,9 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 /*
 	HELPER STYLES 
 */
-.tech { color: #fff; }
-.ninja { color: inherit; }
-/*.test { border:1px solid black;}*/
+.tech { color: #3A89C3; }
+.ninja { color: #F8982F; }
+.test { border:1px solid black;}
 .sm-pad { padding-top: 20px; padding-bottom: 20px; }
 .md-pad { padding-top: 50px; padding-bottom: 50px; }
 .lg-pad { padding-top: 100px; padding-bottom: 100px; }
@@ -43,15 +44,15 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 /* 
 	NAVIGATION 
 */
+#navigation a:hover { color: #F8982F; }
 #copyright .navbar { z-index: 5; }
 #navigation .navbar { margin-bottom:0; border-radius:0;}
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
 .collapsed {  }
 #signin { margin-top: 3px; margin-bottom: 0; }
-a.not-a-member { text-decoration: none !important; font-size: 10px; }
+a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help; }
 
 /* HOME PAGE */
-
 /* 	
 	TESER SECTION 
 */
@@ -71,10 +72,11 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 /* 	
 	TOOLBELT SECTION
 */
+#toolbelt { overflow-x: hidden; }
 #toolbelt ul { margin-top: 0; margin-bottom: 0; }
 .toolbelt a { color: black; }
-.toolbelt:hover { background-color: blue; }
-.toolbelt a:hover { color: white; }
+/*.toolbelt:hover { background-color: blue; }*/
+.toolbelt a:hover { color: #3A89C3; }
 .toolbelt-icon { font-size: 30px; }
 /* 	
 	PORTFOLIO SECTION 
@@ -86,19 +88,25 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; }
 #portfolio-right {
 	background:rgba(247,165,43, 1);
 }
+.flexslider { overflow: hidden; margin-bottom: 14px; }
 /* 	
 	TESTIMONY SECTION 
 */
-#testimony {
+.testimony-slide { font-size: 14px; 
+	/*white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;*/
+}
+/*#testimony {
 	background: url("http://subtlepatterns.com/patterns/shl.png") repeat fixed;
-	/*background:rgba(108, 181, 232, 1);*/
-	/*background-size: 100% 100%;*/
+	background:rgba(108, 181, 232, 1);
+	background-size: 100% 100%;
 	background-position: top left;
-	/*-webkit-background-size: cover;
+	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;*/
-}
+	background-size: cover;
+}*/
 
 /* 	
 	CONSULTATION SECTION 
