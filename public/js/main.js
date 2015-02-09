@@ -1,9 +1,13 @@
+// IMPLEMENT SUPPORT SECTION USER AUTHENTICATION
+// AT LATER TIME
 var userName = "Jeff Coleman";
 var user, icons;
-icons = "<i class='icon-ios'></i>",
+	icons = "<i class='icon-ios'></i>",
     user = "<div id='support-admin'>Rahim: Admin" + icons + "</div>";
 
 $(document).ready(function() {
+	// INITIALIZE PARSE
+	Parse.initialize("XFukCIc6giByefQZjvKjvRQdyaID0OqseAdLYGE4", "TfVbMHnjFPVGfUIFCVCeVr3SWgrgEr5uoxrBSSvz");
     // GLOBAL FUNCTIONS
 
     // DETECT USERS BROWSER
@@ -17,57 +21,15 @@ $(document).ready(function() {
     } else {
         userAgent = "unknown";
     }
-    // console.log("Your Browser Is:", userAgent);
+
     var page = document.getElementsByClassName('content page')[0];
     page.setAttribute('browser', userAgent);
     var browser = page.attributes.browser;
 
-    // NAVBAR FIXED AFTER SCROLL
-    function fixNavbarToTop() {
-        setInterval(function() {
-            var scrollPos = window.scrollY;
-            // console.log(scrollPos);
-            var navbar = $(document.getElementById('navbar'));
-
-            if (scrollPos >= navbar[0].offsetTop) {
-                // console.log("Greater Than Nav Offset", navbar[0].offsetTop);
-                $(navbar).addClass('navbar-fixed-top');
-            } else if (scrollPos < navbar[0].offsetTop) {
-                // console.log("Less Than Nav Offset", navbar[0].offsetTop);
-                $(navbar).offsetTop = 400;
-                $(navbar).removeClass('navbar-fixed-top');
-            } else {
-                // console.log("nothin to be done", navbar[0].offsetTop)
-                console.log(navbar[0].offsetTop - navbar[0].offsetHeight);
-            }
-
-        }, 100);
-    }
-
-    // RUN NAVBAR FIX
-    if (document.getElementById('home-page'))
-    /////////////////////////////////
-    //	  REPLACED NAVBAR AT TOP   //
-    /////////////////////////////////
-    // fixNavbarToTop();
-
-    // PARALLAX EFFECT ON TEASER WINDOW
-        var teaserWindow = $("#teaser-window").height();
-    var windowHeight = $(window).height();
-
-    if (windowHeight > teaserWindow) {
-        $("#teaser-window").height(windowHeight);
-    }
-
-    $(window).scroll(function() {
-        var x = $(this).scrollTop();
-        // console.log("Chaning to this pos:",parseInt(x / 5) + 'px');
-        $('#teaser-window').css('background-position', 'center -' + parseInt(x / 2) + 'px');
-    });
-
     // LOGIN
     var loginBtn = $('#signin');
     var createAccount = $('.not-a-member');
+
     loginBtn.on('click', function() {
         alert('Login Comming Soon!')
     });
@@ -77,6 +39,7 @@ $(document).ready(function() {
 
     // HOMEPAGE CONTENT
     if (document.getElementById('home-page')) {
+        // TRUNCATE TESTIMONY QUOTES
         var testimonial = $('.testimony-slide');
         var elipsis = 150;
         testimonial.each(function(pos, item) {
@@ -87,10 +50,10 @@ $(document).ready(function() {
         var portfolioLeft = $(document.getElementById('portfolio-left'));
         var portfolioRight = $(document.getElementById('portfolio-right'));
         // EVEN HEIGHT FOR BOTH SECTIONS
-        portfolioRight.css('height', portfolioLeft.css('height'));
+        portfolioLeft.css('height', portfolioRight.css('height'));
 
         $('#portfolio-slideshow').flexslider({
-            animation: "slide",
+            animation: "fade",
             animationSpeed: 1000,
             slideshowSpeed: 4000,
             touch: true,
@@ -102,7 +65,7 @@ $(document).ready(function() {
             useCSS: true
         });
         $('#testimony-slideshow').flexslider({
-            animation: "fade",
+            animation: "slide",
             animationSpeed: 1000,
             slideshowSpeed: 5000,
             touch: true,
@@ -177,8 +140,8 @@ $(document).ready(function() {
 		      enabled: false
 		  }
         }
-        
 
+        // LAZY LOAD BARCHART
         var $window = $(window),
         didScroll = false,
         skillsTop = $('#toolbelt').offset().top - 40; //the point at which we will create the chart
@@ -204,6 +167,35 @@ $(document).ready(function() {
 	        $('#reports-chart').highcharts(barOptions);
 	    };
     }
+
+    // FOOTER CONTACT FORM
+    var footerContactFormBtn = $('#footer-contact-us-submit');
+    footerContactFormBtn.on('click', function(e){
+
+    	var footerContactForm = $('#footer-contact-us-form');
+	    var footerContactName = $('#footer-contact-us-name');
+	    var footerContactEmail = $('#footer-contact-us-email');
+	    var footerContactMessage = $('#footer-contact-us-message');
+
+    	var DB = Parse.Object.extend('SiteContactForm');
+    	var saveForm = new DB();
+    	
+    	// SUBMIT FORM UPON VALIDATION
+    	if ( !footerContactName.val() || !footerContactEmail.val() || !footerContactMessage.val() ) {
+    		console.warn("You've Missed Some info");
+    		// e.preventDefault();
+    		return;
+    	} else {
+    		e.preventDefault();
+	    	saveForm.save({
+	    		leadName: footerContactName.val(),
+	    		leadEmail: footerContactEmail.val(),
+	    		message: footerContactMessage.val()
+	    	}).then(function(res){
+	    		console.log("Success!", res);
+	    	})
+	    }
+    })
 
     if (document.getElementById('portfolio-page')) {
         // PROFILE PAGE MODAL
@@ -293,6 +285,7 @@ $(document).ready(function() {
 
             if (message === null || message === undefined || message === "") {
                 console.warn("Please Enter a Message");
+                return;
             } else {
                 supportUserName = userName; // FAKE USER NAME
                 supportUserName = supportUserName.toLowerCase().capitalize();
@@ -308,6 +301,51 @@ $(document).ready(function() {
     }
 
     if (document.getElementById('contact-page')) {
+    	var submitBtn = $('#submit');
+    	submitBtn.on('click', function(e){
+    		console.log("Clicked");
 
+    		var formData = {
+    			companyName: $('#company-name').val(),
+    			currentWebsite: $('#curren-website').val(),
+    			designation: $('#designation').val(),
+    			firstName: $('#first-name').val(),
+    			lastName: $('#last-name').val(),
+    			phoneNumber: $('#phone').val(),
+    			mobileNumber: $('#mobile').val(),
+    			email: $('#email').val(),
+    			city: $('#city').val(),
+    			country: $('#country').val(),
+    			purpose: $('#purpose').val(),
+    			businessDescription: $('#business-description').val(),
+    			competitors: $('#competitors').val(),
+    			usp: $('#usp').val(),
+    			demographics: $('#target-demographics').val(),
+    			sitesEnjoyed: $('#sites-enjoyed').val(),
+    			sitesNotEnjoyed: $('#sites-not-enjoyed').val(),
+    			functionality: $('#functionality').val(),
+    			webManagement: $('#web-management').val(),
+    			keywordResearch: $('#keyword-research').val(),
+    			contentResearch: $('#content-research').val(),
+    			timeInvestment: $('#time-investment').val(),
+    			feedback: $('#feedback') .val()
+    		}
+
+	    	var DB = Parse.Object.extend('SiteContactForm');
+	    	var saveForm = new DB();
+	    	
+	    	// SUBMIT FORM UPON VALIDATION
+	    	if ( !formData.firstName || !formData.lastName || !formData.phoneNumber
+	    		|| !formData.email || !formData.city
+	    		|| !formData.purpose ) {
+	    		console.warn("You've Missed Some info");
+	    		return;
+	    	} else {
+	    		e.preventDefault();
+		    	saveForm.save(formData).then(function(res){
+		    		console.log("Success!", res);
+		    	})
+		    }
+    	})
     }
 });
