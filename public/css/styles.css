@@ -26,6 +26,8 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 	*/
 	/* FOOTER SECTION */
 	#footer-links { margin-left: 35%; }
+	i[class*='-circled'], i.icon-youtube-squared { font-size: 40px; }
+
 	
 	/* SUPPORT PAGE */
 	#support-page { margin-top: 36px; }
@@ -42,6 +44,7 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 	*/
 	/* FOOTER SECTION */
 	#footer-links { padding-left: 10%; }
+	i[class*='-circled'], i.icon-youtube-squared { font-size: 60px; }
 
 	/* SUPPORT PAGE */
 	#support-page { overflow-x: hidden; margin-top:42px; }
@@ -123,42 +126,47 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help
 	PORTFOLIO SECTION 
 */
 #portfolio-left {
-	background:rgba(108, 181, 232, 1);
+	/*background:rgba(108, 181, 232, 1);*/
 }
 #portfolio-right {
 	/*height: 456px;*/
-	background:rgba(247,165,43, 1);
+	/*background:rgba(247,165,43, 1);*/
 	padding-left: 40px;
 	padding-right: 40px;
 }
+#portfolio-message { line-height: 1.3em; }
 .flexslider { overflow: hidden; margin-bottom: 14px; }
 .page-container { overflow: hidden; }
 /* 	
 	TESTIMONY SECTION 
 */
-.testimony-slide { font-size: 14px; 
-	width: 300px;
-	/*white-space: nowrap;
+#testimony-heading { padding-top: 20px; }
+.testimony-slide { font-size: 14px; }
+/*li.testimony-slide { padding-right: 60px; padding-left: 60px; }*/
+p.testimony-slide { padding-right: 20px; }
+/*p.testimony-slide {
+	width: 200px;
 	overflow: hidden;
-	text-overflow: ellipsis;*/
-}
+	padding-left: 20px;
+	padding-right: 20px;
+}*/
 
 /* 	
 	CONSULTATION SECTION 
 */
 #consultation {
 	color:white;
-	background: url(../assets/bg/surf.jpeg) no-repeat fixed;
-	background-size: 100% 100%;
+	background: url("http://subtlepatterns.com/patterns/food.png") repeat fixed;
+	/*background-size: 100% 100%;
 	background-position: top left;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 }
 h3#consultation-heading { text-shadow: 1px 1px 1px black; }
-#consultation-button { background-color: #333; border: 3px solid #F8982F; box-shadow: 1px 1px 5px black;}
-#consultation-button:hover { color: #F8982F; }
+#consultation-button { background-color: #3A89C3; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
+#consultation-button:hover { color: #EEE; border: 3px solid #EEE; }
 
 /* 	
 	FOOTER SECTION 
@@ -170,14 +178,18 @@ h3#consultation-heading { text-shadow: 1px 1px 1px black; }
 #copyright-label, #copyright-label a { padding-top: 15px; text-decoration: none !important; }
 /*	FOOTER ICONS */
 #footer-social-media-icons { padding-top: 10px; }
-#footer a { color: #eee;}
-i[class*='-circled'], i.icon-youtube-squared { font-size: 60px; }
+#footer a { color: #eee; }
+#footer a:hover { color: #3A89C3; text-decoration: none; }
 i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; cursor: pointer; }
+
+/* 	
+	ABOUT PAGE 
+*/
+#about-page div#footer { margin-top: 320px; }
 
 /* 	
 	PORTFOLIO PAGE 
 */
-#portfolio-page { margin-bottom: 70px; }
 #portfolio-page .container-fluid {
     position: relative;
     margin: 0 auto;
@@ -246,7 +258,17 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
     display: block;
     font-size: 9px;
 }
-#portfolio-page .page-container { margin-bottom: 60px; }
+#portfolio-page .page-container { margin-bottom: 50px; }
+/*UNCOMMENT IF FOOTER IS ON PORTFOLIO PAGE*/
+/*#portfoliolist { padding-bottom: 100px; }*/
+#portfolio-page .page-container:after { 
+	background-color: #333; 
+	content: "";
+    display: block;
+    width: 100%;
+    height: inherit;
+    overflow-y: hidden;
+}
 #portfolio-page .container:after {
     content: "\0020";
     display: block;
@@ -286,4 +308,4 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 /* 	
 	CONTACT PAGE 
 */
-#contact-page { padding-bottom: 62px; }
+#contact-page { padding-bottom: 50px; }
