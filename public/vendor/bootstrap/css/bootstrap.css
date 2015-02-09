@@ -1038,8 +1038,9 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  /*TECH NINJA EDIT*/
+  /*margin-top: 20px;
+  margin-bottom: 10px;*/
 }
 h1 small,
 .h1 small,

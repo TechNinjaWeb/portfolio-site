@@ -9,7 +9,7 @@
     {
       "uid": "00108cf61badc47d451f439dd78ba266",
       "css": "android",
-      "code": 59407,
+      "code": 59392,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -173,30 +173,6 @@
       "search": [
         "vtiger"
       ]
-    },
-    {
-      "uid": "47a1f80457068fbeab69fdb83d7d0817",
-      "css": "youtube-squared",
-      "code": 59405,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "0419da6446cb4f31093e2022793571ca",
-      "css": "twitter-circled",
-      "code": 59404,
-      "src": "entypo"
-    },
-    {
-      "uid": "ce1d525f3f31024c6a6b38f5e9a88953",
-      "css": "facebook-circled",
-      "code": 59392,
-      "src": "entypo"
-    },
-    {
-      "uid": "7cb7e246fd23672429db603c0077dc79",
-      "css": "mail-circled",
-      "code": 59406,
-      "src": "elusive"
     }
   ]
 }

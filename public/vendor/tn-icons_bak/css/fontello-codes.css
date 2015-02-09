@@ -1,5 +1,5 @@
 
-.icon-facebook-circled:before { content: '\e800'; } /* '' */
+.icon-android:before { content: '\e800'; } /* '' */
 .icon-angularjs:before { content: '\e801'; } /* '' */
 .icon-cordova:before { content: '\e802'; } /* '' */
 .icon-github:before { content: '\e803'; } /* '' */
@@ -11,7 +11,3 @@
 .icon-nodejs:before { content: '\e809'; } /* '' */
 .icon-parse:before { content: '\e80a'; } /* '' */
 .icon-vtiger:before { content: '\e80b'; } /* '' */
-.icon-twitter-circled:before { content: '\e80c'; } /* '' */
-.icon-youtube-squared:before { content: '\e80d'; } /* '' */
-.icon-mail-circled:before { content: '\e80e'; } /* '' */
-.icon-android:before { content: '\e80f'; } /* '' */

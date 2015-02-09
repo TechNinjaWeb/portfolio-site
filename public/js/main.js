@@ -46,10 +46,13 @@ $(document).ready(function() {
 
     // RUN NAVBAR FIX
     if (document.getElementById('home-page'))
-        fixNavbarToTop();
+    /////////////////////////////////
+    //	  REPLACED NAVBAR AT TOP   //
+    /////////////////////////////////
+    // fixNavbarToTop();
 
     // PARALLAX EFFECT ON TEASER WINDOW
-    var teaserWindow = $("#teaser-window").height();
+        var teaserWindow = $("#teaser-window").height();
     var windowHeight = $(window).height();
 
     if (windowHeight > teaserWindow) {
@@ -71,6 +74,204 @@ $(document).ready(function() {
     createAccount.on('click', function(e) {
         alert("Creat Account Comming Soon!")
     })
+
+    // HOMEPAGE CONTENT
+    if (document.getElementById('home-page')) {
+        var testimonial = $('.testimony-slide');
+        var elipsis = 150;
+        testimonial.each(function(pos, item) {
+            item.innerHTML = item.innerHTML.substr(0, elipsis) + "...";
+        })
+
+        // PORTFOLIO SECTION
+        var portfolioLeft = $(document.getElementById('portfolio-left'));
+        var portfolioRight = $(document.getElementById('portfolio-right'));
+        // EVEN HEIGHT FOR BOTH SECTIONS
+        portfolioRight.css('height', portfolioLeft.css('height'));
+
+        $('#portfolio-slideshow').flexslider({
+            animation: "slide",
+            itemWidth: 200,
+            itemMargin: 1,
+            minItems: 3,
+            maxItems: 9,
+            move: 0,
+        });
+        $('#testimony-slideshow').flexslider({
+            animation: "slide",
+            itemWidth: 600
+        });
+
+        // REPORT SECTION CHARTS
+        var barOptions = {
+            chart: {
+                type: 'column',
+                options3d: {
+                    enabled: true,
+                    alpha: 15,
+                    beta: 15,
+                    viewDistance: 25,
+                    depth: 40
+                },
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: "Reports For Days Son!"
+            },
+
+            xAxis: {
+                categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: "Hover Over The Bar Graph"
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{point.key}</b><br>',
+                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    depth: 40
+                }
+            },
+
+            series: [{
+                name: 'John',
+                data: [5, 3, 4, 7, 2],
+                stack: 'male'
+            }, {
+                name: 'Joe',
+                data: [3, 4, 4, 2, 5],
+                stack: 'male'
+            }, {
+                name: 'Jane',
+                data: [2, 5, 6, 2, 1],
+                stack: 'female'
+            }, {
+                name: 'Janet',
+                data: [3, 0, 4, 4, 3],
+                stack: 'female'
+            }],
+            exporting: { enabled: false },
+            credits: {
+		      enabled: false
+		  }
+        }
+        
+        $('#reports-chart').highcharts(barOptions);
+        var gaugeOptions = {
+            chart: {
+                type: 'solidgauge'
+            },
+            title: null,
+            pane: {
+                center: ['50%', '85%'],
+                size: '140%',
+                startAngle: -90,
+                endAngle: 90,
+                background: {
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                    innerRadius: '60%',
+                    outerRadius: '100%',
+                    shape: 'arc'
+                }
+            },
+            tooltip: {
+                enabled: false
+            },
+            // the value axis
+            yAxis: {
+                stops: [
+                    [0.1, '#55BF3B'], // green
+                    [0.5, '#DDDF0D'], // yellow
+                    [0.9, '#DF5353'] // red
+                ],
+                lineWidth: 0,
+                minorTickInterval: null,
+                tickPixelInterval: 400,
+                tickWidth: 0,
+                title: {
+                    y: -70
+                },
+                labels: {
+                    y: 16
+                }
+            },
+            plotOptions: {
+                solidgauge: {
+                    dataLabels: {
+                        y: 5,
+                        borderWidth: 0,
+                        useHTML: true
+                    }
+                }
+            }
+        };
+        
+     //    // The speed gauge
+     //    $('#growth-gauge').highcharts(Highcharts.merge(gaugeOptions, {
+     //        yAxis: {
+     //            min: 0,
+     //            max: 200,
+     //            title: {
+     //                text: 'Speed'
+     //            }
+     //        },
+
+     //        credits: {
+     //            enabled: false
+     //        },
+
+     //        series: [{
+     //            name: 'Speed',
+     //            data: [80],
+     //            dataLabels: {
+     //                format: '<div style="text-align:center"><span style="font-size:25px;color:' + ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+     //                    '<span style="font-size:12px;color:silver">km/h</span></div>'
+     //            },
+     //            tooltip: {
+     //                valueSuffix: ' km/h'
+     //            }
+     //        }],
+     //        exporting: { enabled: false },
+     //        credits: {
+		   //  	enabled: false
+		  	// }
+
+     //    }));
+
+
+     //    // Bring life to the dials
+     //    setInterval(function() {
+     //        // Speed
+     //        var chart = $('#growth-gauge').highcharts(),
+     //            point,
+     //            newVal,
+     //            inc;
+
+     //        if (chart) {
+     //            point = chart.series[0].points[0];
+     //            inc = Math.round((Math.random() - 0.5) * 100);
+     //            newVal = point.y + inc;
+
+     //            if (newVal < 0 || newVal > 200) {
+     //                newVal = point.y - inc;
+     //            }
+
+     //            point.update(newVal);
+     //        }
+     //    }, 2000);
+    }
 
     if (document.getElementById('portfolio-page')) {
         // PROFILE PAGE MODAL
@@ -94,33 +295,6 @@ $(document).ready(function() {
             modalFooter.html("<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>");
 
             // console.log(modalBody)
-        });
-    }
-
-    // HOMEPAGE CONTENT
-    if (document.getElementById('home-page')) {
-        var testimonial = $('.testimony-slide');
-        var elipsis = 35;
-        testimonial.each(function(pos, item){
-        	item.innerHTML = item.innerHTML.substr(0, elipsis) + "...";
-        })
-
-        // PORTFOLIO SLIDER
-        $('#portfolio-slideshow').flexslider({
-            animation: "slide",
-            itemWidth: 200,
-            itemMargin: 1,
-            minItems: 3,
-            maxItems: 9,
-            move: 0,
-        });
-        $('#testimony-slideshow').flexslider({
-            animation: "slide",
-            itemWidth: 200,
-            itemMargin: 1,
-            minItems: 3,
-            maxItems: 9,
-            move: 2,
         });
     }
 

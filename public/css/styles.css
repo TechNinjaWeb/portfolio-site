@@ -17,13 +17,33 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 	RESPONSIVE MEDIA QUERIES
 */
 @media (max-width: 768px) { 		/* TARGET PHONE ONLY */
+	/* HELPER STYLES */
 	.container-small { margin-left: 30px; margin-right: 30px; }
 	.full { margin-top: -30px; }
+	
+	/* 
+		HOME PAGE 
+	*/
+	/* FOOTER SECTION */
+	#footer-links { margin-left: 35%; }
+	
+	/* SUPPORT PAGE */
 	#support-page { margin-top: 36px; }
+
+	/* PORTFOLIO PAGE */
 	#portfolio-page { margin-top: 36px; }
 }
 @media (min-width: 768px) { 		/* LARGER THAN PHONE */
+	/* HELPER STYLES */
 	.container-small { margin-left: 150px; margin-right: 150px; }
+
+	/* 
+		HOME PAGE 
+	*/
+	/* FOOTER SECTION */
+	#footer-links { padding-left: 10%; }
+
+	/* SUPPORT PAGE */
 	#support-page { overflow-x: hidden; margin-top:42px; }
 }
 
@@ -32,7 +52,7 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 */
 .tech { color: #3A89C3; }
 .ninja { color: #F8982F; }
-.test { border:1px solid black;}
+/*.test { border:1px solid black;}*/
 .sm-pad { padding-top: 20px; padding-bottom: 20px; }
 .md-pad { padding-top: 50px; padding-bottom: 50px; }
 .lg-pad { padding-top: 100px; padding-bottom: 100px; }
@@ -40,6 +60,10 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 .xxl-pad { padding-top: 400px; padding-bottom: 400px; }
 .full { width: 100%; position:fixed; z-index:1; padding-bottom:20px; background-color:white;}
 .parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); } /* PARALLAX EFFECT */
+.logos { background-repeat: no-repeat;}
+.facebook-logo {  }
+.github-logo {  }
+.google-hangouts-logo {  }
 
 /* 
 	NAVIGATION 
@@ -53,6 +77,7 @@ p, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
 a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help; }
 
 /* HOME PAGE */
+#home-page .page-container { padding-bottom: 50px }
 /* 	
 	TESER SECTION 
 */
@@ -68,6 +93,7 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help
 	-o-background-size: cover;
 	background-size: cover;*/
 }
+#teaser-message { margin-top: 100px; }
 
 /* 	
 	TOOLBELT SECTION
@@ -78,35 +104,44 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help
 /*.toolbelt:hover { background-color: blue; }*/
 .toolbelt a:hover { color: #3A89C3; }
 .toolbelt-icon { font-size: 30px; }
+
+/* 	
+	REPORT POINT SECTION 
+*/
+#reports-point-right { padding: 8% 5% 0 5%; }
+#reports-chart {  }
+#reports-point-heading {  }
+
+/* 	
+	GROWTH POINT SECTION 
+*/
+#growth-point-left, #growth-point-right { padding: 2% 10% 0 10%; }
+#growth-point-image { max-height: 500px; }
+#growth-point-heading { margin-top: 40%; }
+
 /* 	
 	PORTFOLIO SECTION 
 */
-#portfolio-page { margin-bottom: 70px; }
 #portfolio-left {
 	background:rgba(108, 181, 232, 1);
 }
 #portfolio-right {
+	/*height: 456px;*/
 	background:rgba(247,165,43, 1);
+	padding-left: 40px;
+	padding-right: 40px;
 }
 .flexslider { overflow: hidden; margin-bottom: 14px; }
+.page-container { overflow: hidden; }
 /* 	
 	TESTIMONY SECTION 
 */
 .testimony-slide { font-size: 14px; 
+	width: 300px;
 	/*white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;*/
 }
-/*#testimony {
-	background: url("http://subtlepatterns.com/patterns/shl.png") repeat fixed;
-	background:rgba(108, 181, 232, 1);
-	background-size: 100% 100%;
-	background-position: top left;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}*/
 
 /* 	
 	CONSULTATION SECTION 
@@ -121,16 +156,28 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help
 	-o-background-size: cover;
 	background-size: cover;
 }
+h3#consultation-heading { text-shadow: 1px 1px 1px black; }
+#consultation-button { background-color: #333; border: 3px solid #F8982F; box-shadow: 1px 1px 5px black;}
+#consultation-button:hover { color: #F8982F; }
 
 /* 	
 	FOOTER SECTION 
 */
-#footer { background-color: #333; color: white; }
+#footer { background-color: #333; color: white; padding-bottom: 20px;}
+#footer-contact-us-box { color: black; }
+/*#footer-contact-us { margin-left: 80px; margin-right: 80px; }*/
+#footer-contact-us-form { padding-left: 40px;  padding-right: 40px;  }
 #copyright-label, #copyright-label a { padding-top: 15px; text-decoration: none !important; }
+/*	FOOTER ICONS */
+#footer-social-media-icons { padding-top: 10px; }
+#footer a { color: #eee;}
+i[class*='-circled'], i.icon-youtube-squared { font-size: 60px; }
+i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; cursor: pointer; }
 
 /* 	
 	PORTFOLIO PAGE 
 */
+#portfolio-page { margin-bottom: 70px; }
 #portfolio-page .container-fluid {
     position: relative;
     margin: 0 auto;
