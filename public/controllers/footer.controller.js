@@ -28,6 +28,7 @@ app.controller('FooterCtrl', function($scope) {
                 leadEmail: footerContactEmail.val(),
                 message: footerContactMessage.val()
             }).then(function(res){
+                console.log("Response", res);
                 window.location.reload();
             })
         }
