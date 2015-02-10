@@ -30,6 +30,7 @@
   ],
   "dependencies": {
     "angular-complete": "~1.0.4",
-    "angular-ui-router": "~0.2.13"
+    "angular-ui-router": "~0.2.13",
+    "animate.css": "~3.2.0"
   }
 }

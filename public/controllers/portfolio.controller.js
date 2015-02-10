@@ -5,7 +5,8 @@ app.controller('PortfolioCtrl', function($scope) {
     $scope.message = "Can You Believe It's Almost Christmas!";
     $scope.test = "This is the main controller";
 
-    if (document.getElementById('portfolio-page')) {
+    if (window.document.getElementById('portfolio-page')) {
+        
         // PROFILE PAGE MODAL
         $('.modal-btn').on('click', function(e) {
             // console.log("Clicked", e);

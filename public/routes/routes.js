@@ -8,10 +8,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "NavCtrl"
                 },
                 'body@': {
-                    templateUrl: "./template/html/home.html"
+                    templateUrl: "./template/html/home.html",
+                    controller: "HomeCtrl"
                 },
                 'footer@': {
-                    templateUrl: "./template/layout/footer.html"
+                    templateUrl: "./template/layout/footer.html",
+                    controller: "FooterCtrl"
                 },
                 'copyright@': {
                     templateUrl: "./template/layout/copyright.html",
@@ -31,7 +33,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "AboutCtrl"
                 },
                 'footer@': {
-                    templateUrl: "./template/layout/footer.html"
+                    templateUrl: "./template/layout/footer.html",
+                    controller: "FooterCtrl"
                 },
                 'copyright@': {
                     templateUrl: "./template/layout/copyright.html",
@@ -51,7 +54,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "ContactCtrl"
                 },
                 'footer@': {
-                    templateUrl: "./template/layout/footer.html"
+                    templateUrl: "./template/layout/footer.html",
+                    controller: "FooterCtrl"
                 },
                 'copyright@': {
                     templateUrl: "./template/layout/copyright.html",
@@ -71,7 +75,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "PortfolioCtrl"
                 },
                 'footer@': {
-                    templateUrl: "./template/layout/footer.html"
+                    templateUrl: "./template/layout/footer.html",
+                    controller: "FooterCtrl"
                 },
                 'copyright@': {
                     templateUrl: "./template/layout/copyright.html",

@@ -133,7 +133,7 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help
 /* 	
 	REPORT POINT SECTION 
 */
-#reports-point { padding-top: 400px; padding-bottom: 400px; }
+#reports-point { padding-top: 300px; padding-bottom: 300px; }
 #reports-point h3 { color: #3A89C3; }
 #reports-point-right { padding: 8% 5% 0 5%; }
 #reports-chart {  }
@@ -296,11 +296,12 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 */
 #support-page .page-container { padding-top:56px; }
 #message-box, #chat, #users { border: 1px solid black; }
+#chat { min-height: 100%; }
 #users { overflow-y: hidden; }
 /*#chat { margin-bottom: 86px; overflow-y: scroll; }*/
 #message-box { padding-left: 15px; padding-right: 15px; }
 #message-box .btn, #message-box input { border-radius: 0; }
-#main { height: 530px; }
+#main { height: 540px; }
 #copyright-label { padding-bottom: 15px!important; }
 #users { margin: 0 auto; padding: 0;}
 .user { cursor: pointer; background-color: #333; color: white; width: 100%; margin: 0 auto; padding-top: 5px; padding-bottom: 5px; border: 1px solid black; }

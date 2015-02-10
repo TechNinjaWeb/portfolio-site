@@ -15,17 +15,6 @@ angular.module('tnApp')
         var browser = userAgent;
         $rootScope.browser = browser;
 
-        // LOGIN
-        var loginBtn = $('#signin');
-        var createAccount = $('.not-a-member');
-
-        loginBtn.on('click', function() {
-            alert('Login Comming Soon!')
-        });
-        createAccount.on('click', function(e) {
-            alert("Creat Account Comming Soon!")
-        })
-
         console.log("User Agent Is:" + userAgent);
         $rootScope.userAgent = userAgent;
 
