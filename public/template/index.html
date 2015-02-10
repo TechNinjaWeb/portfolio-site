@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>Tech Ninja | Web &amp; IT</title>
+    <meta name="description" content="Tech Ninja | Web &amp; IT Advanced Web Applications" />
+    <meta name="author" content="4UmNinja" />
+
+    <link rel="stylesheet" href="./css/styles.css?v=1.0" />
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css">
+    <!-- Tech Ninja Custom Icons -->
+    <link rel="stylesheet" href="./vendor/tn-icons/css/fontello.css">
+    <link rel="stylesheet" href="./vendor/tn-icons/css/animation.css">
+    <!--[if IE 7]><link rel="stylesheet" href="./vendor/tn-icons/css/fontello-ie7.css"><![endif]-->
+
+    <!-- FLEXSLIDER -->
+    <link rel="stylesheet" href="./vendor/flexslider/flexslider.css" />
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.css" />
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body ng-app="tnApp">
+    <div id="fb-root"></div>
+
+    <div ui-view></div>
+    
+    <div ui-view="navigation"></div>
+    
+    <div ui-view="body"></div>
+
+    <div ui-view="footer"></div>
+
+    <div ui-view="copyright"></div>
+
+    <!-- PARSE -->
+    <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- ANGULARJS -->
+    <script type="application/javascript" src="scripts/angular-complete/angular.js"></script>
+    <script type="application/javascript" src="scripts/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="application/javascript" src="scripts/angular-complete/angular-sanitize.js"></script>
+    <!-- Functional Dependencies -->
+    <script type="application/javascript" src="./app.js"></script>
+    <script type="application/javascript" src="./data/ParseSDK.js"></script>
+    <script type="application/javascript" src="./routes/routes.js"></script>
+    <script type="application/javascript" src="./controllers/app.controller.js"></script>
+    <script type="application/javascript" src="./controllers/navigation.controller.js"></script>
+    <script type="application/javascript" src="./controllers/copyright.controller.js"></script>
+    <script type="application/javascript" src="./controllers/home.controller.js"></script>
+    <script type="application/javascript" src="./controllers/about.controller.js"></script>
+    <script type="application/javascript" src="./controllers/portfolio.controller.js"></script>
+    <script type="application/javascript" src="./controllers/support.controller.js"></script>
+    <script type="application/javascript" src="./controllers/contact.controller.js"></script>
+    <!-- Tech Ninja Custom Script -->
+    <script src="./js/prototype.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- FLEXSLIDER -->
+    <script type="application/javascript" src="./vendor/flexslider/jquery.flexslider.js"></script>
+    <script type="application/javascript" src="./vendor/flexslider/jquery.flexslider.js"></script>
+    <!-- SCROLLME -->
+    <script type="application/javascript" src="./vendor/scrollme/jquery.scrollme.min.js"></script>
+    <!-- HIGHCHARTS LIBRARY -->
+    <script src="./vendor/highcharts/highcharts.js"></script>
+    <script src="./vendor/highcharts/highcharts-more.js"></script>
+    <script src="./vendor/highcharts/modules/solid-gauge.js"></script>
+    <script src="./vendor/highcharts/highcharts-3d.js"></script>
+    <script src="./vendor/highcharts/modules/exporting.js"></script>
+</body>
+
+</html>

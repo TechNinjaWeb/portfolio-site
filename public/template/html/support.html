@@ -1,127 +1,29 @@
-<!doctype html>
-<html lang="en" xmlns="//www.w3.org/1999/xhtml">
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1">
-
-    <title>Tech Ninja | Web &amp; IT</title>
-    <meta name="description" content="Tech Ninja | Web &amp; IT Advanced Web Applications" />
-    <meta name="author" content="4UmNinja" />
-
-    <link rel="stylesheet" href="../../css/styles.css?v=1.0" />
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css">
-    <!-- Tech Ninja Custom Icons -->
-    <link rel="stylesheet" href="../../vendor/tn-icons/css/fontello.css">
-    <link rel="stylesheet" href="../../vendor/tn-icons/css/animation.css">
-    <!--[if IE 7]><link rel="stylesheet" href="../../vendor/tn-icons/css/fontello-ie7.css"><![endif]-->
-
-    <!-- FONT AWESOME TEMPORARY -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.css" />
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-    <!--[if lt IE 9]>
-  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-    <div id="navigation">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tn-nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="../../index.html"><span class="tech">TECH</span><span class="ninja"> NINJA</span> <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="tn-nav-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="./about.html">About <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class=""><a href="./portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="active"><a href="./support.html">Support <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class=""><a href="./contact.html">Contact <span class="sr-only">(current)</span></a>
-                            </li>
-                        </ul>
-                        <div id="nav-login" class="text-center navbar-right">
-                            <button id="signin" type="button" class="btn btn-sm btn-success navbar-btn">Sign in </button>
-                            <br /><a class="navbar-link not-a-member">Not A Member?</a>
-                        </div>
-                    </div>
-                </div>
+<div id="support-page" class="content page">
+    <div class="page-container">
+        <div id="main" class="row">
+            <div id="chat" class="col-xs-8 col-sm-10">
             </div>
-        </nav>
-    </div>
-    <div id="support-page" class="content page">
-        <div class="page-container">
-            <div id="main" class="row">
-                <div id="chat" class="col-xs-8 col-sm-10">
-                </div>
-                <div id="users" class="col-xs-4 col-sm-2">
-                </div>
+            <div id="users" class="col-xs-4 col-sm-2">
             </div>
-
         </div>
+
     </div>
-    <div id="footer"></div>
-    <div id="copyright">
-        <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-            <div id="secondary" class="row">
-                <div id="message-box" class="input-group">
-                    <input id="message" type="text" class="form-control" placeholder="TYPE YOUR COMMENTS HERE" autofocus>
-                    <span class="input-group-btn">
-                        <button id="send-btn" class="btn btn-danger" type="button">SEND</button>
-                     </span>
-                </div>
-                <!-- /input-group -->
-            </div>
-            <div id="copyright-label" class="text-center row">
-                <div class="col-sm-12">
-                    <a href="#"><small>Copyright 2015 Tech Ninja | Web &amp; IT®</small></a>
-                </div>
-            </div>
-        </nav>
-    </div>
+</div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="user-modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="user-modalLabel">HEADER TITLE</h4>
-                </div>
-                <div class="modal-body">
-                </div>
-                <div class="modal-footer">
-                </div>
+<!-- Modal -->
+<div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="user-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="user-modalLabel">HEADER TITLE</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
     </div>
-    
-    <!-- PARSE -->
-    <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
-    <!-- Tech Ninja Custom Script -->
-    <script src="../../js/prototype.js"></script>
-    <script src="../../js/main.js"></script>
-
-    <!-- Parallax Scrollr Library -->
-    <script type="text/javascript" src="../../vendor/parallax/parallax.min.js"></script>
-</body>
-
-</html>
+</div>
