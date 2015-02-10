@@ -3,34 +3,84 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        express: {
-            dev: {
-                options: {
-                    script: './server.js'
-                }
-            }
-        },
         concat: {
-            options: {
-                separator: ';'
+            js: {
+                options: {
+                    separator: ';'
+                },
+                src: [
+                    'public/<%= basename %>/**/*.js'
+                ],
+                dest: 'public/js/main.min.js'
             },
-            dist: {
-                src: ['public/**/*.js'],
-                dest: 'dist/<%= pkg.name %>.js'
-            }
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                mangle: false
             },
-            dist: {
+            js: {
                 files: {
-                    'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'public/js/main.min.js': ['public/js/main.min.js']
                 }
             }
         },
+        less: {
+            style: {
+                files: {
+                    "public/css/style.css": "less/style.less"
+                }
+            }
+        },
+        watch: {
+            js: {
+                files: [
+                    'public/*.js',
+                    'public/js/*.js',
+                    'public/controllers/*.js',
+                    'public/services/*.js',
+                    'public/data/*.js',
+                    'public/directives/*.js',
+                    'public/routes/*.js',
+                    'vender/*.js',
+                    'public/<%= basename %>/**/*.js'
+                ],
+                tasks: ['concat:js', 'uglify:js'],
+                options: {
+                    livereload: true,
+                }
+            },
+            css: {
+                files: ['less/*.less'],
+                tasks: ['less:style'],
+                options: {
+                    livereload: true,
+                }
+            },
+            html: {
+                files: ['public/template/**/*.html'],
+                options: {
+                    livereload: true,
+                }
+            }
+        },
+        browserSync: {
+            bsFiles: {
+                src: ['public/**/*.css', 'public/**/*.css'],
+                options: {
+                    server: {
+                        baseDir: "./"
+                    }
+                }
+            },
+            options: {
+                server: {
+                    baseDir: "./"
+                },
+                watchTask: true
+            }
+        },
         jshint: {
-            files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+            files: ['Gruntfile.js', 'public/**/*.js', 'test/**/*.js'],
             options: {
                 // options here to override JSHint defaults
                 globals: {
@@ -41,46 +91,24 @@ module.exports = function(grunt) {
                 }
             }
         },
-        watch: {
-            express: {
-                files: ['**/*.js', '**/*.html'],
-                tasks: ['jshint', 'express:dev'],
+        express: {
+            dev: {
                 options: {
-                    spawn: false,
+                    script: './server.js',
+                    bases: ['.'],
                     livereload: true
                 }
-            }
-        },
-        browserSync: {
-            bsFiles: {
-                src: 'assets/css/*.css'
             },
-            options: {
-                server: {
-                    baseDir: "./"
-                },
-                watchTask: true
-            }
-        },
-        open: {
             all: {
-                path: 'http://localhost:3000/',
                 options: {
-                    openOn: 'serverListening',
-                    target: 'http://localhost:8000', // target url to open
-                    appName: 'open', // name of the app that opens, ie: open, start, xdg-open
-                    callback: function() {
-                            console.log("app opened")
-                        } // called when the app has opened
+                    script: './server.js'
                 }
             }
         },
         connect: {
-            server: {
-                options: {
-                    port: 3000,
-                    base: './'
-                }
+            options: {
+                port: 3000,
+                hostname: 'localhost'
             }
         }
     });
@@ -91,15 +119,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-express-server');
-    grunt.loadNpmTasks('grunt-open');
-    grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('test', ['jshint', 'qunit']);
-
-    grunt.registerTask('server', ['express:dev', 'connect', 'open:dev']);
-
-    grunt.registerTask('custom', ['server', 'watch']);
-
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('server', ['express:dev', 'watch']);
+    grunt.registerTask('build', ['concat', 'uglify']);
+    grunt.registerTask('default', ['server']);
 
 };

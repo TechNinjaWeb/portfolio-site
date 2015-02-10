@@ -26,14 +26,6 @@
     "cookie-parser": "~1.3.3",
     "ejs": "^1.0.0",
     "express": "^4.9.6",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-express-server": "^0.4.19",
-    "grunt-open": "~0.2.3",
-    "matchdep": "~0.3.0",
     "path": "^0.11.14"
   },
   "bugs": {
@@ -42,6 +34,16 @@
   "homepage": "https://github.com/phreelyfe/portfolio-site",
   "private": true,
   "devDependencies": {
-    "grunt-browser-sync": "^1.9.1"
+    "connect-livereload": "^0.5.2",
+    "grunt-browser-sync": "^2.0.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-livereload": "^0.1.2",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.4.19",
+    "grunt-open": "~0.2.3",
+    "matchdep": "~0.3.0"
   }
 }

@@ -27,66 +27,6 @@ angular.module('tnApp')
         // Initialize Parse
         Parse.initialize("XFukCIc6giByefQZjvKjvRQdyaID0OqseAdLYGE4", "TfVbMHnjFPVGfUIFCVCeVr3SWgrgEr5uoxrBSSvz");
 
-
-        // console.log('Parse bootstrap complete');
-
-        // console.log('Initializing FBLogin ...');
-
-        // window.fbAsyncInit = function() {
-        //     console.log('FB Init has been called');
-        //     Parse.FacebookUtils.init({ // this line replaces FB.init({
-        //         appId: '710919952311309',
-        //         xfbml: true,
-        //         version: 'v2.2'
-        //     });
-
-        //     // Run code after the Facebook SDK is loaded.
-        //     // Run check to see if current user is Admin
-        //     $rootScope.checkAdmin();
-
-        //     $rootScope.facebookLogin = function() {
-
-        //         Parse.FacebookUtils.logIn("public_profile,user_likes,email,read_friendlists,user_location", {
-        //             success: function(user) {
-        //                 if (!user.existed()) {
-        //                     console.log("User signed up and logged in through Facebook!");
-        //                     $rootScope.collectFacebookData(user);
-        //                     console.log(user, "also running FB User Details Save");
-
-        //                     console.log($rootScope.sessionUser); // Parse User Current Object
-
-        //                     console.log("User Details Saved");
-
-        //                     $rootScope.reloadWindow();
-        //                 }
-        //                 else {
-        //                     console.log("User logged in through Facebook!");
-        //                     // Recapture User Data If User Is Already in Parse DB
-        //                     $rootScope.collectFacebookData(user);
-
-        //                     console.log("THIS IS USER OBJECT", user);
-
-        //                     $rootScope.reloadWindow();
-        //                 }
-        //             },
-        //             error: function(user, error) {
-        //                 alert("User cancelled the Facebook login or did not fully authorize.");
-        //             }
-        //         });
-        //     };
-        // };
-
-        // (function(d, s, id) {
-        //     var js, fjs = d.getElementsByTagName(s)[0];
-        //     if (d.getElementById(id)) {
-        //         return;
-        //     }
-        //     js = d.createElement(s);
-        //     js.id = id;
-        //     js.src = "//connect.facebook.net/en_US/sdk.js" || "./vendors/facebook/sdk.js";
-        //     fjs.parentNode.insertBefore(js, fjs);
-        // }(document, 'script', 'facebook-jssdk'));
-
         $rootScope.createRoles = function() {
             // Instantiate Parse Role Authentication Object
             var accountRole = new Parse.ACL();
@@ -332,30 +272,4 @@ angular.module('tnApp')
         var ParseCommentClass = Parse.Object.extend("Comment");
         var ParseRoleObject = Parse.Object.extend('_Role');
 
-        // $rootScope.Users = ParseUserClass;
-        // $rootScope.Posts = ParsePostClass;
-        // $rootScope.Comment = ParseCommentClass;
-        // $rootScope.RoleObject = ParseRoleObject;
-
-        // // All Users List Query
-        // var UserListQuery = new Parse.Query($rootScope.Users)
-
-        // //Create the User Post Query and restraints
-        // var postQuery = new Parse.Query($rootScope.Posts);
-
-        // $rootScope.postQuery = postQuery;        
-        // $rootScope.postQuery.exists('content');
-
-
-        // // Create the User Post Collection
-        // var currentUserCollection = Parse.Collection.extend({
-        //     model: $rootScope.Posts,
-        //     query: postQuery
-        // });
-
-        // // Create $rootScope shortcuts
-        // $rootScope.userPostCollection;
-
-
     });
-// console.log('Finished loading ParseSDK Script');

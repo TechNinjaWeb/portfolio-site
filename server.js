@@ -2,6 +2,8 @@ var express = require('express'),
 	path = require('path'),
 	app = express();
 
+var PORT = process.env.PORT || 8080;
+
 app.set('views', __dirname + '/public/template');
 app.engine('html', require('ejs').renderFile);
 
@@ -19,4 +21,11 @@ app.get('/*', function(req, res, next){
     });
 });
 
-app.listen(3000);
+app.listen(PORT, function(){console.log("Listening on port: " + PORT)});
+
+// // Create a live reload server instance
+// var lrserver = require('tiny-lr')();
+// // Listen on port 35729
+// lrserver.listen(9000, function(err) { console.log('LR Server Started'); });
+// // Then later trigger files or POST to localhost:35729/changed
+// lrserver.changed({body:{files:['public/css/changed.css', 'public/js/changed.js']}});
