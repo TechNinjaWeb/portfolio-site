@@ -192,7 +192,7 @@ $(document).ready(function() {
 	    		leadEmail: footerContactEmail.val(),
 	    		message: footerContactMessage.val()
 	    	}).then(function(res){
-	    		console.log("Success!", res);
+	    		window.location.reload();
 	    	})
 	    }
     })
@@ -343,7 +343,8 @@ $(document).ready(function() {
 	    	} else {
 	    		e.preventDefault();
 		    	saveForm.save(formData).then(function(res){
-		    		console.log("Success!", res);
+		    		// console.log("Success!", res);
+		    		window.location.href = "../../index.html"
 		    	})
 		    }
     	})
