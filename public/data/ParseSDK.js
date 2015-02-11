@@ -1,5 +1,6 @@
 angular.module('tnApp')
     .run(function($rootScope, $window, $timeout) {
+
         // DETECT USERS BROWSER
         var userAgent;
         if (window.navigator.userAgent.indexOf('Safari') != -1 && window.navigator.userAgent.indexOf('Chrome') == -1) {

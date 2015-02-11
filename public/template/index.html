@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="scripts/animate.css/animate.css" />
     <!-- JQUERY -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- SOCKET.IO -->
+    <script type="application/javascript" src="./vendor/socket.io/socket.io.js"></script>
 
     <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,12 +36,13 @@
 </head>
 
 <body data-ng-app="tnApp">
+
     <div id="fb-root"></div>
 
     <div id="primary-view" data-ui-view></div>
-    
+
     <div id="navigation-view" data-ui-view="navigation"></div>
-    
+
     <div id="body-view" data-ui-view="body"></div>
 
     <div id="footer-view" data-ui-view="footer"></div>
@@ -58,6 +61,8 @@
     <script type="application/javascript" src="./app.js"></script>
     <script type="application/javascript" src="./data/ParseSDK.js"></script>
     <script type="application/javascript" src="./routes/routes.js"></script>
+    <!-- Services -->
+    <script type="application/javascript" src="./services/socket.io.service.js"></script>
     <!-- Controllers -->
     <script type="application/javascript" src="./controllers/app.controller.js"></script>
     <script type="application/javascript" src="./controllers/navigation.controller.js"></script>
@@ -88,10 +93,6 @@
     <script type="application/javascript" src="./vendor/highcharts/modules/exporting.js"></script>
     <!-- LIVERELOAD SERVICE -->
     <script src="//localhost:35729/livereload.js"></script>
-
-    <script id="initWowAnimations" type="text/javascript">
-        new WOW().init();
-    </script>
 </body>
 
 </html>

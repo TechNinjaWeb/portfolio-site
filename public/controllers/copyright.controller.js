@@ -1,9 +1,15 @@
-app.controller('CopyrightCtrl', function($scope) {
+app.controller('CopyrightCtrl', function($scope, Socket) {
 
     $scope.alias = 'CopyrightCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";
     $scope.test = "This is the main controller";
+
+
+    Socket.on('connect', function(data) {console.log(data);Socket.emit('messages are good')});
+    Socket.on('event', function(data) {});
+
+    Socket.send("Hey Yo");
 
     $scope.getLocation = function() {
         var location = window.location.pathname;
@@ -52,24 +58,38 @@ app.controller('CopyrightCtrl', function($scope) {
             }
         });
 
+        Socket.on('connect', function() {
+            Socket.send("Hello!");
+            $('#chat').append($('<div>Connected</div>'));
+        });
+
         sendBtn.on('click', function() {
             var message = $('#message').val();
             var bit, supportUserName;
-
-            if (message === null || message === undefined || message === "") {
-                console.warn("Please Enter a Message");
-                return;
+            console.log("Message", message)
+            if (message === null || message === 'undefined' || message === "") {
+                console.log("Please enter a valid message");
             } else {
                 supportUserName = userName; // FAKE USER NAME
                 supportUserName = supportUserName.toLowerCase().capitalize();
                 bit = "<div class='" + supportUserName + "bit'>" + supportUserName + ": " + message + "</div>";
 
+                // SEND TO SOCKET
+                // Socket.send($('#message').val());
                 $('#chat').append(bit);
                 $('#message').val('');
                 $(chatWindow)[0].scrollTop = $(chatWindow)[0].scrollHeight;
                 $('#message').focus();
             }
         });
-        // console.log("Chat Window Height", window.document.getElementById('chat').style)
+
+        Socket.on('message', function(message) {
+            $('#chat').append($('<div></div>').text(JSON.stringify(message)));
+        });
+
+        Socket.on('disconnect', function() {
+            $('#chat').append($('<div></div>').text(JSON.stringify(message)));
+        });
+        // console.log("Chat Window Height", window.document.getElementById('chat').style)//
     }
 });
