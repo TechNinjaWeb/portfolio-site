@@ -36,15 +36,15 @@
 <body data-ng-app="tnApp">
     <div id="fb-root"></div>
 
-    <div data-ui-view></div>
+    <div id="primary-view" data-ui-view></div>
     
-    <div data-ui-view="navigation"></div>
+    <div id="navigation-view" data-ui-view="navigation"></div>
     
-    <div data-ui-view="body" scroll></div>
+    <div id="body-view" data-ui-view="body" scroll></div>
 
-    <div data-ui-view="footer"></div>
+    <div id="footer-view" data-ui-view="footer"></div>
 
-    <div data-ui-view="copyright"></div>
+    <div id="copyright-view" data-ui-view="copyright"></div>
 
     <!-- PARSE -->
     <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
@@ -88,6 +88,10 @@
     <script type="application/javascript" src="./vendor/highcharts/modules/exporting.js"></script>
     <!-- LIVERELOAD SERVICE -->
     <script src="//localhost:35729/livereload.js"></script>
+
+    <script id="initWowAnimations" type="text/javascript">
+        new WOW().init();
+    </script>
 </body>
 
 </html>

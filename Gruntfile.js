@@ -44,14 +44,13 @@ module.exports = function(grunt) {
                     'vender/*.js',
                     'public/<%= basename %>/**/*.js'
                 ],
-                tasks: ['concat:js', 'uglify:js'],
+                tasks: [], // 'concat:js', 'uglify:js'
                 options: {
                     livereload: true,
                 }
             },
             css: {
-                files: ['less/*.less'],
-                tasks: ['less:style'],
+                files: ['public/**/*.css'], // 'less/*.less'
                 options: {
                     livereload: true,
                 }
