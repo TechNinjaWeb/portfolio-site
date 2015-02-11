@@ -8,14 +8,6 @@
                 <hr class="white">
                 <div id="footer-links" class="col-sm-6">
                     <ul data-ng-controller="NavCtrl" class="list-unstyled row">
-                        <!-- <div class="col-xs-12"><a href="about.html"><span class="footer-link">About</span></a>
-                        </div>
-                        <div class="col-xs-12"><a href="portfolio.html"><span class="footer-link">Portfolio</span></a>
-                        </div>
-                        <div class="col-xs-12"><a href="support.html"><span class="footer-link">Support</span></a>
-                        </div>
-                        <div class="col-xs-12"><a href="contact.html"><span class="footer-link">Contact</span></a>
-                        </div> -->
                         <li ng-repeat="link in urls">
                           <a class="col-xs-12" ng-href="{{ link.url }}" >{{ link.name }}</a>
                         </li>

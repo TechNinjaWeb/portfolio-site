@@ -22,10 +22,3 @@ app.get('/*', function(req, res, next){
 });
 
 app.listen(PORT, function(){console.log("Listening on port: " + PORT)});
-
-// // Create a live reload server instance
-// var lrserver = require('tiny-lr')();
-// // Listen on port 35729
-// lrserver.listen(9000, function(err) { console.log('LR Server Started'); });
-// // Then later trigger files or POST to localhost:35729/changed
-// lrserver.changed({body:{files:['public/css/changed.css', 'public/js/changed.js']}});

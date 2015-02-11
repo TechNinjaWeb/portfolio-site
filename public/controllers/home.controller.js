@@ -15,33 +15,15 @@ app.controller('HomeCtrl', function($scope) {
         mobile: true, // default
         live: true // default
     })
-    
+
     wow.init();
 
-    $('#reports-point-heading').on('click', function(e){
+    $('#reports-point-heading').on('click', function(e) {
         console.log("Clicked");
     })
 
 
 
-
-
-
-    $scope.articles = [{
-        title: 'article1',
-        body: 'body of article1'
-    }, {
-        title: 'article2',
-        body: 'body of article2'
-    }, {
-        title: 'article3',
-        body: 'body of article3'
-    }];
-
-    $scope.atNewArticle = function(article) {
-        //i only execute when transitioning back and forth between articles
-        console.log(article);
-    };
 
 
     // HOMEPAGE CONTENT
@@ -153,7 +135,31 @@ app.controller('HomeCtrl', function($scope) {
     $scope.barOptions = barOptions;
 
 
-    $('#reports-chart').highcharts(barOptions);
+    // LAZY LOAD BARCHART
+    var $window = $(window),
+        didScroll = false,
+        skillsTop = $('#toolbelt').offset().top - 40; //the point at which we will create the chart
+
+    $window.on('scroll', function() {
+        //detected a scroll event, you want to minimize the code here because this event can be thrown A LOT!
+        didScroll = true;
+    });
+
+    //check every 250ms if user has scrolled to the skills section
+    setInterval(function() {
+        if (didScroll) {
+            didScroll = false;
+            if ($window.scrollTop() >= skillsTop) {
+                createChart();
+            }
+        }
+    }, 250);
+
+    function createChart() {
+        $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
+
+        $('#reports-chart').highcharts(barOptions);
+    };
 
 
 });
