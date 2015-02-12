@@ -18,14 +18,6 @@ app.controller('HomeCtrl', function($scope) {
 
     wow.init();
 
-    $('#reports-point-heading').on('click', function(e) {
-        console.log("Clicked");
-    })
-
-
-
-
-
     // HOMEPAGE CONTENT
 
     // TRUNCATE TESTIMONY QUOTES
@@ -138,7 +130,8 @@ app.controller('HomeCtrl', function($scope) {
     // LAZY LOAD BARCHART
     var $window = $(window),
         didScroll = false,
-        skillsTop = $('#toolbelt').offset().top - 40; //the point at which we will create the chart
+        fired = 0,
+        skillsTop = $('#toolbelt').offset().top - 100; //the point at which we will create the chart
 
     $window.on('scroll', function() {
         //detected a scroll event, you want to minimize the code here because this event can be thrown A LOT!
@@ -146,19 +139,25 @@ app.controller('HomeCtrl', function($scope) {
     });
 
     //check every 250ms if user has scrolled to the skills section
-    setInterval(function() {
-        if (didScroll) {
+    var watch = setInterval(function() {
+        if (fired <= 0 && didScroll && $('#reports-point-right').is(":visible") == true) {
             didScroll = false;
             if ($window.scrollTop() >= skillsTop) {
                 createChart();
+                fired++;
+                clearInterval(watch);
             }
         }
     }, 250);
 
     function createChart() {
-        $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
+        // $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
+        console.log("Fired!")
+            // alert("Fired");
+        setTimeout(function() {
+            $('#reports-chart').highcharts(barOptions);
+        }, 500)
 
-        $('#reports-chart').highcharts(barOptions);
     };
 
 

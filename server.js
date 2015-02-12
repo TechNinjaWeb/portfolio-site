@@ -42,4 +42,4 @@ io.on('connection', function(socket) {
     });
 });
 
-server.listen(PORT);
+server.listen(PORT, function(){console.log("Socket & Express Server Started")});

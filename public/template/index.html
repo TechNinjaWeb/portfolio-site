@@ -9,6 +9,7 @@
     <title>Tech Ninja | Web &amp; IT</title>
     <meta name="description" content="Tech Ninja | Web &amp; IT Advanced Web Applications" />
     <meta name="author" content="4UmNinja" />
+    <base href="/" />
 
     <link rel="stylesheet" href="./css/styles.css?v=1.0" />
     <link href="//fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css">
@@ -36,17 +37,17 @@
 </head>
 
 <body data-ng-app="tnApp">
-
+    <!-- Facebook Login Div -->
     <div id="fb-root"></div>
-
+    <!-- Primary Template Container -->
     <div id="primary-view" data-ui-view></div>
-
+    <!-- Navigation Template Container -->
     <div id="navigation-view" data-ui-view="navigation"></div>
-
-    <div id="body-view" data-ui-view="body"></div>
-
+    <!-- Body Template Container -->
+    <div id="body-view" data-ui-view="body" autoscroll="true"></div>
+    <!-- Footer Template Container -->
     <div id="footer-view" data-ui-view="footer"></div>
-
+    <!-- Copyright Template Container -->
     <div id="copyright-view" data-ui-view="copyright"></div>
 
     <!-- PARSE -->
@@ -77,8 +78,6 @@
     <script type="application/javascript" src="./directives/scroll.directive.js"></script>
     <!-- Tech Ninja Custom Script -->
     <script src="./js/prototype.js"></script>
-    <!-- SCROLLME -->
-    <script type="application/javascript" src="http://scrollme.nckprsn.com/js/jquery.scrollme.js"></script>
     <!-- FLEXSLIDER -->
     <script type="application/javascript" src="./vendor/flexslider/jquery.flexslider.js"></script>
     <script type="application/javascript" src="./vendor/flexslider/jquery.flexslider.js"></script>
