@@ -4,17 +4,17 @@
             <div class="portfolio-page-header full">
                 <h3 id="portfolio-page-heading">Check Out Our Work</h3>
                 <ul id="filters">
-                    <li><span class="filter active" data-filter="app card icon logo web">All</span>
+                    <li><button class="filter btn btn-sm btn-primary active" data-filter="app card icon logo web">All</button>
                     </li>
-                    <li><span class="filter" data-filter="app">App</span>
+                    <li><button class="filter btn btn-sm btn-primary" data-filter="app">App</button>
                     </li>
-                    <li><span class="filter" data-filter="card">Card</span>
+                    <li><button class="filter btn btn-sm btn-primary" data-filter="card">Card</button>
                     </li>
-                    <li><span class="filter" data-filter="icon">Icon</span>
+                    <li><button class="filter btn btn-sm btn-primary" data-filter="icon">Icon</button>
                     </li>
-                    <li><span class="filter" data-filter="logo">Logo</span>
+                    <li><button class="filter btn btn-sm btn-primary" data-filter="logo">Logo</button>
                     </li>
-                    <li><span class="filter" data-filter="web">Web</span>
+                    <li><button class="filter btn btn-sm btn-primary" data-filter="web">Web</button>
                     </li>
                 </ul>
             </div>
@@ -401,3 +401,21 @@
         </div>
     </div>
 </div>
+
+<div style="margin-top:100px;"></div>
+<div class="controls">
+    <label>Filter:</label>
+    <button class="filter" data-filter="all">All</button>
+    <button class="filter" data-filter=".category-{{category}}" ng-repeat="category in categories">{{category}}</button>
+
+    <label>Sort:</label>
+    <button class="sort" data-sort="myorder:asc">Asc</button>
+    <button class="sort" data-sort="myorder:desc">Desc</button>
+</div>
+<div class="test">
+    <div id="MixItUpContainer1" class="container">
+        <div class="mix category-{{drawing.category}}" data-myorder="{{drawing.value}}" ng-repeat="drawing in drawings">Value : {{drawing.name}}</div>
+    </div>
+</div>
+
+

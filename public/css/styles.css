@@ -271,7 +271,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
-    display: none;
+    /*display: none;*/
     float: left;
     overflow-x: hidden;
 }

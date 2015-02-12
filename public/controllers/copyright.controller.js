@@ -32,7 +32,7 @@ app.controller('CopyrightCtrl', function($scope, Socket) {
         var usersOnlineContainer = window.document.getElementById('users');
         var usersOnline = "<div class='user'>" + user + "</div>"
 
-        var modalBtn = $("<a class='modal-btn' href='#' data-toggle='modal' data-target='#user-modal'></a>");
+        var modalBtn = $("<a class='modal-btn' data-toggle='modal' data-target='#user-modal'></a>");
 
         modalBtn.on('click', function(e) {
             var userName = e.target.innerText;
