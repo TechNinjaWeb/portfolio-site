@@ -15,7 +15,7 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
 
     // IMPLEMENT SUPPORT SECTION USER AUTHENTICATION
     // AT LATER TIME
-    var userName = "Jeff Coleman";
+    var userName = "Rahim's Macbook";
     var user, icons;
     icons = "<i class='icon-ios'></i>",
         user = "<div id='support-admin'>Rahim: Admin" + icons + "</div>";
@@ -30,6 +30,15 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
         var usersOnline = "<div class='user'>" + user + "</div>"
 
         var modalBtn = $("<a class='modal-btn' data-toggle='modal' data-target='#user-modal'></a>");
+
+        IO.on('news', function(message) {
+            console.warn("Got Message", message);
+        });
+
+        // IO.on('response', function(message) {
+        //     $('#chat').append($('<div></div>').text(JSON.stringify(message)));
+        //     console.log("Got Response", message);
+        // });
 
         modalBtn.on('click', function(e) {
             var userName = e.target.innerText;
@@ -67,34 +76,16 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
                 bit = "<div class='" + supportUserName + "bit'>" + supportUserName + ": " + message + "</div>";
 
                 // SEND TO IO
-                IO.action($('#message').val());
-                // $('#chat').append(bit);
+                IO.emit("client", $('#message').val());
+                $('#chat').append(bit);
                 $('#message').val('');
                 $(chatWindow)[0].scrollTop = $(chatWindow)[0].scrollHeight;
                 $('#message').focus();
+
             }
         });
-        
 
-        IO.on('connect', function() {
-            console.warn("Connected");
-
-            IO.emit('client', {
-                client: "MacbookPro"
-            });
-
-        });
-
-        // IO.on('news', function(message) {
-        //     console.warn("Got Message", message);
-        // });
-
-        IO.on('message', function(message) {
-            $('#chat').append($('<div></div>').text(JSON.stringify(message)));
-            console.log("Got Message", message);
-        });
-	
-		console.log(IO);
+        console.log(IO);
     }
     plusPlus++;
     console.log("Support Ctrl was loaded ->" + plusPlus + " times!");

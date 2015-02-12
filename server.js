@@ -25,20 +25,44 @@ app.get('/*', function(req, res, next) {
 });
 
 io.on('connection', function(socket) {
-    console.log("connected");
+    var handshake, address, 
+        headers, host, origin, 
+        rooms, listOfUsers = [];
+
+    user = {},
+    user.handshake = socket.handshake,
+    user.address = socket.handshake.address,
+    user.host = socket.handshake.headers.host,
+    user.origin = socket.handshake.headers.origin,
+    user.rooms = socket.rooms;
+    // Log the users data
+    console.log("connected to\n",
+        user.address + "\n",
+        user.host + "\n",
+        user.origin + "\n",
+        user.rooms + "\n");
     // SEND MESSAGE TO CLIENT ON CONNECT
+    setTimeout(function(){
+        socket.emit('response',"Your User Object is without object")
+    }, 5000);
+    var print = [user.address,
+        user.host,
+        user.origin];
+        print.forEach(function(val){
+            JSON.stringify(val);
+        })
+    setTimeout(function(){
+        socket.emit('response', "Your User Object is "+ print);
+    }, 10000);
+
+
     socket.emit('news', {
         messsage: "You've been connected to Rahims MacbookPro"
     });
     // NEWS EVENT LISTENER
-    socket.on('news', function(data) {
+    socket.on('client', function(data) {
         console.log("Got Some News", data);
-        io.emit('news', data);
-    });
-    // MESSAGE EVENT LISTENER
-    socket.on('message', function(data) {
-        console.log("Got Message", data);
-        io.emit('message', data);
+        socket.broadcast.emit('response', data);
     });
     // DISCONNECT EVENT LISTENER
     socket.on('disconnect', function(data) {

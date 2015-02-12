@@ -42,7 +42,8 @@ module.exports = function(grunt) {
                     'public/directives/*.js',
                     'public/routes/*.js',
                     'vender/*.js',
-                    'public/<%= basename %>/**/*.js'
+                    'public/<%= basename %>/**/*.js',
+                    'server.js'
                 ],
                 tasks: [], // 'concat:js', 'uglify:js'
                 options: {
