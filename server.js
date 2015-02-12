@@ -42,9 +42,6 @@ io.on('connection', function(socket) {
         user.origin + "\n",
         user.rooms + "\n");
     // SEND MESSAGE TO CLIENT ON CONNECT
-    setTimeout(function(){
-        socket.emit('response',"Your User Object is without object")
-    }, 5000);
     var print = [user.address,
         user.host,
         user.origin];
@@ -52,7 +49,7 @@ io.on('connection', function(socket) {
             JSON.stringify(val);
         })
     setTimeout(function(){
-        socket.emit('response', "Your User Object is "+ print);
+        socket.emit('response', "SERVER: Your User Object is "+ print);
     }, 10000);
 
 
