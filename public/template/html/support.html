@@ -5,8 +5,17 @@
             </div>
             <div id="users" class="col-xs-4 col-sm-2">
             </div>
+            <div ng-show="getLocation() == '/support' " id="secondary" class="col-xs-12">
+            <div id="message-box" class="input-group">
+                <input id="message" type="text" class="form-control" placeholder="TYPE YOUR COMMENTS HERE" autofocus>
+                <span class="input-group-btn">
+                        <button id="send-btn" class="btn btn-danger" type="button">SEND</button>
+                     </span>
+            </div>
+            <!-- /input-group -->
         </div>
-
+        </div>
+        
     </div>
 </div>
 

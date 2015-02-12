@@ -18,7 +18,7 @@ app.directive("scroll", function($window) {
             // SET THE VISIBLE PROPERTY
             // ADD ANIMATION
             var pageYOffset = this.pageYOffset,
-                windowBottom = this.pageYOffset + this.innerHeight - 60,
+                windowBottom = this.pageYOffset + this.innerHeight - 50,
                 windowHeight = this.innerHeight,
                 windowWidth = this.innerWidth,
                 elemName = attrs.id,

@@ -239,7 +239,7 @@ h3#consultation-heading { text-shadow: 1px 1px 1px black; }
 /*	FOOTER ICONS */
 #footer-social-media-icons { padding-top: 10px; }
 #footer a { color: #eee; }
-#footer a:hover { color: #3A89C3; text-decoration: none; }
+#footer a:hover { color: #F8982F; text-decoration: none; }
 i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; cursor: pointer; }
 
 /* 	
@@ -341,7 +341,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 #chat { min-height: 100%; }
 #users { overflow-y: hidden; }
 /*#chat { margin-bottom: 86px; overflow-y: scroll; }*/
-#message-box { padding-left: 15px; padding-right: 15px; }
+#message-box { padding-bottom: 50px; }
 #message-box .btn, #message-box input { border-radius: 0; }
 #main { height: 540px; }
 #copyright-label { padding-bottom: 15px!important; }
