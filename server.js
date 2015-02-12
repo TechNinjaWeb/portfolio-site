@@ -24,22 +24,30 @@ app.get('/*', function(req, res, next) {
     });
 });
 
-io.on('message', function(req, res) {
-    console.log("Got Message");
-});
-
-io.on('disconnect', function(req, res) {
-    console.log("User Left");
-});
-
 io.on('connection', function(socket) {
     console.log("connected");
-    socket.emit('message', {
-        hello: 'world'
+    // SEND MESSAGE TO CLIENT ON CONNECT
+    socket.emit('news', {
+        messsage: "You've been connected to Rahims MacbookPro"
     });
+    // NEWS EVENT LISTENER
     socket.on('news', function(data) {
-        console.log(data);
+        console.log("Got Some News", data);
+        io.emit('news', data);
+    });
+    // MESSAGE EVENT LISTENER
+    socket.on('message', function(data) {
+        console.log("Got Message", data);
+        io.emit('message', data);
+    });
+    // DISCONNECT EVENT LISTENER
+    socket.on('disconnect', function(data) {
+        console.log("User Left", data);
     });
 });
 
-server.listen(PORT, function(){console.log("Socket & Express Server Started")});
+
+
+server.listen(PORT, function() {
+    console.log("Socket & Express Server Started")
+});
