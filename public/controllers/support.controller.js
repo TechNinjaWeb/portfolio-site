@@ -27,14 +27,10 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
 
         var chatWindow = window.document.getElementById('chat');
         var usersOnlineContainer = window.document.getElementById('users');
-        var usersOnline = "<div class='user'>" + user + "</div>"
 
         var modalBtn = $("<a class='modal-btn' data-toggle='modal' data-target='#user-modal'></a>");
 
-        IO.on('news', function(message) {
-            console.warn("Got Message", message);
-        });
-
+        // Now Being Handled By The Controller
         // IO.on('response', function(message) {
         //     $('#chat').append($('<div></div>').text(JSON.stringify(message)));
         //     console.log("Got Response", message);
@@ -53,8 +49,8 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
             // console.warn("Title", modalTitle, "\nBody", modalBody, "\nFooter", modalFooter);
         })
 
-        $(modalBtn).append(usersOnline);
-        $(usersOnlineContainer).append(modalBtn)
+        // $(modalBtn).append(usersOnline);
+        // $(usersOnlineContainer).append(modalBtn)
 
         message.keyup(function(e) {
             if (e.keyCode == 13) {
@@ -76,13 +72,57 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
                 bit = "<div class='" + supportUserName + "bit'>" + supportUserName + ": " + message + "</div>";
 
                 // SEND TO IO
-                IO.emit("client", $('#message').val());
+                IO.emit("chatMessage", {
+                    'message': $('#message').val(),
+                    'sender': userName
+                });
                 $('#chat').append(bit);
                 $('#message').val('');
                 $(chatWindow)[0].scrollTop = $(chatWindow)[0].scrollHeight;
                 $('#message').focus();
 
             }
+        });
+        
+        IO.on('response', function(message) {
+            $('#chat').append($('<div id="'+message.userName+'">'+message.userName+": " +JSON.stringify(message.message)+' </div>'));
+            console.log("Got Response", message);
+        });
+
+        // Socket Events
+        IO.on('connect', function(message) {
+            setTimeout(function() {
+                console.log("Emit Add User", userName);
+                IO.emit('getAll', function(data){console.log("No Data:",data)});
+                console.log("getAll");
+            }, 1500)
+
+            IO.emit('adduser', userName);
+        })
+
+        IO.on('listAll', function(all) {
+            console.log(all, "All Data from server");
+            for (user in all.usersOnline) {
+                var usersOnline = "<div class='user'>" + user + "</div>"
+                
+                console.log("Outputting user: ", user)
+                $(usersOnlineContainer).html();
+
+                $(modalBtn).append(usersOnline);
+                $(usersOnlineContainer).append(modalBtn);
+            };
+        });
+
+        IO.on('listRooms', function(rooms) {
+            console.log(rooms, "Rooms List from server");
+        });
+
+        IO.on('listUsers', function(users) {
+            console.log(users, "Users List from server");
+        });
+
+        IO.on('news', function(message) {
+            console.warn("Got Message", message);
         });
 
         console.log(IO);

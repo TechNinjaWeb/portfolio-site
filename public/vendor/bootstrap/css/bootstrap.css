@@ -1003,7 +1003,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  /*color: inherit; // Tech Ninja Edit*/
 }
 h1 small,
 h2 small,

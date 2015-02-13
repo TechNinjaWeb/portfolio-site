@@ -18,20 +18,27 @@ app.controller('HomeCtrl', function($scope) {
 
     wow.init();
 
+    var topAnchor = $('#top-anchor')
+        topAnchor.on('click', function(e){
+            $('#teaser-window-anchor').click();
+            window.location.hash = '';
+            console.log("Clicked");
+        })
+
     // HOMEPAGE CONTENT
 
     // TRUNCATE TESTIMONY QUOTES
-    var testimonial = $('.testimony-slide');
-    var elipsis = 150;
+    var testimonial = $('.testimony-slide'),
+        elipsis = 150;
     testimonial.each(function(pos, item) {
         item.innerHTML = item.innerHTML.substr(0, elipsis) + "...";
     })
 
     // PORTFOLIO SECTION
-    var portfolioLeft = $(document.getElementById('portfolio-left'));
-    var portfolioRight = $(document.getElementById('portfolio-right'));
-    // EVEN HEIGHT FOR BOTH SECTIONS
-    portfolioLeft.css('height', portfolioRight.css('height'));
+    // var portfolioLeft = $(document.getElementById('portfolio-left'));
+    // var portfolioRight = $(document.getElementById('portfolio-right'));
+    // // EVEN HEIGHT FOR BOTH SECTIONS
+    // portfolioLeft.css('height', portfolioRight.css('height'));
 
     $('#portfolio-slideshow').flexslider({
         animation: "fade",

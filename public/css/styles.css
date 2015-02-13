@@ -1,41 +1,11 @@
-
-#video-container:before, #video-container:after {
-  z-index: -1; 
-  position: absolute; 
-  content: "";
-  bottom: 38%;
-  left: 10px;
-  width: 80%; 
-  top: 30%;
-  max-width:100%;
-  background: rgba(0, 0, 0, 0.7); 
-  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
-  transform: rotate(-2deg);
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
-}
-
-#video-container:after {
-  transform: rotate(2deg);
-  right: 10px;
-  left: auto;
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
-}
-
 /* 
 	GLOBAL PRIMARY STYLES 
 */
 html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent; }
 /*body { padding-top:14px }*/
-h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; }
-p { font-family: "proxima-nova"; font-size: 18px; }
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 { font-family: "proxima-nova"!important; }
+p { font-family: "Montserrat"; font-size: 18px; }
 button, a, input { border-radius: 0!important; }
 
 /* NAVIGATION FIX */
@@ -164,7 +134,7 @@ a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help
 /* 	
 	TOOLBELT SECTION
 */
-#toolbelt { overflow-x: hidden; background-color: #84ecaf; box-shadow: 2px 2px 1px darkgreen; }
+#toolbelt { overflow-x: hidden; background-color: #84ecaf; box-shadow: 2px 2px 1px darkgreen;}
 #toolbelt ul { margin-top: 0; margin-bottom: 0; }
 .toolbelt a { color: black; }
 /*.toolbelt:hover { background-color: blue; }*/
@@ -229,6 +199,16 @@ h3#consultation-heading { text-shadow: 1px 1px 1px black; }
 #consultation-button { background-color: #3A89C3; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
 #consultation-button:hover { color: #EEE; border: 3px solid #EEE; }
 
+#top-anchor {
+	position: fixed;
+	display: block;
+	float: right;
+	padding: 5px;
+	top: 80%;
+	left: 88%;
+	z-index: 1;
+}
+
 /* 	
 	FOOTER SECTION 
 */
@@ -246,6 +226,35 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 	ABOUT PAGE 
 */
 #about-page .page-container { padding-top: 14px; /*padding-bottom: 30px;*/ }
+#video-container:before, #video-container:after {
+  z-index: -1; 
+  position: absolute; 
+  content: "";
+  bottom: 38%;
+  left: 10px;
+  width: 80%; 
+  top: 30%;
+  max-width:100%;
+  background: rgba(0, 0, 0, 0.7); 
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(-2deg);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+#video-container:after {
+  transform: rotate(2deg);
+  right: 10px;
+  left: auto;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
 /*#about-page div#footer { margin-top: 320px; }*/
 
 /* 	
