@@ -4,22 +4,41 @@
             <div class="portfolio-page-header full">
                 <h3 id="portfolio-page-heading">Check Out Our Work</h3>
                 <ul id="filters">
-                    <li><button class="filter btn btn-sm btn-primary active" data-filter="app card icon logo web">All</button>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary active" data-filter="app card icon logo web">All</a>
                     </li>
-                    <li><button class="filter btn btn-sm btn-primary" data-filter="app">App</button>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="app">App</a>
                     </li>
-                    <li><button class="filter btn btn-sm btn-primary" data-filter="card">Card</button>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="card">Card</a>
                     </li>
-                    <li><button class="filter btn btn-sm btn-primary" data-filter="icon">Icon</button>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="icon">Icon</a>
                     </li>
-                    <li><button class="filter btn btn-sm btn-primary" data-filter="logo">Logo</button>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="logo">Logo</a>
                     </li>
-                    <li><button class="filter btn btn-sm btn-primary" data-filter="web">Web</button>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="web">Web</a>
                     </li>
                 </ul>
             </div>
+            <!-- <portfolio> Portfolio Element </portfolio> -->
             <div id="portfoliolist" class="col-sm-12" style="padding-top:50px;">
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <ul class="list-unstyled">
+                    <li ng-repeat="item in portfolioList" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}" class="portfolio col-sm-4 col-md-3 col-lg-2 {{ item['data-cat'] }}" data-cat="{{ item['data-cat'] }}" portfolioHover>
+                        <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                            <div class="portfolio-wrapper">
+                                <img ng-src="{{ item['imgSrc']}}" alt="{{ item['alt'] }}" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">{{ item['title'] }}</div>
+                                        <span class="text-category">{{ item['data-cat'] }}</span>
+                                    </div>
+                                    <div class="label-bg"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <!--<div id="portfoliolist" class="col-sm-12" style="padding-top:50px;">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="../vendor/portfolio/img/portfolios/logo/5.jpg" alt="logo #5" />
@@ -32,8 +51,8 @@
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app">
+                </div>                
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/app/1.jpg" alt="app #1" />
@@ -49,7 +68,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/web/4.jpg" alt="web #4" />
@@ -65,7 +84,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/card/1.jpg" alt="card #1" />
@@ -81,7 +100,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/app/3.jpg" alt="app #3" />
@@ -97,7 +116,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/card/4.jpg" alt="card #4" />
@@ -113,7 +132,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/card/5.jpg" alt="card #5" />
@@ -129,7 +148,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/logo/1.jpg" alt="logo #1" />
@@ -145,7 +164,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/app/2.jpg" alt="app #2" />
@@ -161,7 +180,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/card/2.jpg" alt="card #2" />
@@ -177,7 +196,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/logo/6.jpg" alt="logo #6" />
@@ -193,7 +212,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/logo/7.jpg" alt="logo #7" />
@@ -209,7 +228,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/icon/4.jpg" alt="icon #4" />
@@ -225,7 +244,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/web/3.jpg" alt="web #3" />
@@ -241,7 +260,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/icon/1.jpg" alt="icon #1" />
@@ -257,7 +276,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/web/2.jpg" alt="web #2" />
@@ -273,7 +292,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/icon/2.jpg" alt="icon #2" />
@@ -289,7 +308,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/icon/5.jpg" alt="icon #5" />
@@ -305,7 +324,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/web/1.jpg" alt="web #1" />
@@ -321,7 +340,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/logo/3.jpg" alt="logo #3" />
@@ -337,7 +356,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/logo/4.jpg" alt="logo #4" />
@@ -353,7 +372,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/icon/3.jpg" alt="icon #3" />
@@ -369,7 +388,7 @@
                 </div>
 
 
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/card/3.jpg" alt="card #3" />
@@ -383,7 +402,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
                             <img src="./vendor/portfolio/img/portfolios/logo/2.jpg" alt="logo #2" />
@@ -397,25 +416,9 @@
                         </div>
                     </a>
                 </div>
+            </div> -->
             </div>
         </div>
     </div>
-</div>
 
-<div style="margin-top:100px;"></div>
-<div class="controls">
-    <label>Filter:</label>
-    <button class="filter" data-filter="all">All</button>
-    <button class="filter" data-filter=".category-{{category}}" ng-repeat="category in categories">{{category}}</button>
-
-    <label>Sort:</label>
-    <button class="sort" data-sort="myorder:asc">Asc</button>
-    <button class="sort" data-sort="myorder:desc">Desc</button>
-</div>
-<div class="test">
-    <div id="MixItUpContainer1" class="container">
-        <div class="mix category-{{drawing.category}}" data-myorder="{{drawing.value}}" ng-repeat="drawing in drawings">Value : {{drawing.name}}</div>
-    </div>
-</div>
-
-
+    <!-- <div style="margin-top:100px;"></div> -->

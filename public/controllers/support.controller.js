@@ -1,4 +1,4 @@
-console.log("Support Loaded")
+// console.log("Support Loaded")
 app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
     var plusPlus = 0
 
@@ -69,7 +69,7 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
             } else {
                 supportUserName = userName; // FAKE USER NAME
                 supportUserName = supportUserName.toLowerCase().capitalize();
-                bit = "<div class='" + supportUserName + "bit'>" + supportUserName + ": " + message + "</div>";
+                bit = "<div class='" + supportUserName.replace(/[^A-Z0-9]/ig, "") + "bit'>" + supportUserName + ": " + message + "</div>";
 
                 // SEND TO IO
                 IO.emit("chatMessage", {
@@ -83,28 +83,36 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
 
             }
         });
-        
+
         IO.on('response', function(message) {
-            $('#chat').append($('<div id="'+message.userName+'">'+message.userName+": " +JSON.stringify(message.message)+' </div>'));
+            $('#chat').append($('<div id="' + message.userName.replace(/[^A-Z0-9]/ig, "") + '">' + message.userName + ": " + JSON.stringify(message.message) + ' </div>'));
             console.log("Got Response", message);
         });
 
         // Socket Events
         IO.on('connect', function(message) {
+            IO.emit('adduser', userName);
+            // TEST DATA INITIATION
             setTimeout(function() {
                 console.log("Emit Add User", userName);
-                IO.emit('getAll', function(data){console.log("No Data:",data)});
-                console.log("getAll");
             }, 1500)
 
-            IO.emit('adduser', userName);
+            IO.emit('getAll');
+            console.log("==========\nEmit getAll\n==========");
+
+            IO.on('disconnect', function(message) {
+                console.warn("Disconnected from host with message: ", message);
+                var userContainer = $("#" + userName.replace(/[^A-Z0-9]/ig, ""));
+                console.log("DELETING YOUR STATUS CONTAINER", userContainer);
+                userContainer.remove();
+            });
         })
 
         IO.on('listAll', function(all) {
             console.log(all, "All Data from server");
             for (user in all.usersOnline) {
-                var usersOnline = "<div class='user'>" + user + "</div>"
-                
+                var usersOnline = '<div id="' + user.replace(/[^A-Z0-9]/ig, "") + '" class="user">' + user + '</div>'; // '<div id="'+message.userName.replace(/[^\w\s]/gi, '')+'">'
+
                 console.log("Outputting user: ", user)
                 $(usersOnlineContainer).html();
 
@@ -122,12 +130,19 @@ app.controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
         });
 
         IO.on('news', function(message) {
-            console.warn("Got Message", message);
+            console.warn("Message From SERVER: ", message);
         });
 
-        console.log(IO);
+
+        // Simulate Disconnect
+        // setTimeout(function(){
+        //     console.log("disconnecting you!")
+        //     IO.disconnect();
+        // }, 10000)
+
+        // console.log(IO);
     }
-    plusPlus++;
-    console.log("Support Ctrl was loaded ->" + plusPlus + " times!");
+    // plusPlus++;
+    // console.log("Support Ctrl was loaded ->" + plusPlus + " times!");
 }]);
-console.log("Support End")
+// console.log("Support End")

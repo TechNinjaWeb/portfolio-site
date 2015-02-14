@@ -48,7 +48,7 @@ io.on('connection', function(socket) {
         user.origin
     ];
     setTimeout(function() {
-        socket.emit('news', "SERVER: Your User Object is " + print);
+        socket.emit('news', "Your User Object is " + print);
         // Log the users data
         console.log("connected to\n",
             user.address + "\n",
@@ -103,6 +103,7 @@ io.on('connection', function(socket) {
     socket.on('createRoom', function(room) {
         rooms.push(room);
         socket.emit('updaterooms', rooms, socket.room);
+        console.log('Update All Users with New Rooms', rooms, socket.room);
     });
 
     socket.on('switchRoom', function(newroom) {
@@ -110,10 +111,10 @@ io.on('connection', function(socket) {
         oldroom = socket.room;
         socket.leave(socket.room);
         socket.join(newroom);
-        socket.emit('updatechat', 'SERVER', 'you have connected to ' + newroom);
-        socket.broadcast.to(oldroom).emit('updatechat', 'SERVER', socket.username + ' has left this room');
+        socket.emit('updatechat', 'you have connected to ' + newroom);
+        socket.broadcast.to(oldroom).emit('updatechat', socket.username + ' has left this room');
         socket.room = newroom;
-        socket.broadcast.to(newroom).emit('updatechat', 'SERVER', socket.username + ' has joined this room');
+        socket.broadcast.to(newroom).emit('updatechat', socket.username + ' has joined this room');
         socket.emit('updaterooms', rooms, newroom);
     });
 

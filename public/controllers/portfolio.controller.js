@@ -7,27 +7,132 @@ app.controller('PortfolioCtrl', function($scope) {
 
     $scope.categories = ['Soft', 'Elements'];
 
-    $scope.drawings = [{
-        name: 'Water',
-        category: 'Elements',
-        value: '2'
+
+    var portfolioList = [{
+        'title': 'Bird Document',
+        'data-cat': 'web',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
     }, {
-        name: 'Fire',
-        category: 'Elements',
-        value: '1'
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
     }, {
-        name: 'Air',
-        category: 'Elements',
-        value: '4'
+        'title': 'Bird Document',
+        'data-cat': 'app',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
     }, {
-        name: 'Coton',
-        category: 'Soft',
-        value: '3'
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
     }, {
-        name: 'Whool',
-        category: 'Soft',
-        value: '5'
+        'title': 'Bird Document',
+        'data-cat': 'card',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'icon',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'icon #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'web #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'web #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'app',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'app',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'logo',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'app',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
+    }, {
+        'title': 'Bird Document',
+        'data-cat': 'card',
+        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'alt': 'logo #5'
     }];
+
+    $scope.portfolioList = portfolioList;
+
+
 
 
     // PROFILE PAGE MODAL
@@ -54,7 +159,7 @@ app.controller('PortfolioCtrl', function($scope) {
     });
     var filterList = {
 
-        init: function () {
+        init: function() {
 
             // MixItUp plugin
             // http://mixitup.io
@@ -102,19 +207,27 @@ app.controller('PortfolioCtrl', function($scope) {
 
         },
 
-        hoverEffect: function () {
+        hoverEffect: function() {
 
             // Simple parallax effect
             $('#portfoliolist .portfolio').hover(
-                function () {
-                    $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                    $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                function() {
+                    $(this).find('.label').stop().animate({
+                        bottom: 0
+                    }, 200, 'easeOutQuad');
+                    $(this).find('img').stop().animate({
+                        top: -30
+                    }, 500, 'easeOutQuad');
                 },
-                function () {
-                    $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                    $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
-                }       
-            );              
+                function() {
+                    $(this).find('.label').stop().animate({
+                        bottom: -40
+                    }, 200, 'easeInQuad');
+                    $(this).find('img').stop().animate({
+                        top: 0
+                    }, 300, 'easeOutQuad');
+                }
+            );
 
         }
 

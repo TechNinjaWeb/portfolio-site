@@ -5,19 +5,19 @@ app.controller('NavCtrl', function($scope) {
     $scope.test = "This is the main controller";
 
     $scope.urls = [{
-        sref: 'about',
+        sref: 'home.about',
         url: '/about',
         name: 'About'
     }, {
-        sref: 'portfolio',
+        sref: 'home.portfolio',
         url: '/portfolio',
         name: 'Portfolio'
     }, {
-        sref: 'support',
+        sref: 'home.support',
         url: '/support',
         name: 'Support'
     }, {
-        sref: 'contact',
+        sref: 'home.contact',
         url: '/contact',
         name: 'Contact'
     }];

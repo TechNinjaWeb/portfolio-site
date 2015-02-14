@@ -138,7 +138,7 @@ app.controller('HomeCtrl', function($scope) {
     var $window = $(window),
         didScroll = false,
         fired = 0,
-        skillsTop = $('#toolbelt').offset().top - 100; //the point at which we will create the chart
+        skillsTop = $('#toolbelt').offset().top - 50; //the point at which we will create the chart
 
     $window.on('scroll', function() {
         //detected a scroll event, you want to minimize the code here because this event can be thrown A LOT!

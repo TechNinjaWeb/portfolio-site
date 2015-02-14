@@ -10,13 +10,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" ng-href="home"><span class="tech">TECH</span><span class="ninja"> NINJA</span> <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
+                    <a class="navbar-brand" ui-sref="home.index"><span class="tech">TECH</span><span class="ninja"> NINJA</span> <img class="hidden" src="#" alt="Tech Ninja | Web &amp; IT"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="tn-nav-collapse">
                     <ul class="nav navbar-nav">
                         <li ng-repeat="link in urls">
-                          <a ng-href="{{ link.url }}" >{{ link.name }} <span class="sr-only">(current)</span></a>
+                          <a ui-sref="{{ link.sref }}" ng-href="{{ link.url }}" >{{ link.name }} <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                     <div id="nav-login" class="text-center navbar-right">
