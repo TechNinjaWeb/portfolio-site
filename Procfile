@@ -1,1 +1,1 @@
-web: grunt default
+web: node server.js
