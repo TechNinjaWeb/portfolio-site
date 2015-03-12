@@ -53,6 +53,7 @@ angular.module('ParseServices', [])
                     console.log("Success! Parse has logged in the user: " + username);
                     // Reload Window To Update Scope
                     $rootScope.reloadWindow();
+                    $state.transitionTo('profile.main');
                     // console.log("Redirecting You To Home State");
                     // $state.go('home');
                 },
@@ -65,20 +66,17 @@ angular.module('ParseServices', [])
 
         parseFactory.logOut = function(sessionUser) {
             console.log("I heard your request to logout")
-            
-            $rootScope.ParseUser.logOut();
-            console.log("User Logged Out");
-            $rootScope.reloadWindow();
 
-            // if ($rootScope.sessionUser) {
-            //     $rootScope.ParseUser.logOut();
-            //     console.log("User Logged Out");
-            //     $rootScope.reloadWindow();
-            // }
-            // else {
-            //     console.log("Please Login");
-            //     $state.go('login');
-            // }
+            if ($rootScope.sessionUser) {
+                $rootScope.ParseUser.logOut();
+                console.log("User Logged Out");
+                $state.go('home.index');
+                $rootScope.reloadWindow();
+            }
+            else {
+                console.log("Please Login");
+                $state.go('login');
+            }
         };
 
         parseFactory.makeAdmin = function() {
@@ -90,57 +88,6 @@ angular.module('ParseServices', [])
                 console.log("User: " + $rootScope.techNinjaAdminName + " is not an admin");
                 console.log("Tech Ninja Admin variable is: ", $rootScope.techNinjaAdmin);
             }
-        };
-        
-        parseFactory.parseObject = function() {
-            console.log("I'm a Parse Object");
-            // A complex subclass of Parse.Object
-            var Monster = Parse.Object.extend("Monster", {
-                // Instance methods
-                hasSuperHumanStrength: function() {
-                    return this.get("strength") > 18;
-                },
-                // Instance properties go in an initialize method
-                initialize: function(attrs, options) {
-                    this.sound = "Rawr";
-                }
-            }, {
-                // Class methods
-                spawn: function(strength, age) {
-                    var monster = new Monster();
-                    monster.set("strength", strength);
-                    monster.set("age", age);
-
-                    monster.save(null, {
-                            success: function(monster) {
-                                // Execute any logic that should take place after the object is saved.
-                                console.log('New object created with objectId: ' + monster.id);
-                            },
-                            error: function(monster, error) {
-                                // Execute any logic that should take place if the save fails.
-                                // error is a Parse.Error with an error code and message.
-                                console.log('Failed to create new object, with error code: ' + error.message);
-                            }
-                        })
-                        .then(function(monster) {
-                            // the object was saved successfully.
-                            console.log("This is a chained method on the monster object -", "Monster Sound: " + monster.sound, "Monster ID: " + monster.id, "Monster Strength: " + monster._previousAttributes.strength, "Monster Updated At: " + monster.updatedAt);
-                        }, function(error) {
-                            // the save failed.
-                            console.log("Error! Could not process object: ", error, error.name);
-                        });
-                    return monster;
-                }
-            });
-
-            var raysMonster = Monster.spawn(5000, 50);
-            console.log(raysMonster.get('strength')); 
-            console.log(raysMonster.sound); 
-            alert(raysMonster._previousAttributes.strength);
-        };
-        
-        parseFactory.createMonster = function() {
-            console.log("Future Feature");
         };
 
         return parseFactory;

@@ -1,0 +1,10 @@
+<div id="profile-settings-page" class="content page">
+    <div ng-hide="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <div>Profile Settings Page</div>
+    </div>
+    <div ng-show="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <div>Please Login!</div>
+    </div>
+</div>

@@ -11,6 +11,7 @@ button, a, input { border-radius: 0!important; }
 /* NAVIGATION FIX */
 #about-page, #contact-page { padding-top:42px; } 
 #create-account-page, #login-page { padding-top:65px; }
+#profile-page { padding-top:65px; }
 #portfolio-page { padding-top: 28px; }
 #home-page { margin-top:-56px; }
 /* ANGULAR ANIMATIONS*/

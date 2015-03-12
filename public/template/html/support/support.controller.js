@@ -1,5 +1,5 @@
 // console.log("Support Loaded")
-angular.module('tnApp.controllers').controller('SupportCtrl', ['$scope', 'Socket', function($scope, IO) {
+angular.module('tnApp.controllers').controller('SupportCtrl', ['$scope', '$rootScope', 'Socket', function($scope, $rootScope, IO) {
     var plusPlus = 0
 
     $scope.getLocation = function() {
@@ -15,7 +15,7 @@ angular.module('tnApp.controllers').controller('SupportCtrl', ['$scope', 'Socket
 
     // IMPLEMENT SUPPORT SECTION USER AUTHENTICATION
     // AT LATER TIME
-    var userName = "Rahim's Macbook";
+    var userName = $rootScope.sessionUserName || "Guest 12345";
     var user, icons;
     icons = "<i class='icon-ios'></i>",
         user = "<div id='support-admin'>Rahim: Admin" + icons + "</div>";

@@ -1,0 +1,22 @@
+<div id="profile-messages-page" class="content page">
+    <div ng-hide="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <ul id="contact-options" class="nav nav-tabs list-inline list-horizontal">
+            <li role="presentation"><a href="/profile/messages/text">Text</a>
+            </li>
+            <li role="presentation"><a href="/profile/messages/talk">Talk</a>
+            </li>
+            <li role="presentation"><a href="/profile/messages/video">Video</a>
+            </li>
+        </ul>
+        <div id="chat-container">
+        	<div ui-view="body@text"></div>
+        	<div ui-view="body@talk"></div>
+        	<div ui-view="body@video"></div>
+        </div>
+    </div>
+    <div ng-show="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <div>Please Login!</div>
+    </div>
+</div>

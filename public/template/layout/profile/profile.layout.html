@@ -1,0 +1,47 @@
+<div id="profile-page" class="content page">
+    <div ng-hide="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <div>Profile Page</div>
+        <div id="user-details" class="col-sm-3">
+            USER DETAILS
+            <div id="profile-image" class="profile-image">
+                <img src="http://lorempixel.com/g/150/230/" class="img-responsive" alt="Profile Pic" />
+            </div>
+            <br/>
+            <div id="username">
+                Username: {{ currentUser.username }}
+                <br/> Real Name: {{ currentUser.firstName }} {{ currentUser.lastName}}
+                <br/> Email: {{ currentUser.email }}
+                <br/>
+            </div>
+        </div>
+        <div id="user-profile" class="col-sm-9">
+            USERS PROFILE
+            <div id="banner" class="banner-image">
+                <img src="http://lorempixel.com/1200/300/" class="img-responsive" alt="Banner Image" />
+            </div>
+            <ul id="inner-nav" class="nav nav-tabs list-unstyled list-inline">
+                <li id="user-messages" role="presentation"><span class="sr-only">(current)</span><a href="/profile">Home</a>
+                </li>
+                <li role="presentation"><a href="/profile/messages">Messages</a>
+                </li>
+                <li role="presentation"><a href="/profile/support">Support Tickets</a>
+                </li>
+                <li role="presentation"><a href="/profile/todos">To Do's</a>
+                </li>
+                <li role="presentation"><a href="/profile/settings">Settings</a>
+                </li>
+            </ul>
+            <div id="profile-page-template">
+                <div id="profile-page-messages" ui-view="body@messages"></div>
+                <div id="profile-page-support" ui-view="body@support"></div>
+                <div id="profile-page-todos" ui-view="body@todos"></div>
+                <div id="profile-page-settings" ui-view="body@settings"></div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <div>Please Login!</div>
+    </div>
+</div>
