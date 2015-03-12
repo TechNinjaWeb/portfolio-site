@@ -153,7 +153,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             views: {
                 'body@support': {
                     templateUrl: "./template/html/profile/profile.support.html",
-                    controller: "ProfileCtrl"
+                    controller: "SupportTicketCtrl"
                 }
             }
         }).state('profile.todos', {

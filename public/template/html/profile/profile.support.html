@@ -1,7 +1,45 @@
 <div id="support-ticket-page" class="content page">
     <div ng-hide="!sessionUser" class="page-container">
-        <div id="test-div">{{ message }}</div>
-        <div>Support Ticketing</div>
+        <h3>Support Ticketing</h3>
+        <div class="container-small-left">
+            <hr>
+        </div>
+        <p>Please select a subject in the left hand column to view a thread.
+        </p>
+        <div class="container-small-left">
+            <hr>
+        </div>
+        <br/>
+        <div id="support-tickets" class="col-sm-3">
+            <h3>Ticket List</h3>
+            <ul ng-repeat="ticket in supportTickets">
+                <a id="{{ ticket.ticketId }}" href="#">
+                    <li class="ticket list-unstyled">
+                        <div id="ticketSubject">{{ ticket.ticketSubject }}</div>
+                        <span id="ticketStatus">{{ ticket.ticketStatus }}</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div ng-show="supportTickets" id="message-threads" class="col-sm-9">
+            <h3>Ticket Thread</h3>
+            <div class="col-sm-12">DETAILS</div>
+            <div class="col-sm-12">SUBJECT</div>
+            <div class="col-sm-12">BODY</div>
+            <br/><br/><br/>
+            <div id="create-ticket">
+            	<h4>Create a Ticket</h4>
+                <div id="message-box" class="col-sm-12">
+                    <div class="form-group">
+                    	<input type="text" id="ticketSubject" name="ticketSubject" ng-model="ticketSubject" placeholder="ticketSubject" class="form-control col-sm-12"/>
+                    	<textarea name="message" id="message" class="form-control" placeholder="Enter Your Message Here"></textarea>
+                    </div>
+                    <div class="clearfix sm-pad"></div>
+                    <button id="message-send-btn" class="btn btn-success col-sm-4">Send</button>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div ng-show="!sessionUser" class="page-container">
         <div id="test-div">{{ message }}</div>

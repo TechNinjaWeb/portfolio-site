@@ -22,6 +22,14 @@ angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope
         name: 'Contact'
     }];
 
+    if ($rootScope.sessionUser) {
+        $scope.urls.push({
+            sref: 'profile.main',
+            url: '/profile',
+            name: 'Profile'
+        })
+    }
+
     $scope.logOut = function() {
         console.log("Session User", $rootScope.sessionUser);
         Socket.disconnect();

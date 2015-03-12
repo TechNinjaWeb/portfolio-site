@@ -1,10 +1,11 @@
 var app = angular.module('tnApp'
 	, [
 		'ui.router'
-		, 'highcharts-ng'
-		, 'ngAnimate'
+		, 'ngResource'
 		, 'tnApp.controllers'
 		, 'tnApp.services'
+		, 'highcharts-ng'
+		, 'ngAnimate'
 		, 'ParseServices'
 	]);
 

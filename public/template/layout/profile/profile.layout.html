@@ -1,9 +1,6 @@
 <div id="profile-page" class="content page">
     <div ng-hide="!sessionUser" class="page-container">
-        <div id="test-div">{{ message }}</div>
-        <div>Profile Page</div>
         <div id="user-details" class="col-sm-3">
-            USER DETAILS
             <div id="profile-image" class="profile-image">
                 <img src="http://lorempixel.com/g/150/230/" class="img-responsive" alt="Profile Pic" />
             </div>
@@ -16,12 +13,11 @@
             </div>
         </div>
         <div id="user-profile" class="col-sm-9">
-            USERS PROFILE
             <div id="banner" class="banner-image">
                 <img src="http://lorempixel.com/1200/300/" class="img-responsive" alt="Banner Image" />
             </div>
-            <ul id="inner-nav" class="nav nav-tabs list-unstyled list-inline">
-                <li id="user-messages" role="presentation"><span class="sr-only">(current)</span><a href="/profile">Home</a>
+            <ul id="inner-nav" class="nav nav-pills list-unstyled list-inline">
+                <li id="user-messages" role="presentation" class="active"><span class="sr-only">(current)</span><a href="/profile">Home</a>
                 </li>
                 <li role="presentation"><a href="/profile/messages">Messages</a>
                 </li>

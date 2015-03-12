@@ -1,7 +1,43 @@
 <div id="profile-settings-page" class="content page">
     <div ng-hide="!sessionUser" class="page-container">
-        <div id="test-div">{{ message }}</div>
-        <div>Profile Settings Page</div>
+        <h3>Account Settings</h3>
+        <div class="container-small-left">
+        	<hr>
+        </div>
+        <p>Please make sure your information is as true to your knowledge as possible.
+            <br/> It makes it easier to remember when you have lost it!</p>
+        <br/>
+        <div class="container-small-left">
+            <div id="username" class="form-group col-sm-12">
+                <label class="" for="username">Username</label>
+                <input type="text" id="username" class="form-control" name="username" placeholder="{{currentUser.username}}" ng-bind="currentUser.username">
+            </div>
+            <div id="firstName" class="form-group col-sm-12">
+                <label class="" for="firstName">First Name</label>
+                <input type="text" id="firstName" class="form-control" name="firstName" placeholder="{{currentUser.firstName}}" ng-bind="currentUser.firstName">
+            </div>
+            <div id="lastName" class="form-group col-sm-12">
+                <label class="" for="lastName">Last Name</label>
+                <input type="text" id="lastName" class="form-control" name="lastName" placeholder="{{currentUser.lastName}}" ng-bind="currentUser.lastName">
+            </div>
+            <div id="email" class="form-group col-sm-12">
+                <label class="" for="email">Email Address</label>
+                <input type="text" id="email" class="form-control" name="email" placeholder="{{currentUser.email}}" ng-bind="currentUser.email">
+            </div>
+            <br/>
+            <br/>
+            <div id="newPassword" class="form-group col-sm-12">
+                <label class="" for="newPassword">New Password</label>
+                <input type="text" id="newPassword" class="form-control" ng-model="newPassword" name="newPassword" placeholder="newPassword">
+            </div>
+            <div id="confirmPassword" class="form-group col-sm-12">
+                <label class="" for="confirmPassword">Confirm Password</label>
+                <input type="text" id="confirmPassword" class="form-control" ng-model="confirmPassword" name="confirmPassword" placeholder="confirmPassword">
+            </div>
+            <div class="profile-save-btn">
+            	<button id="save" class="btn btn-primary col-sm-12 center-block">Save</button>
+            </div>
+        </div>
     </div>
     <div ng-show="!sessionUser" class="page-container">
         <div id="test-div">{{ message }}</div>

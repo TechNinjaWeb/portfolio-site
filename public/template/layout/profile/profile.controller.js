@@ -3,7 +3,7 @@ angular.module('tnApp.controllers')
     .controller('ProfileCtrl', ['$scope', '$state', '$rootScope', 'ParseSDK', function($scope, $state, $rootScope, User) {
 
         $scope.alias = 'Profile Controller';
-        
+
         if (Parse.User.current() != null || Parse.User.current()) {
             $scope.currentUser = {
                 username: Parse.User.current().get('username'),
