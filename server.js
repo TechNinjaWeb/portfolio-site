@@ -1,4 +1,4 @@
-var PORT = 8081,
+var PORT = process.env.PORT || 3000,
     express = require('express'),
     path = require('path'),
     app = express(),
@@ -132,5 +132,5 @@ io.on('connection', function(socket) {
 
 
 server.listen(PORT, function() {
-    console.log("Socket & Express Server Started")
+    console.log("Socket & Express Server Started on port %d in %s mode", this.address().port, app.settings.env)
 });
