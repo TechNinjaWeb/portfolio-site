@@ -45,5 +45,8 @@
     "grunt-express-server": "^0.4.19",
     "grunt-open": "~0.2.3",
     "matchdep": "~0.3.0"
+  },
+  "scripts": {
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt grunt"
   }
 }
