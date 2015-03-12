@@ -12,6 +12,21 @@
     <base href="/" />
 
     <link rel="stylesheet" href="./css/styles.css?v=1.0" />
+    
+    <!-- <link href="//fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css"> -->
+    <!-- Portfolio Page Fix -->
+    <link rel="stylesheet" href="./vendor/portfolio/css/normalize.css">
+    <!-- Tech Ninja Custom Icons -->
+    <link rel="stylesheet" href="./vendor/tn-icons/css/fontello.css">
+    <link rel="stylesheet" href="./vendor/tn-icons/css/animation.css">
+    <!--[if IE 7]><link rel="stylesheet" href="./vendor/tn-icons/css/fontello-ie7.css"><![endif]-->
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.css" />
+    <!-- FLEXSLIDER -->
+    <link rel="stylesheet" href="./vendor/flexslider/flexslider.css" />
+    <!-- ANIMATE.CSS -->
+    <link rel="stylesheet" href="scripts/animate.css/animate.css" />
+    <!-- END OF CSS INCLUDES -->
 
     <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,47 +41,38 @@
     <!-- Navigation Template Container -->
     <div id="navigation-view" data-ui-view="navigation"></div>
     <!-- Body Template Container -->
-    <div id="body-view" data-ui-view="body" autoscroll="true"></div>
+    <div id="body-view" data-ui-view="body" data-autoscroll="true"></div>
     <!-- Footer Template Container -->
     <div id="footer-view" data-ui-view="footer"></div>
     <!-- Copyright Template Container -->
     <div id="copyright-view" data-ui-view="copyright"></div>
 
     <div id="scripts">
-        <!-- DOCUMENT DEPENDENT STYLES AND SCRIPTS -->
-        <link href="//fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css">
-        <!-- Portfolio Page Fix -->
-        <link rel="stylesheet" href="./vendor/portfolio/css/normalize.css">
-        <!-- Tech Ninja Custom Icons -->
-        <link rel="stylesheet" href="./vendor/tn-icons/css/fontello.css">
-        <link rel="stylesheet" href="./vendor/tn-icons/css/animation.css">
-        <!--[if IE 7]><link rel="stylesheet" href="./vendor/tn-icons/css/fontello-ie7.css"><![endif]-->
-        <!-- BOOTSTRAP -->
-        <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.css" />
-        <!-- FLEXSLIDER -->
-        <link rel="stylesheet" href="./vendor/flexslider/flexslider.css" />
-        <!-- ANIMATE.CSS -->
-        <link rel="stylesheet" href="scripts/animate.css/animate.css" />
-        <!-- END OF CSS INCLUDES -->
         <!-- JQUERY -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+        <script type="application/javascript" src="./vendor/jquery/jquery.2.1.1.js"></script>
         <!-- SOCKET.IO -->
         <script type="application/javascript" src="./vendor/socket.io/socket.io.js"></script>
         <!-- PARSE -->
-        <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+        <script src="./vendor/parse/parse-1.3.4.min.js"></script>
         <!-- BOOTSTRAP -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
+        <script type="application/javascript" src="./vendor/bootstrap/js/bootstrap.js"></script>
         <!-- ANGULARJS -->
         <!--<script type="application/javascript" src="scripts/angular-complete/angular.js"></script>-->
-        <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.js"></script>
+        <!--<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.js"></script>-->
+        <script type="application/javascript" src="scripts/angular/angular.js"></script>
         <script type="application/javascript" src="scripts/angular-ui-router/release/angular-ui-router.js"></script>
-        <script type="application/javascript" src="scripts/angular-complete/angular-sanitize.js"></script><script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-animate.js"></script>
+        <script type="application/javascript" src="scripts/angular-complete/angular-sanitize.js"></script>
+        <script type="application/javascript" src="scripts/angular/angular-animate.js"></script>
         <!-- Core Dependencies -->
         <script type="application/javascript" src="./app.js"></script>
-        <script type="application/javascript" src="./data/ParseSDK.js"></script>
+        <script type="application/javascript" src="./data/AppInit.js"></script>
         <script type="application/javascript" src="./routes/routes.js"></script>
         <!-- Services -->
+        <script type="application/javascript" src="./services/ParseServices.js"></script>
         <script type="application/javascript" src="./services/socket.io.service.js"></script>
+        <!--<script type="application/javascript" src="./services/user.profile.service.js"></script>-->
         <!-- Controllers -->
         <script type="application/javascript" src="./controllers/app.controller.js"></script>
         <script type="application/javascript" src="./controllers/navigation.controller.js"></script>
@@ -77,6 +83,8 @@
         <script type="application/javascript" src="./controllers/portfolio.controller.js"></script>
         <script type="application/javascript" src="./controllers/support.controller.js"></script>
         <script type="application/javascript" src="./controllers/contact.controller.js"></script>
+        <script type="application/javascript" src="./controllers/login.controller.js"></script>
+        <script type="application/javascript" src="./controllers/profile.controller.js"></script>
         <!-- Directives -->
         <script type="application/javascript" src="./directives/scroll.directive.js"></script>
         <script type="application/javascript" src="./directives/portfolio.hover.directive.js"></script>

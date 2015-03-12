@@ -1,0 +1,26 @@
+<div id="create-account-page" class="content page">
+    <div class="page-container">
+        <div>
+        	<div id="username">
+                <input type="username" name="username" ng-model="username" placeholder="Enter A Username">
+            </div>
+            <div id="firstName">
+                <input type="firstName" name="firstName" ng-model="firstName" placeholder="Enter First Name">
+            </div>
+            <div id="lastName">
+                <input type="lstName" name="lastName" ng-model="lastName" placeholder="Enter Last Name">
+            </div>
+            <div id="email">
+                <input type="email" name="email" ng-model="email" placeholder="Enter Email">
+            </div>
+            <div id="pass">
+                <input type="password" name="pass" ng-model="pass" placeholder="Enter Password">
+            </div>
+            <div>
+                <button id="create" ng-click="createUser(username, firstName, lastName, email, pass)">Create</button>
+                <button id="login" ui-sref="home.login" ng-href="/login">Login</button>
+            </div>
+        </div>
+
+    </div>
+</div>

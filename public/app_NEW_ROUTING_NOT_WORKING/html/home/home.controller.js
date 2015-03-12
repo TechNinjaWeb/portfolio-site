@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
+app.controller('HomeCtrl', function($scope) {
     $scope.alias = 'HomeCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";

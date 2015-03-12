@@ -1,0 +1,424 @@
+<div id="portfolio-page" class="content page">
+    <div class="page-container">
+        <div id="portfolio-page-header-wrapper" class="container-fluid">
+            <div class="portfolio-page-header full">
+                <h3 id="portfolio-page-heading">Check Out Our Work</h3>
+                <ul id="filters">
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary active" data-filter="app card icon logo web">All</a>
+                    </li>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="app">App</a>
+                    </li>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="card">Card</a>
+                    </li>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="icon">Icon</a>
+                    </li>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="logo">Logo</a>
+                    </li>
+                    <li><a portfoliofilter class="filter btn btn-sm btn-primary" data-filter="web">Web</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <portfolio> Portfolio Element </portfolio> -->
+            <div id="portfoliolist" class="col-sm-12" style="padding-top:50px;">
+                <ul class="list-unstyled">
+                    <li ng-repeat="item in portfolioList" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}" class="portfolio col-sm-4 col-md-3 col-lg-2 {{ item['data-cat'] }}" data-cat="{{ item['data-cat'] }}" portfolioHover>
+                        <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                            <div class="portfolio-wrapper">
+                                <img ng-src="{{ item['imgSrc']}}" alt="{{ item['alt'] }}" />
+                                <div class="label">
+                                    <div class="label-text">
+                                        <div class="text-title">{{ item['title'] }}</div>
+                                        <span class="text-category">{{ item['data-cat'] }}</span>
+                                    </div>
+                                    <div class="label-bg"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <!--<div id="portfoliolist" class="col-sm-12" style="padding-top:50px;">
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="../vendor/portfolio/img/portfolios/logo/5.jpg" alt="logo #5" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Bird Document</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>                
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/app/1.jpg" alt="app #1" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Visual Infography</div>
+                                    <span class="text-category">APP</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/web/4.jpg" alt="web #4" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Sonor's Design</div>
+                                    <span class="text-category">Web design</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/card/1.jpg" alt="card #1" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Typography Company</div>
+                                    <span class="text-category">Business card</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/app/3.jpg" alt="app #3" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Weatherette</div>
+                                    <span class="text-category">APP</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/card/4.jpg" alt="card #4" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">BMF</div>
+                                    <span class="text-category">Business card</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/card/5.jpg" alt="card #5" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Techlion</div>
+                                    <span class="text-category">Business card</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/logo/1.jpg" alt="logo #1" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">KittyPic</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 app" data-cat="app" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/app/2.jpg" alt="app #2" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Graph Plotting</div>
+                                    <span class="text-category">APP</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/card/2.jpg" alt="card #2" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">QR Quick Response</div>
+                                    <span class="text-category">Business card</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/logo/6.jpg" alt="logo #6" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Mobi Sock</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/logo/7.jpg" alt="logo #7" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Village Community Church</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/icon/4.jpg" alt="icon #4" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Domino's Pizza</div>
+                                    <span class="text-category">Icon</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/web/3.jpg" alt="web #3" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Backend Admin</div>
+                                    <span class="text-category">Web design</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/icon/1.jpg" alt="icon #1" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Instagram</div>
+                                    <span class="text-category">Icon</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/web/2.jpg" alt="web #2" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Student Guide</div>
+                                    <span class="text-category">Web design</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/icon/2.jpg" alt="icon #2" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Scoccer</div>
+                                    <span class="text-category">Icon</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/icon/5.jpg" alt="icon #5" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">3D Map</div>
+                                    <span class="text-category">Icon</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 web" data-cat="web" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/web/1.jpg" alt="web #1" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Note</div>
+                                    <span class="text-category">Web design</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/logo/3.jpg" alt="logo #3" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Native Designers</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/logo/4.jpg" alt="logo #4" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Bookworm</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 icon" data-cat="icon" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/icon/3.jpg" alt="icon #3" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Sandwich</div>
+                                    <span class="text-category">Icon</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 card" data-cat="card" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/card/3.jpg" alt="card #3" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Reality</div>
+                                    <span class="text-category">Business card</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio col-sm-4 col-md-3 col-lg-2 logo" data-cat="logo" portfolioHover>
+                    <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
+                        <div class="portfolio-wrapper">
+                            <img src="./vendor/portfolio/img/portfolios/logo/2.jpg" alt="logo #2" />
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="text-title">Speciallisterne</div>
+                                    <span class="text-category">Logo</span>
+                                </div>
+                                <div class="label-bg"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- <div style="margin-top:100px;"></div> -->

@@ -3,7 +3,7 @@
 // Elements will be reusable in this mannor by allowing us
 // to pass ParseServices as a dependency in any of our controllers
 angular.module('ParseServices', [])
-    .factory("ParseSDK", ['$state', '$rootScope', '$window', '$route', function($state, $rootScope, $window, $route) {
+    .factory("ParseSDK", ['$state', '$rootScope', '$window', function($state, $rootScope, $window) {
         var parseFactory = {};
 
         parseFactory.createUser = function(userDetails) {
@@ -16,21 +16,21 @@ angular.module('ParseServices', [])
 
             // Using Parses user.set() method to set the Users
             // login data before querying the server
-            user.set("username", userDetails[userDetailsLength - 1].username);
-            console.log("Setting Parse.User " + userDetails[userDetailsLength - 1].username);
-            user.set("password", userDetails[userDetailsLength - 1].password);
-            console.log("Setting Parse.User " + userDetails[userDetailsLength - 1].password);
-            user.set("firstName", userDetails[userDetailsLength - 1].firstName);
-            console.log("Setting Parse.User " + userDetails[userDetailsLength - 1].firstName);
-            user.set("lastName", userDetails[userDetailsLength - 1].lastName);
-            console.log("Setting Parse.User " + userDetails[userDetailsLength - 1].lastName);
-            user.set("email", userDetails[userDetailsLength - 1].email);
-            console.log("Setting Parse.User " + userDetails[userDetailsLength - 1].email);
+            user.set("username", userDetails.username);
+            console.log("Setting Parse.User " + userDetails.username);
+            user.set("password", userDetails.password);
+            console.log("Setting Parse.User " + userDetails.password);
+            user.set("firstName", userDetails.firstName);
+            console.log("Setting Parse.User " + userDetails.firstName);
+            user.set("lastName", userDetails.lastName);
+            console.log("Setting Parse.User " + userDetails.lastName);
+            user.set("email", userDetails.email);
+            console.log("Setting Parse.User " + userDetails.email);
 
             user.signUp(null, {
                 success: function(user) {
                     console.log("Redirecting You To Home State");
-                    $state.go('home');
+                    $state.go('home.login');
                     // $rootScope.reloadWindow();
                 },
                 error: function(user, error) {
@@ -41,17 +41,16 @@ angular.module('ParseServices', [])
 
         };
 
-        parseFactory.login = function(userDetails) {
+        parseFactory.login = function(username, password) {
             // Capture the length of the array
-            var userDetailsLength = userDetails.length;
             // The last item in userDetailsLength array is the
             // most recent data from the user
             // Grab the username & password and send it
             // into a Parse.User.logIn function
-            Parse.User.logIn(userDetails[userDetailsLength - 1].username, userDetails[userDetailsLength - 1].password, {
+            Parse.User.logIn(username, password, {
                 success: function(user) {
                     // Do stuff after successful login.
-                    console.log("Success! Parse has logged in the user: " + userDetails[userDetailsLength - 1].username);
+                    console.log("Success! Parse has logged in the user: " + username);
                     // Reload Window To Update Scope
                     $rootScope.reloadWindow();
                     // console.log("Redirecting You To Home State");
@@ -65,15 +64,21 @@ angular.module('ParseServices', [])
         };
 
         parseFactory.logOut = function(sessionUser) {
-            if ($rootScope.sessionUser) {
-                $rootScope.ParseUser.logOut();
-                console.log("User Logged Out");
-                $rootScope.reloadWindow();
-            }
-            else {
-                console.log("Please Login");
-                $state.go('login');
-            }
+            console.log("I heard your request to logout")
+            
+            $rootScope.ParseUser.logOut();
+            console.log("User Logged Out");
+            $rootScope.reloadWindow();
+
+            // if ($rootScope.sessionUser) {
+            //     $rootScope.ParseUser.logOut();
+            //     console.log("User Logged Out");
+            //     $rootScope.reloadWindow();
+            // }
+            // else {
+            //     console.log("Please Login");
+            //     $state.go('login');
+            // }
         };
 
         parseFactory.makeAdmin = function() {

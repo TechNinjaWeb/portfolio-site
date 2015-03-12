@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers').controller('CopyrightCtrl', ['$scope', 'Socket', function($scope, IO) {
+app.controller('CopyrightCtrl', ['$scope', 'Socket', function($scope, IO) {
 
     $scope.alias = 'CopyrightCtrl';
     $scope.title = 'Nav Controller';

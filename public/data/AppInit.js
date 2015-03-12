@@ -237,10 +237,11 @@ angular.module('tnApp')
         // Create a $rootScope shortcut
         $rootScope.ParseUser = User;
         // Loading Parse.User.current() into rootScope
-        $rootScope.sessionUser = /* Parse.User.current() */ "587154828096319";
+        console.log(Parse.User.current(), "The Current Parse USER");
+        $rootScope.sessionUser = Parse.User.current() /* "587154828096319" */;
 
-        if ($rootScope.sessionUser || true) {
-            $rootScope.sessionUserName = /* Parse.User.current().get('username') || */ "Phree Lyfe";
+        if ($rootScope.sessionUser) {
+            $rootScope.sessionUserName = Parse.User.current().get('username') /* || "Phree Lyfe" */; 
 
             console.log("sessionUser Logged In has triggered attempted to Create Roles");
             $rootScope.createRoles();
@@ -248,8 +249,8 @@ angular.module('tnApp')
         }
 
         // Get Username and load it into a variable
-        if ($rootScope.sessionUser || true) {
-            $rootScope.currentUsername = /* Parse.User.current().get('username') || */ "Phree Lyfe";
+        if ($rootScope.sessionUser) {
+            $rootScope.currentUsername = Parse.User.current().get('username') /* || "Phree Lyfe" */;
             $rootScope.sessionUserId = $rootScope.sessionUser.id;
             console.log("Current Username Is: " + $rootScope.currentUsername + " and your ID is: " + $rootScope.sessionUserId);
         }

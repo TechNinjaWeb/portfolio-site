@@ -19,9 +19,13 @@
                           <a ui-sref="{{ link.sref }}" ng-href="{{ link.url }}" >{{ link.name }} <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
-                    <div id="nav-login" class="text-center navbar-right">
-                        <button id="signin" type="button" class="btn btn-sm btn-success navbar-btn">Sign in </button>
-                        <br /><a class="navbar-link not-a-member">Not A Member?</a>
+                    <div ng-show="!sessionUser" id="nav-login" class="text-center navbar-right">
+                        <a id="signin" href="/login" ui-sref="home.login" class="btn btn-sm btn-success navbar-btn">Sign in </a>
+                        <br /><a id="create-account" href="/login/create" ui-sref="home.login.create" class="navbar-link not-a-member">Not A Member?</a>
+                    </div>
+                    <div ng-show="sessionUser" id="nav-logout" class="text-center navbar-right" style="margin-top:8px;">
+                        <a id="signin" ng-click="logOut()" class="btn btn-sm btn-success navbar-btn">LogOut</a>
+                        <br /><a id="my-account" href="/user/profile" ui-sref="user.profile" class="navbar-link profile">My Profile</a>
                     </div>
                 </div>
             </div>

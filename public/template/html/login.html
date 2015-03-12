@@ -1,0 +1,21 @@
+<div id="login-page" class="content page">
+    <div class="page-container">
+        <div id="test-div">{{ message }}</div>
+
+        <div id="login">
+            <div id="username">
+                <input type="text" name="username" ng-model="username" placeholder="Enter Username" />
+            </div>
+            <div id="pass">
+                <input type="password" name="pass" ng-model="pass" placeholder="Enter Password" />
+            </div>
+            <br>
+            <div>
+                <button id="create-account" ui-sref="home.login.create" ng-href="/login/create">Create</button>
+                <button id="login" ng-click="login(username, pass)">Login</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
