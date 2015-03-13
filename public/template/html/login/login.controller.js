@@ -1,6 +1,6 @@
 // -- See AppCtrl Comment for usage description -- //
 angular.module('tnApp.controllers')
-    .controller('LoginCtrl', ['$scope', '$state', '$rootScope', 'ParseSDK', function($scope, $state, $rootScope, Login) {
+    .controller('LoginCtrl', ['$scope', '$state', '$rootScope', 'LoginService', function($scope, $state, $rootScope, Login) {
 
         $scope.alias = 'Login Controller';
 

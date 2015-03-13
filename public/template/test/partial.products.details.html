@@ -1,0 +1,26 @@
+<div>
+	ITEM DETAILS PAGE
+</div>
+<div class="item-container">
+	<!-- <div ng-repeat="detail in data" class="row itemDetail"> -->
+	<div class="row itemDetail">	
+		<!-- <div class="col-sm-3">{{ detail }}</div> -->
+		<div class="col-sm-12 col-md-3">{{ title }}</div>
+		<div class="col-sm-12 col-md-3">{{ objectId }}</div>
+		<div class="col-sm-12 col-md-3">{{ description }}</div>
+		<div class="col-sm-12 col-md-3">{{ price }}</div>
+		<!-- <div class="row" ng-repeat="spec in specs">
+			<div class="col-sm-12 col-md-6 spec">{{ specs }}</div>
+		</div> -->
+	</div>
+	<div class="col-sm-12 col-md-6 spec" ng-repeat="specHeading in specs">
+			<!-- <div class="col-sm-12">ENTIRE SPEC: {{ specs }}</div> -->
+			<div class="col-sm-6">HEADING: {{ specHeading }}</div>
+			<div class="col-sm-6">
+				<div class="col-sm-12" class="col-md-4" ng-repeat="spec in specHeading">
+					SPEC: {{ spec }}
+				</div>
+			</div>
+		</div>
+</div>
+<div><button ng-click="parseConst()">Find Constrained</button></div>

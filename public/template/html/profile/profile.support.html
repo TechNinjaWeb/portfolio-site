@@ -10,17 +10,15 @@
             <hr>
         </div>
         <br/>
-        <div id="support-tickets" class="col-sm-3">
-            <h3>Ticket List</h3>
-            <ul ng-repeat="ticket in supportTickets">
+        <h3>Ticket List</h3>
+        <ul id="support-tickets" class="col-sm-3">
+        	<li ng-repeat="ticket in supportTickets" class="ticket list-unstyled">
                 <a id="{{ ticket.ticketId }}" href="#">
-                    <li class="ticket list-unstyled">
-                        <div id="ticketSubject">{{ ticket.ticketSubject }}</div>
-                        <span id="ticketStatus">{{ ticket.ticketStatus }}</span>
-                    </li>
+                    <div id="ticketSubject">{{ ticket.ticketSubject }}</div>
+                    <span id="ticketStatus">{{ ticket.ticketStatus }}</span>
                 </a>
-            </ul>
-        </div>
+            </li>
+        </ul>
         <div ng-show="supportTickets" id="message-threads" class="col-sm-9">
             <h3>Ticket Thread</h3>
             <div class="col-sm-12">DETAILS</div>
@@ -38,7 +36,20 @@
                     <button id="message-send-btn" class="btn btn-success col-sm-4">Send</button>
                 </div>
             </div>
-
+            <div ng-repeat="product in data" class="row productLink">
+			<!-- <a ui-sref="products.details({objectId:product.objectId})" ng-click="viewItem($index, product.objectId)"> -->
+			<a ui-sref="products.details({objectId:product.objectId})">
+				<div class="col-sm-2">{{ $index + 1 }}</div>
+				<div class="col-sm-2">{{ product.title }}</div>
+				<div class="col-sm-2">{{ product.price }}</div>
+				<div class="col-sm-2">{{ product.sku }}</div>
+				<div class="col-sm-2">{{ product.bulk[0] }}</div>
+				<div class="col-sm-2">{{ product.description[0] }}</div>
+				<div class="row">
+					<div ng-repeat="spec in product.specs" class="col-sm-12">{{ spec['Power & Batteries'] }}</div>
+				</div>
+			</a>
+		</div>
         </div>
     </div>
     <div ng-show="!sessionUser" class="page-container">

@@ -156,7 +156,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "SupportTicketCtrl"
                 }
             }
-        }).state('profile.todos', {
+        })
+        .state('profile.todos', {
             url: '/todos',
             views: {
                 'body@todos': {
@@ -164,7 +165,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "ProfileCtrl"
                 }
             }
-        }).state('profile.settings', {
+        })
+        .state('profile.settings', {
             url: '/settings',
             views: {
                 'body@settings': {
@@ -172,7 +174,31 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "ProfileCtrl"
                 }
             }
-        });
+        })
+
+        .state('products', {
+              url: '/products',
+              views: {
+                  '@': {
+                      templateUrl: "./template/test/partial.products.html",
+                      controller: 'ProductsCtrl',
+                      resolve: {
+                          objectId: ['$stateParams', function($stateParams) {
+                              return $stateParams;
+                          }]
+                      },
+                  }
+              }
+          })
+          .state('products.details', {
+              url: '/details/:objectId',
+              views: {
+                  '@': {
+                      templateUrl: "./template/test/partial.products.details.html",
+                      controller: 'ItemDetailsCtrl'
+                  }
+              }
+          });;
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
 });

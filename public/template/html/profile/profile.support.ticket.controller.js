@@ -1,6 +1,6 @@
 // -- See AppCtrl Comment for usage description -- //
 angular.module('tnApp.controllers')
-    .controller('SupportTicketCtrl', ['$scope', '$state', '$rootScope', 'SupportTickets', function($scope, $state, $rootScope, Ticket) {
+    .controller('SupportTicketCtrl', ['$scope', '$state', '$rootScope', 'SupportTickets', 'TicketService', function($scope, $state, $rootScope, Ticket, Message) {
 
         $scope.alias = 'Support Ticket Controller';
 
@@ -21,7 +21,6 @@ angular.module('tnApp.controllers')
                 console.log("Data", data);
                 data.forEach(function(val){
                     $scope.supportTickets = val.attributes.supportTicket;
-                    console.log("Support Tickets in Loop", $scope.supportTickets)
                 })
             });
 

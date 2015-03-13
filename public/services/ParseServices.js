@@ -3,10 +3,10 @@
 // Elements will be reusable in this mannor by allowing us
 // to pass ParseServices as a dependency in any of our controllers
 angular.module('ParseServices', [])
-    .factory("ParseSDK", ['$state', '$rootScope', '$window', function($state, $rootScope, $window) {
-        var parseFactory = {};
+    .factory("LoginService", ['$state', '$rootScope', '$window', function($state, $rootScope, $window) {
+        var Login = {};
 
-        parseFactory.createUser = function(userDetails) {
+        Login.createUser = function(userDetails) {
 
             var user = new Parse.User();
 
@@ -41,7 +41,7 @@ angular.module('ParseServices', [])
 
         };
 
-        parseFactory.login = function(username, password) {
+        Login.login = function(username, password) {
             // Capture the length of the array
             // The last item in userDetailsLength array is the
             // most recent data from the user
@@ -64,7 +64,7 @@ angular.module('ParseServices', [])
             });
         };
 
-        parseFactory.logOut = function(sessionUser) {
+        Login.logOut = function(sessionUser) {
             console.log("I heard your request to logout")
 
             if ($rootScope.sessionUser) {
@@ -79,7 +79,7 @@ angular.module('ParseServices', [])
             }
         };
 
-        parseFactory.makeAdmin = function() {
+        Login.makeAdmin = function() {
             if ($rootScope.sessionUser && $rootScope.techNinjaAdmin) {
                 console.log("Making: " + $rootScope.techNinjaAdminName + " admin");
                 console.log("Tech Ninja Admin variable is: ", $rootScope.techNinjaAdmin);
@@ -90,7 +90,7 @@ angular.module('ParseServices', [])
             }
         };
 
-        return parseFactory;
+        return Login;
 
     }]);
 // console.log('Finished loading ParseServices Factory');

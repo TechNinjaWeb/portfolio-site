@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope', 'ParseSDK', 'Socket',  function($scope, $rootScope, Login, Socket) {
+angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope', 'LoginService', 'Socket',  function($scope, $rootScope, Login, Socket) {
     $scope.alias = 'NavCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";
@@ -40,10 +40,4 @@ angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope
     var loginBtn = $('#signin');
     var createAccount = $('.not-a-member');
 
-    // loginBtn.on('click', function() {
-    //     alert('Login Comming Soon!')
-    // });
-    // createAccount.on('click', function(e) {
-    //     alert("Creat Account Comming Soon!")
-    // })
 }]);
