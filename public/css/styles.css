@@ -1,4 +1,4 @@
- 
+/* 
 	GLOBAL PRIMARY STYLES 
 */
 html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent; }
@@ -92,22 +92,23 @@ button, a, input { border-radius: 0!important; }
 	/* 
 		ABOUT PAGE 
 	*/
-	#video-container { height:370px; overflow: hidden; opacity: 0.7; box-shadow: 2px 2px 2px black; }
-	#video-ad { width: 200%; height: 200%; margin-top: -40%; margin-left: -50%; }
+	#about-page #video-container { height:370px; overflow: hidden; opacity: 0.7; box-shadow: 2px 2px 2px black; }
+	#about-page #video-ad { width: 200%; height: 200%; margin-top: -40%; margin-left: -50%; }
 
 	/* SUPPORT PAGE */
 	/*#support-page { margin-top: 36px; }*/
 
 	/* PORTFOLIO PAGE */
 	#portfolio-page .page-container { padding-top: 14px; }
+
 }
 @media (min-width: 768px) and (max-width: 992px) { /* EVERYTHING IN BETWEEN */
 	#portfolio-left { padding-top: 2%; }
 	/* 
 		ABOUT PAGE 
 	*/
-	#video-container { height:370px; overflow: hidden; opacity: 0.9; box-shadow: 2px 2px 2px black; }
-	#video-ad { width: 100%; height: 200%; margin-top: -200px; }
+	#about-page #video-container { height:370px; overflow: hidden; opacity: 0.9; box-shadow: 2px 2px 2px black; }
+	#about-page #video-ad { width: 100%; height: 200%; margin-top: -200px; }
 }
 @media (min-width: 992px) { /* LARGER THAN PHONE */
 	/* HELPER STYLES */
@@ -125,8 +126,9 @@ button, a, input { border-radius: 0!important; }
 	/* 
 		ABOUT PAGE 
 	*/
-	#video-container { height:370px; overflow: hidden; opacity: 0.9; box-shadow: 2px 2px 2px black; }
-	#video-ad { width: 100%; height: 200%; margin-top: -200px; }
+	#about-page #video-container { height:370px; overflow: hidden; opacity: 0.9; box-shadow: 2px 2px 2px black; }
+	#about-page #video-ad { width: 100%; height: 200%; margin-top: -200px; }
+  
 	/* 
 		PORTFOLIO PAGE 
 	*/
@@ -337,10 +339,18 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 .logo-vtiger { width: 110px; height: 60px; background-position: -844px -18px; }
 /*#about-page div#footer { margin-top: 320px; }*/
 
+/* 
+  SERVICE PAGE 
+*/
+#service-page .page-container { padding-top: 50px; /*padding-bottom: 30px;*/ }
+#service-page a:hover { text-decoration: none; }
+#service-page .dm-message p { font-size: 14px; }
+
 /* 	
 	PORTFOLIO PAGE 
 */
 /*#portfolio-page .page-container { padding-bottom: 30px; }*/
+#portfolio-page ::-webkit-scrollbar { -webkit-appearance: none; display: none; }
 #portfolio-right h2 { padding-top: 10px; }
 #portfolio-page .container-fluid {
     position: relative;
@@ -369,7 +379,6 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 #portfolio-page .portfolio-wrapper {
     overflow-x: hidden;
     position: relative !important;
-    background: #666;
     cursor: pointer;
 }
 #portfolio-page .portfolio img { max-width: 100%; position: relative; }

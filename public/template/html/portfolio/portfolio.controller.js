@@ -11,125 +11,55 @@ angular.module('tnApp.controllers').controller('PortfolioCtrl', function($scope)
 
 
     var portfolioList = [{
-        'title': 'Bird Document',
+        'title': 'Annies Repurpose Inc.',
         'data-cat': 'web',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'imgSrc': 'assets/banners/portfolio/annies-repurpose.png',
+        'alt': 'Annies Repurpose Inc.'
+    }, {
+        'title': 'BlueBook Business',
+        'data-cat': 'web logo',
+        'imgSrc': 'assets/banners/portfolio/bluebook.png',
+        'alt': 'BlueBook Business'
+    }, {
+        'title': 'EvolutionX Diesel Performance',
+        'data-cat': 'web',
+        'imgSrc': 'assets/banners/portfolio/evox.png',
+        'alt': 'EvolutionX Diesel Performance'
+    }, {
+        'title': 'Trenderz Hub Inc.',
+        'data-cat': 'web logo',
+        'imgSrc': 'assets/banners/portfolio/trenderzhub.png',
         'alt': 'logo #5'
     }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
+        'title': 'Nitrotech Energy Services',
+        'data-cat': 'web',
+        'imgSrc': 'assets/banners/portfolio/nitrotech.png',
+        'alt': 'Nitrotech Energy Services'
+    }, {
+        'title': 'RoomXI.com',
+        'data-cat': 'web',
+        'imgSrc': 'assets/banners/portfolio/roomxi.png',
+        'alt': 'RoomXI.com'
+    }, {
+        'title': 'Smoke Em Diesel',
+        'data-cat': 'code app',
+        'imgSrc': 'assets/banners/portfolio/smoke-em.png',
+        'alt': 'Smoke Em Diesel'
+    }, {
+        'title': 'DFC Diesel',
+        'data-cat': 'code',
+        'imgSrc': 'assets/banners/portfolio/dfc-diesel.png',
         'alt': 'logo #5'
     }, {
-        'title': 'Bird Document',
-        'data-cat': 'app',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
+        'title': 'Uncle Bear Spices',
+        'data-cat': 'code',
+        'imgSrc': 'assets/banners/portfolio/uncle-bear-spices.png',
+        'alt': 'Uncle Bear Spices'
     }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'card',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'icon',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'icon #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'web #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'web #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'app',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'app',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'logo',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'app',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Bird Document',
-        'data-cat': 'card',
-        'imgSrc': '../vendor/portfolio/img/portfolios/logo/5.jpg',
-        'alt': 'logo #5'
+        'title': 'Spacantik',
+        'data-cat': 'web code',
+        'imgSrc': 'assets/banners/portfolio/spacantik.png',
+        'alt': 'Spacantik'
     }];
 
     $scope.portfolioList = portfolioList;

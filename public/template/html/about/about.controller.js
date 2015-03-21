@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $location, $anchorScroll) {
+angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $location, $anchorScroll, $timeout) {
     $scope.alias = 'AboutCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";
@@ -7,8 +7,8 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
     $scope.scrollTo = function(id) {
         $location.path('/service');
         $location.hash(id);
-        $anchorScroll(id);
-        //reset to old to keep any additional routing logic from kicking in
-        // $location.hash('');
+        $timeout(function(){
+            $anchorScroll();
+        }, 500)
     };
 });

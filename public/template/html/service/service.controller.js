@@ -7,8 +7,8 @@ angular.module('tnApp.controllers').controller('ServiceCtrl', function($scope, $
         var location = '/service/';
         var old = $location.hash(location);
         var newLoc = location + id;
+        $location.hash(id);
         $anchorScroll(id);
-        //reset to old to keep any additional routing logic from kicking in
-        // $location.hash('/service');
+        console.log("ID", id)
     };
 });
