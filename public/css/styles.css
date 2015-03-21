@@ -69,6 +69,12 @@ button, a, input { border-radius: 0!important; }
 /*::-webkit-scrollbar { -webkit-appearance: none;	width: 7px; }
 ::-webkit-scrollbar-thumb {	border-radius: 4px;	background-color: rgba(0,0,0,.5); -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5); }*/
 
+/* 
+  HELPER CLASSES 
+*/
+.v-center{margin-top:5%;}
+.jumbotron { padding: 0px!important; }
+
 /*
 	RESPONSIVE MEDIA QUERIES
 */
@@ -154,7 +160,8 @@ button, a, input { border-radius: 0!important; }
 /* 
 	NAVIGATION 
 */
-#navigation a:hover { color: #F8982F; }
+#navigation #menu-links a { color: #EEE; }
+#navigation #menu-links a:hover { color: #F8982F; }
 #copyright .navbar { z-index: 5; }
 #navigation .navbar { margin-bottom:0; min-height: 57px; border-radius:0; }
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
@@ -315,19 +322,19 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   background-image: url(/assets/Banners/Coding-960x100.png);
   background-repeat: no-repeat;
 }
-.logo-html5 { width: 60px; height: 60px; background-position: 0px -16px; }
-.logo-css3 { width: 58px; height: 60px; background-position: -60px -16px; }
-.logo-js { width: 44px; height: 60px; background-position: -120px -16px; }
-.logo-sql { width: 100px; height: 60px; background-position: -164px -16px; }
-.logo-ajax { width: 100px; height: 60px; background-position: -264px -16px; }
-.logo-jquery { width: 100px; height: 60px; background-position: -364px -16px; }
-.logo-json { width: 70px; height: 60px; background-position: -464px -16px; }
-.logo-php { width: 70px; height: 70px; background-position: -534px -16px; }
-.logo-joomla { width: 80px; height: 72px; background-position: -604px -16px; }
-.logo-wordpress { width: 85px; height: 72px; background-position: -684px -16px; }
-.logo-magento { width: 70px; height: 72px; background-position: -774px -16px; }
-.logo-vtiger { width: 110px; height: 60px; background-position: -844px -16px; }
-
+#short-portfolio { margin-bottom: 40px; }
+.logo-html5 { width: 60px; height: 60px; background-position: 0px -18px; }
+.logo-css3 { width: 58px; height: 60px; background-position: -60px -18px; }
+.logo-js { width: 44px; height: 60px; background-position: -120px -18px; }
+.logo-sql { width: 100px; height: 60px; background-position: -164px -18px; }
+.logo-ajax { width: 100px; height: 60px; background-position: -264px -18px; }
+.logo-jquery { width: 100px; height: 60px; background-position: -364px -18px; }
+.logo-json { width: 70px; height: 60px; background-position: -464px -18px; }
+.logo-php { width: 70px; height: 70px; background-position: -534px -8px; }
+.logo-joomla { width: 80px; height: 95px; background-position: -604px 18px; }
+.logo-wordpress { width: 85px; height: 72px; background-position: -684px -8px; }
+.logo-magento { width: 70px; height: 72px; background-position: -774px -8px; }
+.logo-vtiger { width: 110px; height: 60px; background-position: -844px -18px; }
 /*#about-page div#footer { margin-top: 320px; }*/
 
 /* 	
@@ -415,6 +422,11 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 }
 #portfolio-page .row:after, .clearfix:after { clear: both; }
 #portfolio-page .row, .clearfix { zoom: 1; }
+
+/*  
+  SERVICES PAGE 
+*/
+#services-page .page-container { padding-top:60px; }
 
 /* 	
 	SUPPORT PAGE 

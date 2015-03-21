@@ -19,7 +19,7 @@
         <div id="services">
             <h2 id="services-heading" class="md-pad text-center">WHAT WE OFFER</h2>
             <div id="services-body" class="container text-center">
-                <div id="first-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="">
+                <div id="first-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <span class="fa fa-html5 fa-5x">
@@ -30,7 +30,7 @@
                             <p>Every Website We Build Comes Packed With The Latest Web 2.0 Technology and Is HTML5 and Mobile Ready</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="./index.php/services/#web-design">
+                            <a ng-click="scrollTo('web-design-anchor')">
                                 <button class="btn btn-primary">
                                     MORE
                                 </button>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="second-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="">
+                <div id="second-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <span class="fa fa-5x fa-linux">
@@ -49,7 +49,7 @@
                             <p>Our Team Of Tech Ninja Support Operatives Have Over 10 Years In IT Reconnaissance, In-Home or In The Cloud</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="./index.php/services/#support">
+                            <a ng-click="scrollTo('support-anchor')">
                                 <button class="btn btn-primary">
                                     MORE!
                                 </button>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="third-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="">
+                <div id="third-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <span class="fa fa-5x fa-film">
@@ -69,7 +69,7 @@
                                 <br />To End</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="./index.php/services/#media">
+                            <a ng-click="scrollTo('media-anchor')">
                                 <button class="btn btn-primary">
                                     MORE!
                                 </button>
@@ -77,18 +77,18 @@
                         </div>
                     </div>
                 </div>
-                <div id="fourth-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="">
+                <div id="fourth-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <span class="fa fa-5x fa-group">
-                                <h3>Forums &amp Courses</h3>
+                                <h3>Forums &amp; Courses</h3>
                             </span>
                         </div>
                         <div class="panel-body">
                             <p>Learn From The Pros About All Things Tech. Begin Your Lessons With Tech Ninja | Edu. Our Forums Are Open For Your Ideas</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="./index.php/forum">
+                            <a href="/profile">
                                 <button class="btn btn-primary">
                                     MORE!
                                 </button>
@@ -103,161 +103,159 @@
             <h2 id="slogan" style="max-width:800px;display:block" class="center-block text-center sm-pad">Every Order Received Shall Be Executed With Extreme Accuracy -- <a style="text-decoration:none;" href="/site/j3/?option=com_content&am;view=article&am;id=7">Law 5</a>
             </h2>
             <hr>
+            <div id="belief" class="text-center lg-pad">
+                <h2 id="belief-heading">WE STRONGLY BELIEVE</h2>
+                <p id="belief-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
+            </div>
             <div id="featured-work" class="container">
                 <h2>Featured Work</h2>
-                <br>
-                <br>
-                <br>
-                    <div id="portfolio-box" class="row">
-                        <div id="mission-box" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <h3>Leave Your Feedback!</h3>
-                            <br><br>
-                            <a class="twitter-timeline" data-tweet-limit="4" data-dnt="true" href="https://twitter.com/PhreeLyfe" data-widget-id="454478518974296064">Tweets by @PhreeLyfe</a>
-                            <!-- Twitter ShoutBox -->
-                            <script>
-                            ! function(d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0],
-                                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                                if (!d.getElementById(id)) {
-                                    js = d.createElement(s);
-                                    js.id = id;
-                                    js.src = p + "://platform.twitter.com/widgets.js";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }
-                            }(document, "script", "twitter-wjs");
-                            </script>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div id="short-portfolio" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-right">
-                            <h3>Find Out Why We're Canada's Best</h3>
-                            <br><br>
-                            <a href="./assets/banners/portfolio/social-media-advert.png" data-toggle="lightbox">
-                                <div class="portfolio-screen text-center col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                                    <br />
-                                    <div>
-                                        Thumbnail 1
-                                    </div>
-                                    <br />
-                                    <div class="uk-overlay">
-                                        <img class="img-responsive" src="./assets/banners/portfolio/social-media-advert.png" alt="Social Media" />
-                                        <div class="uk-overlay-area">
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <a href="./assets/banners/portfolio/social-media-advert.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                                </div>
-                            </a>
-                            <a href="./assets/banners/portfolio/bluebook.png" data-toggle="lightbox">
-                                <div class="portfolio-screen text-center col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                                    <br />
-                                    <div>
-                                        Thumbnail 2
-                                    </div>
-                                    <br />
-                                    <div class="uk-overlay">
-                                        <img class="img-responsive" src="./assets/banners/portfolio/bluebook.png" alt="Blue Book Business" />
-                                        <div class="uk-overlay-area">
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <a href="./assets/banners/portfolio/bluebook.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                                </div>
-                            </a>
-                            <a href="./assets/banners/portfolio/trenderzhub.png" data-toggle="lightbox">
-                                <div class="portfolio-screen text-center col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                                    <br />
-                                    <div>
-                                        Thumbnail 3
-                                    </div>
-                                    <br />
-                                    <div class="uk-overlay">
-                                        <img class="img-responsive" src="./assets/banners/portfolio/trenderzhub.png" alt="Trenderz Hub Sandbox" />
-                                        <div class="uk-overlay-area">
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <a href="./assets/banners/portfolio/trenderzhub.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                                </div>
-                            </a>
-                            <a href="./assets/banners/portfolio/evox.png" data-toggle="lightbox">
-                                <div class="portfolio-screen text-center col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                                    <br />
-                                    <div>
-                                        Thumbnail 4
-                                    </div>
-                                    <br />
-                                    <div class="uk-overlay">
-                                        <img class="img-responsive" src="./assets/banners/portfolio/evox.png" alt="Evolution X" />
-                                        <div class="uk-overlay-area">
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <a href="./assets/banners/portfolio/evox.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                                </div>
-                            </a>
-                            <a href="./assets/banners/portfolio/annies-repurpose-temp.png" data-toggle="lightbox">
-                                <div class="portfolio-screen text-center col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                                    <br />
-                                    <div>
-                                        Thumbnail 5
-                                    </div>
-                                    <br />
-                                    <div class="uk-overlay">
-                                        <img class="img-responsive" src="./assets/banners/portfolio/annies-repurpose-temp.png" alt="" />
-                                        <div class="uk-overlay-area">
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <a href="./assets/banners/portfolio/evox.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                                </div>
-                            </a>
-                        </div>
-                        <div id="portfolio-more" class="lg-pad">
-                            <button id="portfolio-more-btn" class="btn btn-danger center-block">SEE MORE</button>
-                        </div>
+                <div id="portfolio-box" class="row">
+                    <div id="mission-box" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <h3>Leave Your Feedback!</h3>
+                        <br>
+                        <br>
+                        <a class="twitter-timeline" data-tweet-limit="4" data-dnt="true" href="https://twitter.com/PhreeLyfe" data-widget-id="454478518974296064">Tweets by @PhreeLyfe</a>
+                        <!-- Twitter ShoutBox -->
+                        <script>
+                        ! function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + "://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");
+                        </script>
                         <div class="clearfix"></div>
-                        <div id="law-5" class="text-right">
-                            <h5><small>Read The Tech Ninja<a href="./?view=article&amp;id=7">
+                    </div>
+                    <div id="short-portfolio" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-left">
+                        <h3>Find Out Why We're Canada's Best</h3>
+                        <br>
+                        <br>
+                        <a href="/./assets/banners/portfolio/social-media-advert.png" data-toggle="lightbox">
+                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <br />
+                                <div>
+                                    Thumbnail 1
+                                </div>
+                                <br />
+                                <div class="uk-overlay">
+                                    <img class="img-responsive" src="./assets/banners/portfolio/social-media-advert.png" alt="Social Media" />
+                                    <div class="uk-overlay-area">
+                                    </div>
+                                </div>
+                                <br />
+                                <a href="/./assets/banners/portfolio/social-media-advert.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
+                            </div>
+                        </a>
+                        <a href="/./assets/banners/portfolio/bluebook.png" data-toggle="lightbox">
+                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <br />
+                                <div>
+                                    Thumbnail 2
+                                </div>
+                                <br />
+                                <div class="uk-overlay">
+                                    <img class="img-responsive" src="./assets/banners/portfolio/bluebook.png" alt="Blue Book Business" />
+                                    <div class="uk-overlay-area">
+                                    </div>
+                                </div>
+                                <br />
+                                <a href="/./assets/banners/portfolio/bluebook.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
+                            </div>
+                        </a>
+                        <a href="/./assets/banners/portfolio/trenderzhub.png" data-toggle="lightbox">
+                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <br />
+                                <div>
+                                    Thumbnail 3
+                                </div>
+                                <br />
+                                <div class="uk-overlay">
+                                    <img class="img-responsive" src="./assets/banners/portfolio/trenderzhub.png" alt="Trenderz Hub Sandbox" />
+                                    <div class="uk-overlay-area">
+                                    </div>
+                                </div>
+                                <br />
+                                <a href="/./assets/banners/portfolio/trenderzhub.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
+                            </div>
+                        </a>
+                        <a href="/./assets/banners/portfolio/evox.png" data-toggle="lightbox">
+                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <br />
+                                <div>
+                                    Thumbnail 4
+                                </div>
+                                <br />
+                                <div class="uk-overlay">
+                                    <img class="img-responsive" src="./assets/banners/portfolio/evox.png" alt="Evolution X" />
+                                    <div class="uk-overlay-area">
+                                    </div>
+                                </div>
+                                <br />
+                                <a href="/./assets/banners/portfolio/evox.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
+                            </div>
+                        </a>
+                        <a href="/./assets/banners/portfolio/annies-repurpose-temp.png" data-toggle="lightbox">
+                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <br />
+                                <div>
+                                    Thumbnail 5
+                                </div>
+                                <br />
+                                <div class="uk-overlay">
+                                    <img class="img-responsive" src="./assets/banners/portfolio/annies-repurpose-temp.png" alt="" />
+                                    <div class="uk-overlay-area">
+                                    </div>
+                                </div>
+                                <br />
+                                <a href="/./assets/banners/portfolio/evox.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
+                            </div>
+                        </a>
+                        <div id="portfolio-more" class="md-pad row col-xs-12 col-md-6 col-lg-4 col-md-offset-4">
+                            <button id="portfolio-more-btn" class="btn btn-danger center-block">SEE MORE</button>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div id="law-5" class="text-right">
+                                <h5><small>Read The Tech Ninja<a href="/#">
                                 *Laws of Conduct*</a></small>
                             </h5>
                         </div>
-                        <div class="clearfix"></div>
                     </div>
-                    <br />
-                    <div id="slogan2" class="row text-center col-md-12">
-                        <h3 class="lead">We Use Responsive Technology To Adapt To An Ever Changing World</h3>
-                        <ul id="logo-block" class="list-inline list-unstyled col-md-12">
-                            <li class="logo-html5"></li>
-                            <li class="logo-css3"></li>
-                            <li class="logo-js"></li>
-                            <li class="logo-sql"></li>
-                            <li class="logo-ajax"></li>
-                            <li class="logo-jquery"></li>
-                            <li class="logo-json"></li>
-                            <li class="logo-php"></li>
-                            <li class="logo-joomla"></li>
-                            <li class="logo-wordpress"></li>
-                            <li class="logo-magento"></li>
-                            <li class="logo-vtiger"></li>
-                        </ul>
-                    </div>
+                </div>
+                <br />
+                <div id="slogan2" class="row text-center col-md-12">
+                    <h3 class="lead">We Use Responsive Technology To Adapt To An Ever Changing World</h3>
+                    <ul id="logo-block" class="list-inline list-unstyled col-md-12">
+                        <li class="logo-html5"></li>
+                        <li class="logo-css3"></li>
+                        <li class="logo-js"></li>
+                        <li class="logo-sql"></li>
+                        <li class="logo-ajax"></li>
+                        <li class="logo-jquery"></li>
+                        <li class="logo-json"></li>
+                        <li class="logo-php"></li>
+                        <li class="logo-joomla"></li>
+                        <li class="logo-wordpress"></li>
+                        <li class="logo-magento"></li>
+                        <li class="logo-vtiger"></li>
+                    </ul>
+                </div>
                 </center>
             </div>
         </div>
-        <div id="belief" class="text-center lg-pad">
-            <h2 id="belief-heading">WHAT WE OFFER</h2>
-            <p id="belief-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
-        </div>
         <div id="values" class="text-center lg-pad">
-            <h2 id="values-heading">WHAT WE OFFER</h2>
+            <h2 id="values-heading">WE VALUE</h2>
             <p id="values-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
         </div>
         <div id="team" class="text-center lg-pad">
-            <h2 id="team-heading">WHAT WE OFFER</h2>
+            <h2 id="team-heading">MEET THE HEAD NINJA</h2>
             <p id="team-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
         </div>
         <div id="cta" class="text-center lg-pad">
-            <h2 id="cta-heading">WHAT WE OFFER</h2>
+            <h2 id="cta-heading">GET FREE CONSULTATION</h2>
             <p id="cta-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
         </div>
     </div>

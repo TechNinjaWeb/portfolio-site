@@ -54,6 +54,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
+        .state('home.service', {
+            url: '/service',
+            views: {
+                'body@': {
+                    templateUrl: "./template/html/service/service.html",
+                    controller: "ServiceCtrl"
+                }
+            }
+        })
         .state('home.support', {
             url: '/support',
             views: {
@@ -229,4 +238,5 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           });;
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('#');
 });

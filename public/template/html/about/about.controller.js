@@ -1,27 +1,14 @@
-angular.module('tnApp.controllers').controller('AboutCtrl', function($scope) {
+angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $location, $anchorScroll) {
     $scope.alias = 'AboutCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";
     $scope.test = "This is the main controller";
-    $scope.urls = [{
-        sref: 'contact',
-        url: '/contact',
-        name: 'Contact Us'
-    }, {
-        sref: 'about',
-        url: '/about',
-        name: 'About Us'
-    }, {
-        sref: 'login',
-        url: '/login',
-        name: 'Login'
-    }, {
-        sref: 'support',
-        url: '/support',
-        name: 'Support'
-    }, {
-        sref: 'portfolio',
-        url: '/portfolio',
-        name: 'Portfolio'
-    }];
+
+    $scope.scrollTo = function(id) {
+        $location.path('/service');
+        $location.hash(id);
+        $anchorScroll(id);
+        //reset to old to keep any additional routing logic from kicking in
+        // $location.hash('');
+    };
 });
