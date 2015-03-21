@@ -2,6 +2,7 @@ var PORT = process.env.PORT || 3000,
     express = require('express'),
     path = require('path'),
     app = express(),
+    compression = require('compression'),
     server = require('http').createServer(app),
     io = require('socket.io')(server),
     sio = io.listen(server)
@@ -17,6 +18,8 @@ app.set('views', path.join(__dirname, 'public/template'));
 app.use(express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use('/scripts', express.static(__dirname + '/bower_components'));
+
+app.use(compression());
 
 app.get('/*', function(req, res, next) {
     res.render('index.html', {
