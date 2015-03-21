@@ -1,28 +1,44 @@
 // -- See AppCtrl Comment for usage description -- //
 angular.module('tnApp.controllers')
-    .controller('SupportTicketCtrl', ['$scope', '$state', '$rootScope', 'SupportTickets', 'TicketService', function($scope, $state, $rootScope, Ticket, Message) {
+    .controller('SupportTicketCtrl', ['$scope', '$state', '$rootScope', 'ngTableParams', 'SupportTickets', 'TicketService', function($scope, $state, $rootScope, Table, Ticket, Messages) {
 
         $scope.alias = 'Support Ticket Controller';
 
-        // $scope.supportTickets = [{
-        //     ticketId: "12345",
-        //     ticketStatus: "Open",
-        //     ticketSubject: "Broken Mixing Tape",
-        //     ticketBody: "Hey Man Yada Yada Yah, Man!"
+        console.log('Getting products ...');
+        // // PAGINATION PLUGIN TEST
+        // $scope.tableParams = new Table({
+        //     page: 1, // show first page
+        //     count: 10 // count per page
         // }, {
-        //     ticketId: "54321",
-        //     ticketStatus: "Open",
-        //     ticketSubject: "Awesome Site",
-        //     ticketBody: "Hey Dude Yada Yada Yah, Dude!"
-        // }];
+        //     getData: function($defer, params) {
+        //         var query = Messages;
+        //         query.getAllTickets(
+        //             function(res) {
+        //                 console.log("GET DATA: res = ", res)
+        //                 $scope.data = res.results.slice((params.page() - 1) * params.count(), params.page() * params.count());
+        //                 window.console.log($scope.data, "Data Object");
+        //             })
+        //     }
+        // });
 
-        var TicketData = new Ticket.get()
-            .then(function(data){
-                console.log("Data", data);
-                data.forEach(function(val){
-                    $scope.supportTickets = val.attributes.supportTicket;
-                })
-            });
+        var query = Messages;
+        query.nab({
+            id: "uFodfPG42N"
+        }, function(res) {
+            console.log("Non Paginated Res = ", res)
+                $scope.supportTickets = res.results;
+                window.console.log($scope.supportTickets, "Support Ticket Data Object");
+        });
+
+
+
+        // var TicketData = new Ticket.get()
+        //     .then(function(data) {
+        //         console.log("Data", data);
+        //         data.forEach(function(val) {
+        //             $scope.supportTickets = val.attributes.supportTicket;
+        //         })
+        //     });
 
         console.log("Ticket Service", Ticket);
 

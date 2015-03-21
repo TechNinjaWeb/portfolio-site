@@ -1,4 +1,4 @@
-/* 
+ 
 	GLOBAL PRIMARY STYLES 
 */
 html, body { margin:0 auto; padding:0; width:100%; height:100%; background: transparent; }
@@ -310,6 +310,24 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   -ms-filter: blur(10px);
   filter: blur(10px);
 }
+.logo-html5, .logo-css3, .logo-js, .logo-sql, .logo-ajax, .logo-jquery, .logo-json,
+.logo-php, .logo-joomla, .logo-wordpress, .logo-magento, .logo-vtiger {
+  background-image: url(/assets/Banners/Coding-960x100.png);
+  background-repeat: no-repeat;
+}
+.logo-html5 { width: 60px; height: 60px; background-position: 0px -16px; }
+.logo-css3 { width: 58px; height: 60px; background-position: -60px -16px; }
+.logo-js { width: 44px; height: 60px; background-position: -120px -16px; }
+.logo-sql { width: 100px; height: 60px; background-position: -164px -16px; }
+.logo-ajax { width: 100px; height: 60px; background-position: -264px -16px; }
+.logo-jquery { width: 100px; height: 60px; background-position: -364px -16px; }
+.logo-json { width: 70px; height: 60px; background-position: -464px -16px; }
+.logo-php { width: 70px; height: 70px; background-position: -534px -16px; }
+.logo-joomla { width: 80px; height: 72px; background-position: -604px -16px; }
+.logo-wordpress { width: 85px; height: 72px; background-position: -684px -16px; }
+.logo-magento { width: 70px; height: 72px; background-position: -774px -16px; }
+.logo-vtiger { width: 110px; height: 60px; background-position: -844px -16px; }
+
 /*#about-page div#footer { margin-top: 320px; }*/
 
 /* 	
@@ -427,4 +445,4 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 
 .profile-save-btn { padding-right:15px; padding-left:15px; }
 .profile-save-btn #save { margin-top: 30px; margin-bottom: 40px; }
-/*#contact-page .page-container { padding-bottom: 30px; }*/
+/*#contact-page .page-container { padding-bottom: 30px; }

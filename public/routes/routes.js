@@ -106,7 +106,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('profile.main', {
             url: '',
             views: {
-                'body@messages': {
+                'profile@messages': {
                     templateUrl: "./template/html/profile/profile.main.html",
                     controller: "ProfileCtrl"
                 }
@@ -115,7 +115,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('profile.messages', {
             url: '/messages',
             views: {
-                'body@messages': {
+                'profile@messages': {
                     templateUrl: "./template/html/profile/profile.messages.html",
                     controller: "ProfileCtrl"
                 }
@@ -124,7 +124,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('profile.messages.text', {
             url: '/text',
             views: {
-                'body@text': {
+                'profile@text': {
                     templateUrl: "./template/html/profile/profile.messages.text.html",
                     controller: "ProfileCtrl"
                 }
@@ -133,7 +133,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('profile.messages.talk', {
             url: '/talk',
             views: {
-                'body@talk': {
+                'profile@talk': {
                     templateUrl: "./template/html/profile/profile.messages.talk.html",
                     controller: "ProfileCtrl"
                 }
@@ -142,25 +142,53 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('profile.messages.video', {
             url: '/video',
             views: {
-                'body@video': {
+                'profile@video': {
                     templateUrl: "./template/html/profile/profile.messages.video.html",
                     controller: "ProfileCtrl"
                 }
             }
         })
+
+
         .state('profile.support', {
             url: '/support',
             views: {
-                'body@support': {
-                    templateUrl: "./template/html/profile/profile.support.html",
-                    controller: "SupportTicketCtrl"
+                'profile@support': {
+                    templateUrl: "./template/layout/profile/profile.support.layout.html",
+                    controller: "SupportTicketCtrl",
+                    resolve: {
+                        objectId: ['$stateParams', function($stateParams) {
+                          return $stateParams;
+                        }]
+                    }
                 }
             }
         })
+        .state('profile.support.tickets', {
+            url: '/ticket/:objectId',
+            views: {
+                'support@tickets': {
+                    templateUrl: "./template/html/profile/profile.support.ticket.html",
+                    controller: "SupportTicketDetailsCtrl"
+                }
+            }
+        })
+        // .state('profile.support.tickets.details', {
+        //     url: '/:objectId',
+        //     views: {
+        //         'support@tickets': {
+        //             templateUrl: "./template/layout/profile/profile.support.ticket.details.html",
+        //             controller: "SupportTicketDetailsCtrl"
+        //         }
+        //     }
+        // })
+
+
+
         .state('profile.todos', {
             url: '/todos',
             views: {
-                'body@todos': {
+                'profile@todos': {
                     templateUrl: "./template/html/profile/profile.todos.html",
                     controller: "ProfileCtrl"
                 }
@@ -169,7 +197,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('profile.settings', {
             url: '/settings',
             views: {
-                'body@settings': {
+                'profile@settings': {
                     templateUrl: "./template/html/profile/profile.settings.html",
                     controller: "ProfileCtrl"
                 }

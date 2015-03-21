@@ -1,26 +1,80 @@
-<div>
-	ITEM DETAILS PAGE
-</div>
 <div class="item-container">
-	<!-- <div ng-repeat="detail in data" class="row itemDetail"> -->
-	<div class="row itemDetail">	
-		<!-- <div class="col-sm-3">{{ detail }}</div> -->
-		<div class="col-sm-12 col-md-3">{{ title }}</div>
-		<div class="col-sm-12 col-md-3">{{ objectId }}</div>
-		<div class="col-sm-12 col-md-3">{{ description }}</div>
-		<div class="col-sm-12 col-md-3">{{ price }}</div>
-		<!-- <div class="row" ng-repeat="spec in specs">
-			<div class="col-sm-12 col-md-6 spec">{{ specs }}</div>
-		</div> -->
+	<div style="padding-bottom:20px; padding-top:20px; border-bottom:1px solid #eee;" ng-repeat="ticket in supportTickets" class="row itemDetail">	
+		<div class="col-sm-12">TICKET ID: {{ ticket.ticketId }}</div>
+		<div class="col-sm-12">TICKET BODY: {{ ticket.ticketBody }}</div>
+		<div class="col-sm-12">TICKET SUBJECT: {{ ticket.ticketSubject }}</div>
 	</div>
-	<div class="col-sm-12 col-md-6 spec" ng-repeat="specHeading in specs">
-			<!-- <div class="col-sm-12">ENTIRE SPEC: {{ specs }}</div> -->
-			<div class="col-sm-6">HEADING: {{ specHeading }}</div>
-			<div class="col-sm-6">
-				<div class="col-sm-12" class="col-md-4" ng-repeat="spec in specHeading">
-					SPEC: {{ spec }}
-				</div>
-			</div>
-		</div>
+	<p><strong>Page:</strong> {{ tableParams.page() }}
+            <p><strong>Count per page:</strong> {{ tableParams.count() }}
+                <div class="product-container">
+                    <div class="row">
+                        <div class="col-sm-2">TICKET #</div>
+                        <div class="col-sm-2">TICKET SUBJECT</div>
+                        <div class="col-sm-2">TICKET BODY</div>
+                    </div>
+                    <div ng-repeat="tickets in supportTicket" class="row productLink">
+                        <a ui-sref="profile.support.tickets({ objectId:tickets.objectId })" id="{{ tickets.ticketId }}">
+                        	{{ tickets }}
+                        	<div>OBJECT ID {{ tickets.objectId }}</div>
+                            <div class="col-sm-2">{{ $index + 1 }}</div>
+                            <div class="col-sm-2">{{ tickets.supportTicket }}</div>
+                            <div class="col-sm-2">{{ tickets.supportTicket }}</div>
+                        </a>
+                    </div>
+                </div>
+
+                <table ng-table="tableParams" template-pagination="custom/pager" class="table">
+                    <tr ng-repeat="product in $data">
+                        <td data-title="'Product Name'">
+                            {{ product.title }}
+                        </td>
+                        <td data-title="'Price'">
+                            {{ product.price | currency:'$'}}
+                        </td>
+                        <td data-title="'Description'">
+                            {{ product.description[0] }}
+                        </td>
+                        <td data-title="'Images'">
+                            <a type="button" class="img-thumbnail" data-toggle="modal" data-target="#productModal" ng-repeat="image in product.images" ng-href="http:{{image}}"><img class="item" ng-src="http:{{ image }}" />
+                                <!-- Modal -->
+                                <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <h4 class="modal-title" id="productModalLabel">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img class="item-lg" ng-src="http:{{ image }}" />
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
+                            <!-- <div ng-repeat="image in product.images">{{ image }}</div> -->
+                        </td>
+                    </tr>
+                </table>
+                <script type="text/ng-template" id="custom/pager">
+                    <ul class="pager ng-cloak">
+                        <li ng-repeat="page in pages" ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}" ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
+                            <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Previous</a>
+                            <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>
+                        </li>
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)" class="btn btn-default">10</button>
+                                <button type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)" class="btn btn-default">25</button>
+                                <button type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)" class="btn btn-default">50</button>
+                                <button type="button" ng-class="{'active':params.count() == 100}" ng-click="params.count(100)" class="btn btn-default">100</button>
+                            </div>
+                        </li>
+                    </ul>
+                </script>
 </div>
-<div><button ng-click="parseConst()">Find Constrained</button></div>

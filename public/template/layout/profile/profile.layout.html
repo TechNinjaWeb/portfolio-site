@@ -12,28 +12,28 @@
                 <br/>
             </div>
         </div>
-        <div id="user-profile" class="col-sm-9">
-            <div id="banner" class="banner-image">
+        <div id="user-profile-header" class="col-sm-9">
+            <div id="profile-banner" class="banner-image">
                 <img src="http://lorempixel.com/1200/300/" class="img-responsive" alt="Banner Image" />
             </div>
-            <ul id="inner-nav" class="nav nav-pills list-unstyled list-inline">
-                <li id="user-messages" role="presentation" class="active"><span class="sr-only">(current)</span><a href="/profile">Home</a>
+            <ul id="user-profile-navigation" class="nav nav-pills list-unstyled list-inline">
+                <li id="user-messages" role="presentation" class="active"><span class="sr-only">(current)</span><a ui-sref="profile.main">Home</a>
                 </li>
-                <li role="presentation"><a href="/profile/messages">Messages</a>
+                <li role="presentation"><a ui-sref="profile.messages">Messages</a>
                 </li>
-                <li role="presentation"><a href="/profile/support">Support Tickets</a>
+                <li role="presentation"><a ui-sref="profile.support">Support Tickets</a>
                 </li>
-                <li role="presentation"><a href="/profile/todos">To Do's</a>
+                <li role="presentation"><a ui-sref="profile.todos">To Do's</a>
                 </li>
-                <li role="presentation"><a href="/profile/settings">Settings</a>
+                <li role="presentation"><a ui-sref="profile.settings">Settings</a>
                 </li>
             </ul>
-            <div id="profile-page-template">
-                <div id="profile-page-messages" ui-view="body@messages"></div>
-                <div id="profile-page-support" ui-view="body@support"></div>
-                <div id="profile-page-todos" ui-view="body@todos"></div>
-                <div id="profile-page-settings" ui-view="body@settings"></div>
-            </div>
+        </div>
+        <div id="profile-template" class="col-sm-12">
+            <div id="profile-page-messages" ui-view="profile@messages"></div>
+            <div id="profile-page-support" ui-view="profile@support"></div>
+            <div id="profile-page-todos" ui-view="profile@todos"></div>
+            <div id="profile-page-settings" ui-view="profile@settings"></div>
         </div>
     </div>
     <div ng-show="!sessionUser" class="page-container">

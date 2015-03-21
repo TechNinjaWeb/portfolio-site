@@ -1,0 +1,55 @@
+<div id="support-ticket-page" class="content page">
+    <div ng-hide="!sessionUser" class="page-container">
+        <h3>Support Ticketing</h3>
+        <div class="container-small-left">
+            <hr>
+        </div>
+        <p>Please select a subject in the left hand column to view a thread.
+        </p>
+        <div class="container-small-left">
+            <hr>
+        </div>
+        <br/>
+        <ul id="support-tickets" class="col-sm-3">
+            <h3>Ticket List</h3>
+            <li ng-repeat="ticket in supportTickets" class="ticket list-unstyled">
+                <a id="{{ ticket.ticketId }}" ui-sref="profile.support.tickets({supportTicket:supportTicket.objectId})">
+                    {{ ticket }}
+                    <div id="objectId">OBJECT ID {{ ticket.objectId }}</div>
+                    <div id="ticketSubject">SUBJECT {{ ticket.ticketSubject }}</div>
+                    <span id="ticketStatus">STATUS {{ ticket.ticketStatus }}</span>
+                </a>
+            </li>
+        </ul>
+        <div ng-show="supportTickets" id="message-threads" class="col-sm-9">
+            <h3>Ticket Thread</h3>
+            <div ui-view="support@tickets"></div>
+            <br/>
+            <br/>
+            <br/>
+            <div id="create-ticket">
+                <h4>Create a Ticket</h4>
+                <div id="message-box" class="col-sm-12">
+                    <div class="form-group">
+                        <input type="text" id="ticketSubject" name="ticketSubject" ng-model="ticketSubject" placeholder="ticketSubject" class="form-control col-sm-12" />
+                        <textarea name="message" id="message" class="form-control" placeholder="Enter Your Message Here"></textarea>
+                    </div>
+                    <div class="clearfix sm-pad"></div>
+                    <button id="message-send-btn" class="btn btn-success col-sm-4">Send</button>
+                </div>
+            </div>
+            <div ng-repeat="tickets in data.supportTicket" class="row productLink">
+                <a ui-sref="profile.support.tickets({ objectId:tickets.objectId })" id="{{ tickets.ticketId }}">
+                    {{ tickets }}
+                    <div class="col-sm-2">{{ $index + 1 }}</div>
+                    <div class="col-sm-2">{{ tickets.supportTicket }}</div>
+                    <div class="col-sm-2">{{ tickets.supportTicket }}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div ng-show="!sessionUser" class="page-container">
+        <div id="test-div">{{ message }}</div>
+        <div>Please Login!</div>
+    </div>
+</div>

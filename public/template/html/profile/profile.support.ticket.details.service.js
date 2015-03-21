@@ -12,14 +12,15 @@ angular.module('tnApp.services')
         return data;
     });
 
-    return $resource('https://api.parse.com/1/classes/FastTech/:id/:params:format', {
+    return $resource('https://api.parse.com/1/classes/SupportTickets/:id/:userName/:params:format', {
         id: '@id',
+        userName: '@userName',
         params: '@params'
     }, {
         update: {
             method: 'PUT'
         },
-        grab: {
+        getAllTickets: {
             method: 'GET',
             cache: true
         },
@@ -27,7 +28,7 @@ angular.module('tnApp.services')
             method: 'GET',
             isArray: false,
             params: {
-                objectId: 'LtET4bS9h4'
+                objectId: 'User Name'
             }
         },
         nab: {

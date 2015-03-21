@@ -1,56 +1,6 @@
 <div id="support-ticket-page" class="content page">
     <div ng-hide="!sessionUser" class="page-container">
-        <h3>Support Ticketing</h3>
-        <div class="container-small-left">
-            <hr>
-        </div>
-        <p>Please select a subject in the left hand column to view a thread.
-        </p>
-        <div class="container-small-left">
-            <hr>
-        </div>
-        <br/>
-        <h3>Ticket List</h3>
-        <ul id="support-tickets" class="col-sm-3">
-        	<li ng-repeat="ticket in supportTickets" class="ticket list-unstyled">
-                <a id="{{ ticket.ticketId }}" href="#">
-                    <div id="ticketSubject">{{ ticket.ticketSubject }}</div>
-                    <span id="ticketStatus">{{ ticket.ticketStatus }}</span>
-                </a>
-            </li>
-        </ul>
-        <div ng-show="supportTickets" id="message-threads" class="col-sm-9">
-            <h3>Ticket Thread</h3>
-            <div class="col-sm-12">DETAILS</div>
-            <div class="col-sm-12">SUBJECT</div>
-            <div class="col-sm-12">BODY</div>
-            <br/><br/><br/>
-            <div id="create-ticket">
-            	<h4>Create a Ticket</h4>
-                <div id="message-box" class="col-sm-12">
-                    <div class="form-group">
-                    	<input type="text" id="ticketSubject" name="ticketSubject" ng-model="ticketSubject" placeholder="ticketSubject" class="form-control col-sm-12"/>
-                    	<textarea name="message" id="message" class="form-control" placeholder="Enter Your Message Here"></textarea>
-                    </div>
-                    <div class="clearfix sm-pad"></div>
-                    <button id="message-send-btn" class="btn btn-success col-sm-4">Send</button>
-                </div>
-            </div>
-            <div ng-repeat="product in data" class="row productLink">
-			<!-- <a ui-sref="products.details({objectId:product.objectId})" ng-click="viewItem($index, product.objectId)"> -->
-			<a ui-sref="products.details({objectId:product.objectId})">
-				<div class="col-sm-2">{{ $index + 1 }}</div>
-				<div class="col-sm-2">{{ product.title }}</div>
-				<div class="col-sm-2">{{ product.price }}</div>
-				<div class="col-sm-2">{{ product.sku }}</div>
-				<div class="col-sm-2">{{ product.bulk[0] }}</div>
-				<div class="col-sm-2">{{ product.description[0] }}</div>
-				<div class="row">
-					<div ng-repeat="spec in product.specs" class="col-sm-12">{{ spec['Power & Batteries'] }}</div>
-				</div>
-			</a>
-		</div>
-        </div>
+        <h3>Support Page Layout BODY</h3>
     </div>
     <div ng-show="!sessionUser" class="page-container">
         <div id="test-div">{{ message }}</div>
