@@ -18,13 +18,6 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
 
     wow.init();
 
-    var topAnchor = $('#top-anchor')
-        topAnchor.on('click', function(e){
-            $('#teaser-window-anchor').click();
-            window.location.hash = '';
-            console.log("Clicked");
-        })
-
     // HOMEPAGE CONTENT
 
     // TRUNCATE TESTIMONY QUOTES

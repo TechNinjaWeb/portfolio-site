@@ -3,7 +3,7 @@
         <div id="video-container">
             <iframe id="video-ad" class="container-full" src="//www.youtube.com/embed/4BunoRNTJIg?autoplay=0&amp;showinfo=0&amp;controls=0" allowfullscreen></iframe>
         </div>
-        <hr>
+        <br>
         <div id="feature" class="text-center md-pad">
             <h2 id="feature-heading" class="">
                 TECHNOLOGY IS OUR 
@@ -13,11 +13,11 @@
                 We've been surrounded by it for decades and it's become a part of us.
                 <br> Our goal is simply to handle the heavy lifting so you don't have to.
             </p>
-            <button id="feature-slogan" class="btn btn-default">VIEW OUR PORTFOLIO</button>
+            <button ui-sref="home.portfolio" id="feature-slogan" class="btn btn-default">VIEW OUR PORTFOLIO</button>
         </div>
         <hr>
         <div id="services">
-            <h2 id="services-heading" class="md-pad text-center">WHAT WE OFFER</h2>
+            <h2 id="services-heading" class="md-pad text-center">OUR SERVICE OFFER</h2>
             <div id="services-body" class="container text-center">
                 <div id="first-service" class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="panel panel-default">
@@ -81,7 +81,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <span class="fa fa-5x fa-group">
-                                <h3>Forums &amp; Courses</h3>
+                                <h3>Training &amp; Courses</h3>
                             </span>
                         </div>
                         <div class="panel-body">
@@ -100,12 +100,17 @@
                 <div class="clearfix"></div>
             </div>
             <hr>
-            <h2 id="slogan" style="max-width:800px;display:block" class="center-block text-center sm-pad">Every Order Received Shall Be Executed With Extreme Accuracy -- <a style="text-decoration:none;" href="/site/j3/?option=com_content&am;view=article&am;id=7">Law 5</a>
+            <h2 id="slogan" style="max-width:800px;display:block" class="center-block text-center sm-pad">Every Order Received Shall Be Executed With Extreme Accuracy -- <a style="text-decoration:none;" ui-sref="home.laws" data-toggle="tooltip" title="
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.
+                ">Law 5</a>
             </h2>
             <hr>
             <div id="belief" class="text-center lg-pad">
                 <h2 id="belief-heading">WE STRONGLY BELIEVE</h2>
-                <p id="belief-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
+                <br>
+                <p id="belief-body" class="container-small">Computers and the Internet are here to stay,
+                so don't get left behind!<br> Our team can help you navigate through any complicated,
+                technology setup.</p>
             </div>
             <div id="featured-work" class="container">
                 <h2>Featured Work</h2>
@@ -134,92 +139,30 @@
                         <h3>Find Out Why We're Canada's Best</h3>
                         <br>
                         <br>
-                        <a href="/./assets/banners/portfolio/social-media-advert.png" data-toggle="lightbox">
-                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                <br />
-                                <div>
-                                    Thumbnail 1
-                                </div>
-                                <br />
-                                <div class="uk-overlay">
-                                    <img class="img-responsive" src="./assets/banners/portfolio/social-media-advert.png" alt="Social Media" />
-                                    <div class="uk-overlay-area">
+                        <ul id="porfolio-list">
+                            <li ng-repeat="item in portfolioList | limitTo: 6" class="item portfolio-screen list-unstyled text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <a ng-click="modalPopup(item)" class="modal-btn" data-toggle='modal' data-target='#portfolio-modal'>
+                                    <br />
+                                    <h5>
+                                        {{ item.title }}
+                                    </h5>
+                                    <br />
+                                    <div class="uk-overlay">
+                                        <img class="img-responsive" ng-src="{{ item.imgSrc }}" alt="{{ item.alt }}" />
+                                        <div class="uk-overlay-area">
+                                        </div>
                                     </div>
-                                </div>
-                                <br />
-                                <a href="/./assets/banners/portfolio/social-media-advert.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                            </div>
-                        </a>
-                        <a href="/./assets/banners/portfolio/bluebook.png" data-toggle="lightbox">
-                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                <br />
-                                <div>
-                                    Thumbnail 2
-                                </div>
-                                <br />
-                                <div class="uk-overlay">
-                                    <img class="img-responsive" src="./assets/banners/portfolio/bluebook.png" alt="Blue Book Business" />
-                                    <div class="uk-overlay-area">
-                                    </div>
-                                </div>
-                                <br />
-                                <a href="/./assets/banners/portfolio/bluebook.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                            </div>
-                        </a>
-                        <a href="/./assets/banners/portfolio/trenderzhub.png" data-toggle="lightbox">
-                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                <br />
-                                <div>
-                                    Thumbnail 3
-                                </div>
-                                <br />
-                                <div class="uk-overlay">
-                                    <img class="img-responsive" src="./assets/banners/portfolio/trenderzhub.png" alt="Trenderz Hub Sandbox" />
-                                    <div class="uk-overlay-area">
-                                    </div>
-                                </div>
-                                <br />
-                                <a href="/./assets/banners/portfolio/trenderzhub.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                            </div>
-                        </a>
-                        <a href="/./assets/banners/portfolio/evox.png" data-toggle="lightbox">
-                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                <br />
-                                <div>
-                                    Thumbnail 4
-                                </div>
-                                <br />
-                                <div class="uk-overlay">
-                                    <img class="img-responsive" src="./assets/banners/portfolio/evox.png" alt="Evolution X" />
-                                    <div class="uk-overlay-area">
-                                    </div>
-                                </div>
-                                <br />
-                                <a href="/./assets/banners/portfolio/evox.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                            </div>
-                        </a>
-                        <a href="/./assets/banners/portfolio/annies-repurpose-temp.png" data-toggle="lightbox">
-                            <div class="portfolio-screen text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                <br />
-                                <div>
-                                    Thumbnail 5
-                                </div>
-                                <br />
-                                <div class="uk-overlay">
-                                    <img class="img-responsive" src="./assets/banners/portfolio/annies-repurpose-temp.png" alt="" />
-                                    <div class="uk-overlay-area">
-                                    </div>
-                                </div>
-                                <br />
-                                <a href="/./assets/banners/portfolio/evox.png" data-toggle="lightbox" class="more info btn btn-info">View</a>
-                            </div>
-                        </a>
-                        <div id="portfolio-more" class="md-pad row col-xs-12 col-md-6 col-lg-4 col-md-offset-4">
+                                    <br />
+                                    <a ng-click="modalPopup(item)" class="modal-btn more info btn btn-info" data-toggle='modal' data-target='#portfolio-modal'>View</a>
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="portfolio-more" class="sm-pad row col-sm-6 col-sm-offset-4">
                             <a ui-sref="home.portfolio" id="portfolio-more-btn" class="btn btn-danger center-block">SEE MORE</a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div id="law-5" class="text-right">
-                                <h5><small>Read The Tech Ninja<a href="/#">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="law-5" class="text-right">
+                            <h5><small>Read The Tech Ninja<a ui-sref="home.laws" href="/laws">
                                 *Laws of Conduct*</a></small>
                             </h5>
                         </div>
@@ -247,24 +190,42 @@
             </div>
         </div>
         <div id="values" class="text-center lg-pad">
-            <h2 id="values-heading">WE VALUE</h2>
-            <p id="values-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
+            <h2 id="values-heading">WHAT WE VALUE</h2>
+            <br>
+            <p id="values-body" class="container-small">We use the best, most proven tools the industry has to offer, <br>
+            so that our clients get an unparalleled experience. <br><br>
+            <h5 class="open-source-tools">"Our tools are all Open Source which means ... <br> No expensive proprietary software.<br>No costly support."</h5></p>
         </div>
         <div id="team" class="text-center lg-pad">
             <h2 id="team-heading">MEET THE HEAD NINJA</h2>
+            <br>
             <p id="team-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
         </div>
         <div id="cta" class="text-center lg-pad">
-            <h2 id="cta-heading">GET FREE CONSULTATION</h2>
-            <p id="cta-body" class="container-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
+            <h2 id="cta-heading">GET A FREE CONSULTATION</h2>
+            <br>
+            <p id="cta-body" class="container-small">YOU'RE JUST STEPS AWAY FROM BEING INFORMED. <br>
+                FILL OUT OUR COSULTATION FORM TO HAVE SOMEONE GET IN TOUCH WITH YOU.
+            </p>
+            <br>
+            <a id="consultation-button-alt" ng-href="contact" class="btn btn-lg">GET A QUOTE</a>
+        </div>
         </div>
     </div>
 </div>
-<script>
-$(document).ready(function() {
-    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-        event.preventDefault();
-        $(this).ekkoLightbox();
-    });
-});
-</script>
+<!-- Modal -->
+<div class="modal fade" id="portfolio-modal" tabindex="-1" role="dialog" aria-labelledby="portfolio-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="portfolio-modalLabel">HEADER TITLE</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

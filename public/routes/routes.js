@@ -235,7 +235,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                       controller: 'ItemDetailsCtrl'
                   }
               }
-          });;
+          })
+
+
+          .state('home.laws', {
+              url: '/laws',
+              views: {
+                  'body@': {
+                      templateUrl: "./template/html/laws/laws.html",
+                      controller: ''
+                  }
+              }
+          });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('#');

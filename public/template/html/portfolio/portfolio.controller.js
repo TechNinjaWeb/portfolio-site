@@ -1,5 +1,5 @@
 // -- See AppCtrl Comment for usage description -- //
-angular.module('tnApp.controllers').controller('PortfolioCtrl', function($scope) {
+angular.module('tnApp.controllers').controller('PortfolioCtrl', ['$scope', 'portfolioList', function($scope, PortfolioList) {
     $scope.alias = 'PortfolioCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";
@@ -7,65 +7,7 @@ angular.module('tnApp.controllers').controller('PortfolioCtrl', function($scope)
 
     $scope.categories = ['Soft', 'Elements'];
 
-    // $scope.filterBtns = 
-
-
-    var portfolioList = [{
-        'title': 'Annies Repurpose Inc.',
-        'data-cat': 'web',
-        'imgSrc': 'assets/banners/portfolio/annies-repurpose.png',
-        'alt': 'Annies Repurpose Inc.'
-    }, {
-        'title': 'BlueBook Business',
-        'data-cat': 'web logo',
-        'imgSrc': 'assets/banners/portfolio/bluebook.png',
-        'alt': 'BlueBook Business'
-    }, {
-        'title': 'EvolutionX Diesel Performance',
-        'data-cat': 'web',
-        'imgSrc': 'assets/banners/portfolio/evox.png',
-        'alt': 'EvolutionX Diesel Performance'
-    }, {
-        'title': 'Trenderz Hub Inc.',
-        'data-cat': 'web logo',
-        'imgSrc': 'assets/banners/portfolio/trenderzhub.png',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Nitrotech Energy Services',
-        'data-cat': 'web',
-        'imgSrc': 'assets/banners/portfolio/nitrotech.png',
-        'alt': 'Nitrotech Energy Services'
-    }, {
-        'title': 'RoomXI.com',
-        'data-cat': 'web',
-        'imgSrc': 'assets/banners/portfolio/roomxi.png',
-        'alt': 'RoomXI.com'
-    }, {
-        'title': 'Smoke Em Diesel',
-        'data-cat': 'code app',
-        'imgSrc': 'assets/banners/portfolio/smoke-em.png',
-        'alt': 'Smoke Em Diesel'
-    }, {
-        'title': 'DFC Diesel',
-        'data-cat': 'code',
-        'imgSrc': 'assets/banners/portfolio/dfc-diesel.png',
-        'alt': 'logo #5'
-    }, {
-        'title': 'Uncle Bear Spices',
-        'data-cat': 'code',
-        'imgSrc': 'assets/banners/portfolio/uncle-bear-spices.png',
-        'alt': 'Uncle Bear Spices'
-    }, {
-        'title': 'Spacantik',
-        'data-cat': 'web code',
-        'imgSrc': 'assets/banners/portfolio/spacantik.png',
-        'alt': 'Spacantik'
-    }];
-
-    $scope.portfolioList = portfolioList;
-
-
-
+    $scope.portfolioList = PortfolioList;
 
     // PROFILE PAGE MODAL
     $('.modal-btn').on('click', function(e) {
@@ -90,4 +32,4 @@ angular.module('tnApp.controllers').controller('PortfolioCtrl', function($scope)
         // console.log(modalBody)
     });
 
-});
+}]);

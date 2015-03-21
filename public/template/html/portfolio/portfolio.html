@@ -3,27 +3,25 @@
         <div id="portfolio-page-header-wrapper" class="container-fluid">
             <div class="portfolio-page-header full">
                 <h3 id="portfolio-page-heading">Check Out Our Work</h3>
-                <!-- <ul id="filters">
+                <ul id="filters">
                     <li><a class="filter btn btn-sm btn-primary active" data-filter="app card icon logo web">All</a>
                     </li>
                     <li><a class="filter btn btn-sm btn-primary" data-filter="app">App</a>
                     </li>
                     <li><a class="filter btn btn-sm btn-primary" data-filter="card">Card</a>
                     </li>
-                    <li><a class="filter btn btn-sm btn-primary" data-filter="icon">Icon</a>
-                    </li>
                     <li><a class="filter btn btn-sm btn-primary" data-filter="logo">Logo</a>
                     </li>
                     <li><a class="filter btn btn-sm btn-primary" data-filter="web">Web</a>
                     </li>
-                </ul> -->
+                </ul>
             </div>
             <!-- <portfolio> Portfolio Element </portfolio> -->
             <div portfoliofiler id="portfoliolist" class="col-sm-12" style="padding-top:50px;">
                 <div ng-repeat="item in portfolioList" class="portfolio mix col-sm-4 col-md-3 col-lg-2 {{ item['data-cat'] }}" data-cat="{{ item['data-cat'] }}" portfolioHover>
                     <a class="modal-btn" href="#" data-toggle="modal" data-target="#image-modal">
                         <div class="portfolio-wrapper">
-                            <img ng-src="{{ item['imgSrc']}}" alt="{{ item['alt'] }}" />
+                            <img ng-src="{{ item['imgSrc']}}" alt="{{ item['alt'] }}" class="img-responsive" />
                             <div class="label">
                                 <div class="label-text">
                                     <div class="text-title">{{ item['title'] }}</div>
@@ -37,5 +35,4 @@
             </div>
         </div>
     </div>
-
-    <!-- <div style="margin-top:100px;"></div> -->
+</div>

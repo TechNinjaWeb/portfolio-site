@@ -162,6 +162,7 @@ button, a, input { border-radius: 0!important; }
 /* 
 	NAVIGATION 
 */
+#navigation #menu-links, .navbar-brand { margin-top: 6px; }
 #navigation #menu-links a { color: #EEE; }
 #navigation #menu-links a:hover { color: #F8982F; }
 #copyright .navbar { z-index: 5; }
@@ -261,17 +262,14 @@ a.profile { text-decoration: none !important; font-size: 10px; }
 }
 h3#consultation-heading { text-shadow: 1px 1px 1px black; }
 #consultation-button { background-color: #3A89C3; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
+#consultation-button-alt { background-color: #C0392B; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
 #consultation-button:hover { color: #EEE; border: 3px solid #EEE; }
+#consultation-button-alt:hover { background-color: #3A89C3; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
 
-#top-anchor {
-	position: fixed;
-	display: block;
-	float: right;
-	padding: 5px;
-	top: 80%;
-	left: 88%;
-	z-index: 1;
-}
+.top-anchor { position: fixed; display: block; 
+  float: right; padding: 5px; bottom: 1.3%; right: 3%; z-index: 10; background-color: #F8982F;
+  font-size: 10px; opacity: 0.5; }
+.top-anchor:hover { color: black; opacity: 1; }
 
 /* 	
 	FOOTER SECTION 
@@ -290,7 +288,8 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 	ABOUT PAGE 
 */
 #about-page .page-container { padding-top: 14px; /*padding-bottom: 30px;*/ }
-#video-container:before, #video-container:after {
+#about-page .item a { text-decoration: none; cursor: pointer; }
+#about-page #video-container:before, #video-container:after {
   z-index: -1; 
   position: absolute; 
   content: "";
@@ -309,7 +308,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   filter: blur(10px);
 }
 
-#video-container:after {
+#about-page #video-container:after {
   transform: rotate(2deg);
   right: 10px;
   left: auto;
@@ -458,11 +457,17 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   CONTACT PAGE 
 */
 
+/*  
+  LAWS PAGE 
+*/
+#laws-page .page-container { padding-top:60px; }
+
 /* 	
 	PROFILE PAGE 
 */
-#support-tickets .ticket { border-bottom: 1px solid #aaa; }
-#support-tickets a:hover { text-decoration: none; }
+#profile-page #user-profile-header { padding-left: 0px; padding-right: 0px; }
+#profile-page #support-tickets .ticket { border-bottom: 1px solid #aaa; }
+#profile-page #support-tickets a:hover { text-decoration: none; }
 
 .profile-save-btn { padding-right:15px; padding-left:15px; }
 .profile-save-btn #save { margin-top: 30px; margin-bottom: 40px; }
