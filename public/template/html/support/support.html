@@ -1,5 +1,5 @@
 <div id="support-page" class="content page">
-    <div class="page-container">
+    <div ng-hide="!sessionUser" class="page-container">
         <div id="main" class="row">
             <div id="chat" class="col-xs-8 col-sm-10">
             </div>
@@ -15,7 +15,19 @@
                 <!-- /input-group -->
             </div>
         </div>
-
+    </div>
+    <div ng-show="!sessionUser" class="page-container">
+        <h3>This Feature Is Not Yet Active!</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 </div>
 <!-- Modal -->

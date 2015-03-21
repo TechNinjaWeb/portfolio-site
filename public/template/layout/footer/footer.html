@@ -2,22 +2,36 @@
     <div class="container-fluid test">
         <div class="row">
             <div class="footer-links-container col-sm-4 sm-pad">
-                <h4 id="footer-links-heading">
+                <!-- <div class="col-sm-6">
+                    <h4>Laws Of Conduct</h4>
+                    <hr />
+                    <small>A Tech Ninja's Word Is His Honour. Our Operatives Follow The Strictest Guidelines To Ensure The Success Of Our Missions.</small>
+                    <div class="clearfix">
+                        <br />
+                    </div>
+                    <a href="./?view=article&id=7" class="btn btn-danger btn-sm">Read The Ninja Laws</a>
+                    <div class="clearfix"></div>
+                    <br />
+                    <br />
+                </div> -->
+                <div class="col-sm-12">
+                    <h4 id="footer-links-heading">
                                 Navigation Links
                             </h4>
-                <hr class="white">
-                <div id="footer-links" class="col-sm-6">
-                    <ul data-ng-controller="NavCtrl" class="list-unstyled row">
-                        <li ng-repeat="link in urls">
-                          <a class="col-xs-12" ng-href="{{ link.url }}" >{{ link.name }}</a>
-                        </li>
-                    </ul>
+                    <hr class="white">
+                    <div id="footer-links" class="col-sm-6">
+                        <ul data-ng-controller="NavCtrl" class="list-unstyled row">
+                            <li ng-repeat="link in urls">
+                                <a class="col-xs-12" ng-href="{{ link.url }}">{{ link.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4 text-left sm-pad">
                 <h4 id="footer-social-media-heading">
-                                Connect With Us
-                            </h4>
+                    Connect With Us
+                </h4>
                 <hr class="white">
                 <div id="footer-social-media-icons" class="list-unstyled list-inline text-center row">
                     <div class="col-xs-3"><a href="https://facebook.com/4UmNinja" onclick="window.open(this.href,'_blank');return false;"><i class="icon-facebook-circled"></i></a>

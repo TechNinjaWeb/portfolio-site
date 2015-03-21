@@ -13,9 +13,9 @@ angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope
         url: '/portfolio',
         name: 'Portfolio'
     }, {
-        sref: 'home.service',
-        url: '/service',
-        name: 'Service'
+        sref: 'home.services',
+        url: '/services',
+        name: 'Services'
     }, {
         sref: 'home.support',
         url: '/support',

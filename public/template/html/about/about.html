@@ -109,7 +109,8 @@
                 <h2 id="belief-heading">WE STRONGLY BELIEVE</h2>
                 <br>
                 <p id="belief-body" class="container-small">Computers and the Internet are here to stay, so don't get left behind!
-                    <br> Our team can help you navigate through any complicated, technology setup.</p>
+                    <br> Our team can help you navigate through any complicated, technology setup. <br>
+                    from front to back.</p>
             </div>
             <div id="featured-work" class="container">
                 <h2>Featured Work</h2>
@@ -139,8 +140,8 @@
                         <br>
                         <br>
                         <ul id="porfolio-list">
-                            <li ng-repeat="item in portfolioList | limitTo: 6" class="item portfolio-screen list-unstyled text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                <a ng-click="modalPopup(item)" class="modal-btn" data-toggle='modal' data-target='#portfolio-modal'>
+                            <a ng-click="modalPopup(item)" class="modal-btn" data-toggle='modal' data-target='#about-modal'>
+                                <li ng-repeat="item in portfolioList | limitTo: 6" class="item portfolio-screen list-unstyled text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                     <br />
                                     <h5>
                                         {{ item.title }}
@@ -152,11 +153,12 @@
                                         </div>
                                     </div>
                                     <br />
-                                    <a ng-click="modalPopup(item)" class="modal-btn more info btn btn-info" data-toggle='modal' data-target='#portfolio-modal'>View</a>
-                                </a>
-                            </li>
+                                    <a ng-click="modalPopup(item)" class="modal-btn more info btn btn-info" data-toggle='modal' data-target='#about-modal'>View</a>
+                                </li>
+                            </a>
                         </ul>
-                        <div id="portfolio-more" class="sm-pad row col-sm-6 col-sm-offset-4">
+                        <div class="clearfix"></div>
+                        <div id="portfolio-more" class="sm-pad col-sm-6 col-sm-offset-4">
                             <a ui-sref="home.portfolio" id="portfolio-more-btn" class="btn btn-danger center-block">SEE MORE</a>
                         </div>
                         <div class="clearfix"></div>
@@ -189,13 +191,13 @@
             </div>
         </div>
         <div id="values" class="text-center lg-pad">
-            <h2 id="values-heading">WHAT WE VALUE</h2>
+            <h2 id="values-heading">OUR VALUES</h2>
             <br>
-            <p id="values-body" class="container-small">We use the best, most proven tools the industry has to offer,
-                <br> so that our clients get an unparalleled experience.
+            <p id="values-body" class="container-small">We use the best most cutting edge tools the industry has to offer,
+                <br> so that our clients get an unparalleled, unique experience.
                 <br>
                 <br>
-                <h5 class="open-source-tools">"Our tools are all Open Source which means ... <br> No expensive proprietary software.<br>No costly support."</h5></p>
+                <h5 class="open-source-tools">"Our tools are all Open Source which means ... <br> Less proprietary legacy software,<br>More comprehensive support."</h5></p>
         </div>
         <div id="team" class="text-center lg-pad">
             <h2 id="team-heading">MEET THE HEAD NINJA</h2>
@@ -206,13 +208,13 @@
 </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="portfolio-modal" tabindex="-1" role="dialog" aria-labelledby="portfolio-modalLabel" aria-hidden="true">
+<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="about-modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="portfolio-modalLabel">HEADER TITLE</h4>
+                <h4 class="modal-title" id="about-modalLabel">HEADER TITLE</h4>
             </div>
             <div class="modal-body">
             </div>

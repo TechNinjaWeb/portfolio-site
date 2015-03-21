@@ -7,7 +7,7 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
     $scope.portfolioList = portfolioList;
 
     $scope.scrollTo = function(id) {
-        $location.path('/service');
+        $location.path('/services');
         $location.hash(id);
         $timeout(function() {
             $anchorScroll();
@@ -18,8 +18,6 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
         animated: 'fade',
         placement: 'bottom',
     });
-
-    // var modalBtn = $("<a class='modal-btn' data-toggle='modal' data-target='#user-modal'></a>");
 
     $scope.modalPopup = function(item) {
         var modalTitle = $('.modal-title');

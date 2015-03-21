@@ -54,11 +54,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
-        .state('home.service', {
-            url: '/service',
+        .state('home.services', {
+            url: '/services',
             views: {
                 'body@': {
-                    templateUrl: "./template/html/service/service.html",
+                    templateUrl: "./template/html/services/services.html",
                     controller: "ServiceCtrl"
                 }
             }
