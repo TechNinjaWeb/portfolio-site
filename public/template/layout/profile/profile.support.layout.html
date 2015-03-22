@@ -1,28 +1,26 @@
 <div id="support-ticket-page" class="content page">
     <div ng-hide="!sessionUser" class="page-container">
-        <h3>Support Ticketing</h3>
-        <div class="container-small-left">
-            <hr>
-        </div>
-        <p>Please select a subject in the left hand column to view a thread.
-        </p>
-        <div class="container-small-left">
-            <hr>
-        </div>
+        <h3>Support Ticketing</h3><br>
+        <p>Please select a subject in the left hand column to view a thread.</p>
         <br/>
+        <!-- 1st 9/3 Column Setup -->
+        <div id="ticket-menu-bar" class="jumbotron col-sm-12">
+            <div class="col-sm-3">
+                <h3>Ticket List</h3></div>
+            <div class="col-sm-9">
+                <h3 class="col-sm-6 text-left">Ticket Thread</h3>
+                
+                <!-- Create A Ticket Partial -->
+                <div id="ticket-menu" ui-view="support@ticketMenu"></div>
+            </div>
+        </div>
+        <!-- 2nd 9/3 Column Setup -->
         <ul id="support-tickets" class="col-sm-3">
-            <h3>Ticket List</h3>
             <div ui-view="profile@ticketList"></div>
         </ul>
-        <div ng-show="supportTickets" id="message-threads" class="col-sm-9">
-            <h3>Ticket Thread</h3>
+        <div id="message-threads" class="col-sm-9">
             <!-- Support Ticket Template -->
             <div ui-view="support@tickets"></div>
-            
-            <div id="create-ticket">
-                <h4>Create a Ticket</h4>
-                <div ui-view="support@createTicket"></div>
-            </div>
         </div>
     </div>
     <div ng-show="!sessionUser" class="page-container">

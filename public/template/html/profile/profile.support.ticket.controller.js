@@ -20,6 +20,17 @@ angular.module('tnApp.controllers')
         //     }
         // });
 
+        $scope.ticketInView = function() {
+            
+            var location = window.location.pathname;
+            
+            if (location.contains('ticket')) 
+                return true;
+            else 
+                return false;
+            
+        };
+
         var params = {
             "where": {
                 "postedBy": Parse.User.current().get('username')
@@ -28,9 +39,10 @@ angular.module('tnApp.controllers')
 
         var query = Messages;
         query.get(params, function(res) {
-            // console.log("Non Paginated Res = ", res)
+            // console.log("Non Paginated Res = ", res)    
             $scope.supportTickets = res.results;
             $scope.ticketThread = res.results[0].supportTickets;
+
         });
 
         $scope.createTicket = function(subject, body) {
@@ -62,12 +74,24 @@ angular.module('tnApp.controllers')
 
             query.post(params, function(res) {
                 console.log("Post Ticket ", res)
+                if ($('.close').length > 0)
+                    $('.close').click();
+
+
+                console.warn("Hope that this updated with new message!", $scope.supportTickets)
+
             });
         }
 
         $scope.updateTicket = function(subject, body) {
-            
+
         }
+
+        $scope.deleteTicket = function(stateParams) {
+            console.log("StateParams ObjectId", stateParams);
+        }
+
+
 
     }]);
 // console.log('Finished loading LoginCtrl');

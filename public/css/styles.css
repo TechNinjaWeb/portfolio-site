@@ -128,6 +128,7 @@ button, a, input { border-radius: 0!important; }
 	*/
 	#about-page #video-container { height:370px; overflow: hidden; opacity: 0.9; box-shadow: 2px 2px 2px black; }
 	#about-page #video-ad { width: 100%; height: 200%; margin-top: -200px; }
+  #about-page .open-source-tools { padding-left: 60px; padding-right: 60px; }
   
 	/* 
 		PORTFOLIO PAGE 
@@ -175,15 +176,16 @@ a.profile { text-decoration: none !important; font-size: 10px; }
 
 /* HOME PAGE */
 /*#home-page .page-container { padding-bottom: 30px }*/
+#home-page .bg { display:none; position: absolute; top:0px; left:0px; width:100%; height:100%; z-index:-1; }
 /* 	
 	TESER SECTION 
 */
 #teaser-window {
-	color: white;
+	/*color: white;
 	background: url(/assets/bg/black_lozenge.png) fixed;
 	width:100%;
 	height: 750px!important; 
-	background-position: center top;
+	background-position: center top;*/
 	/*-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -199,7 +201,7 @@ a.profile { text-decoration: none !important; font-size: 10px; }
 /* 	
 	TOOLBELT SECTION
 */
-#toolbelt { overflow-x: hidden; background-color: #84ecaf; box-shadow: 2px 2px 1px darkgreen;}
+#toolbelt { overflow-x: hidden; background-color: #D8DDFF; box-shadow: 2px 2px 1px #ccc;}
 #toolbelt ul { margin-top: 0; margin-bottom: 0; }
 .toolbelt a { color: black; }
 /*.toolbelt:hover { background-color: blue; }*/
@@ -467,7 +469,11 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 */
 #profile-page #user-profile-header { padding-left: 0px; padding-right: 0px; }
 #profile-page #support-tickets .ticket { border-bottom: 1px solid #aaa; }
-#profile-page #support-tickets a:hover { text-decoration: none; }
+#profile-page #support-tickets a:hover, #profile-page #support-tickets a { text-decoration: none; }
+ul#ticket-menu { margin-top: 20px; }
+a#createTicket, a#deleteTicket { text-decoration: none; }
+a#createTicket:hover { cursor: copy; }
+a#deleteTicket:hover { cursor: no-drop }
 
 .profile-save-btn { padding-right:15px; padding-left:15px; }
 .profile-save-btn #save { margin-top: 30px; margin-bottom: 40px; }

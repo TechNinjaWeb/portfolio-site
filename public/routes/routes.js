@@ -1,4 +1,4 @@
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
     $stateProvider
         .state('home', {
             url: '',
@@ -173,9 +173,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     templateUrl: "./template/html/profile/profile.support.ticket.list.html",
                     controller: "SupportTicketDetailsCtrl"
                 },
-                'support@createTicket': {
+                'support@ticketMenu': {
                     templateUrl: "./template/html/profile/profile.support.ticket.create.html",
-                    controller: "SupportTicketCtrl"
+                    controller: "SupportTicketDetailsCtrl"
                 }
             }
         })
@@ -215,7 +215,30 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         });
+
+    $urlMatcherFactoryProvider.strictMode(false)
     $urlRouterProvider.otherwise('/');
+    // Implementation for Trailing Slashes
+    // state.url param must match '/target_url/'
+    // or remove trailling slashes eg '/target_url'
+    $urlRouterProvider.rule(function($injector, $location) {
+        var path = $location.url();
+
+        // check to see if the path already has a slash where it should be
+        if (path[path.length - 1] === '/' || path.indexOf('/?') > -1) {
+            console.log($locationProvider);
+            alert("Yo! First Bubble")
+            return;
+        }
+
+        if (path.indexOf('?') > -1) {
+            alert("Yo! 2nd Bubble")
+            return path.replace('?', '/?');
+        }
+
+        return path + '/';
+    });
+
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('#');
 });

@@ -6,14 +6,15 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
 
     $scope.portfolioList = portfolioList;
 
-    $scope.scrollTo = function(id) {
-        $location.path('/services');
-        $location.hash(id);
-        $timeout(function() {
-            $anchorScroll();
-        }, 500)
-    };
+    // $scope.scrollTo = function(id) {
+    //     $location.path('/services');
+    //     $location.hash(id);
+    //     $timeout(function() {
+    //         $anchorScroll();
+    //     }, 500)
+    // };
 
+    // Ninja Law Tooltip
     $('a[data-toggle="tooltip"]').tooltip({
         animated: 'fade',
         placement: 'bottom',

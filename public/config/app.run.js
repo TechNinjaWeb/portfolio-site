@@ -16,7 +16,7 @@ angular.module('tnApp')
         var browser = userAgent;
         $rootScope.browser = browser;
 
-        console.log("User Agent Is:" + userAgent);
+        // console.log("User Agent Is:" + userAgent);
         $rootScope.userAgent = userAgent;
 
         // var page = window.document.getElementsByClassName('content page')[0];
@@ -58,25 +58,25 @@ angular.module('tnApp')
             // Create Object for individual Role Save Functions
             var saveUsers = {
                 user: function() {
-                    console.log(saveUsers);
+                    // console.log(saveUsers);
                     // Save User Role
                     userRole.save(null, {
                         success: function(userRole) {
                             // var userRoleString = JSON.stringify(userRole, null, 4);
                             // console.log('userRoleString Object output a string: ', userRoleString);
-                            console.log('Successfully saved ', userRole);
+                            // console.log('Successfully saved ', userRole);
                         },
                         error: function(userRole, err) {
                             var userRoleString = JSON.stringify(userRole, null, 4);
-                            console.log('userRoleString Object output a string: ', userRoleString);
-                            console.log("This Object created an Error ", userRole);
-                            console.log("It's Error is ", err);
-                            console.log("The Errors name is ", err.name);
+                            // console.log('userRoleString Object output a string: ', userRoleString);
+                            // console.log("This Object created an Error ", userRole);
+                            // console.log("It's Error is ", err);
+                            // console.log("The Errors name is ", err.name);
                         }
                     }).then(function(userRole, err) {
-                        console.log("Testing Chained Functions", "Nothing to See Here ...");
+                        // console.log("Testing Chained Functions", "Nothing to See Here ...");
                     });
-                    console.log("User Role Saved");
+                    // console.log("User Role Saved");
                 },
                 admin: function() {
                     // Save Admin Role
@@ -84,17 +84,17 @@ angular.module('tnApp')
                         success: function(adminRole) {
                             // var adminRoleString = JSON.stringify(adminRole, null, 4);
                             // console.log('adminRoleString Object output a string: ', adminRoleString);
-                            console.log('Successfully saved ', adminRole);
+                            // console.log('Successfully saved ', adminRole);
                         },
                         error: function(adminRole, err) {
                             var adminRoleString = JSON.stringify(adminRole, null, 4);
-                            console.log('adminRoleString Object output a string: ', adminRoleString);
-                            console.log("This Object created an Error ", adminRole);
-                            console.log("It's Error is ", err);
-                            console.log("The Errors name is ", err.name);
+                            // console.log('adminRoleString Object output a string: ', adminRoleString);
+                            // console.log("This Object created an Error ", adminRole);
+                            // console.log("It's Error is ", err);
+                            // console.log("The Errors name is ", err.name);
                         }
                     });
-                    console.log("Admin Role Saved");
+                    // console.log("Admin Role Saved");
                 }
             };
 
@@ -103,7 +103,7 @@ angular.module('tnApp')
                 success: function(results) {
                     var user = false;
                     var admin = false;
-                    console.log("Successfully retrieved " + results.length + " Roles In Database.");
+                    // console.log("Successfully retrieved " + results.length + " Roles In Database.");
                     // Do something with the returned Parse.Object values
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i];
@@ -112,13 +112,13 @@ angular.module('tnApp')
                         var id = object.id;
                         var date = object.updatedAt;
 
-                        console.log("Found Row in Database: ", {
-                            'name': name
-                        }, {
-                            'id': id
-                        }, {
-                            'date': date
-                        });
+                        // console.log("Found Row in Database: ", {
+                        //     'name': name
+                        // }, {
+                        //     'id': id
+                        // }, {
+                        //     'date': date
+                        // });
 
                         // Set the value true if an expected Role exists
                         if (name === "Admin") {
@@ -132,19 +132,19 @@ angular.module('tnApp')
                         // This will only have to be called once ever
                         saveUsers.user();
                         saveUsers.admin();
-                        console.log("Role Data Has Been Created and Saved");
+                        // console.log("Role Data Has Been Created and Saved");
                     } else if (results.length != 0 && results.length <= 1) {
-                        console.log("Results are here, but are not greater than 1");
-                        console.log("Admin Role present, ", admin);
-                        console.log("User Role present, ", user);
+                        // console.log("Results are here, but are not greater than 1");
+                        // console.log("Admin Role present, ", admin);
+                        // console.log("User Role present, ", user);
                         if (!admin) {
                             saveUsers.admin();
                         } else if (!user) {
                             saveUsers.user();
                         }
                     } else {
-                        console.log("No Role Data To Be Saved as a Result of this Find in the Database");
-                        console.log("Moving along as planned ...");
+                        // console.log("No Role Data To Be Saved as a Result of this Find in the Database");
+                        // console.log("Moving along as planned ...");
                     }
                 },
                 error: function(error) {
@@ -154,7 +154,7 @@ angular.module('tnApp')
         };
 
         $rootScope.checkAdmin = function() {
-            console.log("Checking Admin Credentials");
+            // console.log("Checking Admin Credentials");
             // FB ID of Administrator
             var techNinjaAdminID = "587154828096319";
             // Extend the _User Class Object
@@ -166,7 +166,7 @@ angular.module('tnApp')
             if ($rootScope.sessionUserName === "Phree Lyfe") {
                 query.find({
                     success: function(results) {
-                        console.log("Successfully retrieved " + results.length + " Admin Username.");
+                        // console.log("Successfully retrieved " + results.length + " Admin Username.");
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results.length; i++) {
                             var object = results[i];
@@ -181,11 +181,11 @@ angular.module('tnApp')
                             // console.log("This is the parsed fbAuthDataObject:", fbAuthDataObject.facebook.id, "This is the techNinjaAdminID:", techNinjaAdminID);
 
                             if (fbAuthDataObject.facebook.id === techNinjaAdminID) {
-                                console.log($rootScope.techNinjaAdminName + " is the True Admin, We matched your facebook authId with our Records");
+                                // console.log($rootScope.techNinjaAdminName + " is the True Admin, We matched your facebook authId with our Records");
                             } else if (fbAuthDataObject.facebook.id === null || fbAuthDataObject.facebook.id === "") {
-                                console.log("Facebook AuthData Empty or Null");
+                                // console.log("Facebook AuthData Empty or Null");
                             } else {
-                                console.log("This is not an admin user");
+                                // console.log("This is not an admin user");
                             }
                         }
                     },
@@ -194,26 +194,26 @@ angular.module('tnApp')
                     }
                 });
             } else {
-                console.log("Hey! You're Not Phree Lyfe.", "... Treating You like the filth you are");
+                // console.log("Hey! You're Not Phree Lyfe.", "... Treating You like the filth you are");
             }
         };
 
         $rootScope.reloadWindow = function() {
             $timeout(function() {
-                console.log('Window Reloaded');
+                // console.log('Window Reloaded');
                 $window.location.reload();
             }, 200);
-            console.log('Invoking Timeout Instead');
+            // console.log('Invoking Timeout Instead');
         };
 
         //@ FACEBOOK DATA SAVE  @////////////////////////////////
         $rootScope.collectFacebookData = function(user) {
-            console.log("Capturing User Data from Facebook");
+            // console.log("Capturing User Data from Facebook");
 
             // Set Facebook User Data and Save It To Parse
             FB.api('/me', function(response) {
                 var object = response;
-                console.log('Your name is ' + object.name);
+                // console.log('Your name is ' + object.name);
                 user.set("username", object.name);
                 user.set("firstName", object.first_name);
                 user.set("lastName", object.last_name);
@@ -225,7 +225,7 @@ angular.module('tnApp')
                 "type": "normal"
             }, function(response) {
                 var object = response;
-                console.log("profile Pic Located at: " + object.data.url);
+                // console.log("profile Pic Located at: " + object.data.url);
                 user.set("profilePic", object.data.url);
                 user.save();
             });
@@ -237,13 +237,13 @@ angular.module('tnApp')
         // Create a $rootScope shortcut
         $rootScope.ParseUser = User;
         // Loading Parse.User.current() into rootScope
-        console.log(Parse.User.current(), "The Current Parse USER");
+        // console.log(Parse.User.current(), "The Current Parse USER");
         $rootScope.sessionUser = Parse.User.current() /* "587154828096319" */;
 
         if ($rootScope.sessionUser) {
             $rootScope.sessionUserName = Parse.User.current().get('username') /* || "Phree Lyfe" */; 
 
-            console.log("sessionUser Logged In has triggered attempted to Create Roles");
+            // console.log("sessionUser Logged In has triggered attempted to Create Roles");
             $rootScope.createRoles();
 
         }
@@ -252,20 +252,20 @@ angular.module('tnApp')
         if ($rootScope.sessionUser) {
             $rootScope.currentUsername = Parse.User.current().get('username') /* || "Phree Lyfe" */;
             $rootScope.sessionUserId = $rootScope.sessionUser.id;
-            console.log("Current Username Is: " + $rootScope.currentUsername + " and your ID is: " + $rootScope.sessionUserId);
+            // console.log("Current Username Is: " + $rootScope.currentUsername + " and your ID is: " + $rootScope.sessionUserId);
         }
 
         // Check For Administrator Account
         // and set it to Admin
         if ($rootScope.currentUsername == "Phree Lyfe") {
             $rootScope.techNinjaAdminName = $rootScope.currentUsername;
-            console.log("This will make " + $rootScope.techNinjaAdminName + " an Admin. Function coming soon!");
+            // console.log("This will make " + $rootScope.techNinjaAdminName + " an Admin. Function coming soon!");
 
             $rootScope.techNinjaAdmin = true;
-            console.log("techNinjaAdmin variable set to True");
+            // console.log("techNinjaAdmin variable set to True");
         } else {
             $rootScope.techNinjaAdmin = false;
-            console.log("techNinjaAdmin variable set to False");
+            // console.log("techNinjaAdmin variable set to False");
         }
 
         // Declare Database Model Variables

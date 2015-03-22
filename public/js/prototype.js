@@ -4,6 +4,7 @@ String.prototype.capitalize = function() {
         return p1 + p2.toUpperCase();
     });
 };
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 // JQUERY/ANGULAR
 $.prototype.tn = function(input){
 	console.log("Ran Custom Prototype");
