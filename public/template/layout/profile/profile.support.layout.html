@@ -21,14 +21,7 @@
             
             <div id="create-ticket">
                 <h4>Create a Ticket</h4>
-                <div id="message-box" class="col-sm-12">
-                    <div class="form-group">
-                        <input type="text" id="ticketSubject" name="ticketSubject" ng-model="ticketSubject" placeholder="ticketSubject" class="form-control col-sm-12" />
-                        <textarea name="ticketBody" id="ticketBody" ng-model="ticketBody" class="form-control" placeholder="Enter Your Message Here"></textarea>
-                    </div>
-                    <div class="clearfix sm-pad"></div>
-                    <button id="message-send-btn" class="btn btn-success col-sm-4" ng-click="createTicket(ticketSubject, ticketBody)">Send</button>
-                </div>
+                <div ui-view="support@createTicket"></div>
             </div>
         </div>
     </div>

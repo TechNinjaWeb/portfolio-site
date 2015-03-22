@@ -180,7 +180,7 @@ a.profile { text-decoration: none !important; font-size: 10px; }
 */
 #teaser-window {
 	color: white;
-	background: url("http://subtlepatterns.com/patterns/black_lozenge.png") fixed;
+	background: url(/assets/bg/black_lozenge.png) fixed;
 	width:100%;
 	height: 750px!important; 
 	background-position: center top;
@@ -255,7 +255,7 @@ a.profile { text-decoration: none !important; font-size: 10px; }
 */
 #consultation { 
 	color:white; 
-	background: url("http://subtlepatterns.com/patterns/food.png") repeat fixed; 
+	background: url(/assets/bg/food.png) repeat fixed; 
 	padding-top: 250px; 
 	padding-bottom: 250px;
 	box-shadow: -1px -1px 2px black;
@@ -471,4 +471,6 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 
 .profile-save-btn { padding-right:15px; padding-left:15px; }
 .profile-save-btn #save { margin-top: 30px; margin-bottom: 40px; }
+
+#profile-page #support-tickets { margin-top: 0; }
 /*#contact-page .page-container { padding-bottom: 30px; }

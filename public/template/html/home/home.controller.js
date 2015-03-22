@@ -72,7 +72,7 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
         },
 
         title: {
-            text: "Reports For Days Son!"
+            text: "Reports For Days!"
         },
 
         xAxis: {

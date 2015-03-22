@@ -8,5 +8,4 @@ var app = angular.module('tnApp'
 		, 'highcharts-ng'
 		, 'ngAnimate'
 		, 'ParseServices'
-	]);
-
+	])

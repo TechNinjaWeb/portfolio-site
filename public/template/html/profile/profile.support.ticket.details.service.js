@@ -28,12 +28,7 @@ angular.module('tnApp.services')
         },
         find: {
             method: 'GET',
-            isArray: false,
-            params: {
-                "where": {
-                    "userName": "User Name"
-                }
-            }
+            isArray: false
         },
         nab: {
             method: 'GET',

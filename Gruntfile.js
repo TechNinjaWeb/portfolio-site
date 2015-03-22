@@ -11,16 +11,18 @@ module.exports = function(grunt) {
                 src: [
                     'public/<%= basename %>/**/*.js'
                 ],
-                dest: 'public/js/main.min.js'
+                dest: 'dist/app.concat.js'
             },
         },
         uglify: {
             options: {
-                mangle: false
+                mangle: false,
+                sourceMap: true,
+                sourceMapName: 'dist/app.source.map'
             },
             js: {
                 files: {
-                    'public/js/main.min.js': ['public/js/main.min.js']
+                    'dist/app.min.js': ['public/**/*.js']
                 }
             }
         },

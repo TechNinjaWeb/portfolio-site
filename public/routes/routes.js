@@ -172,6 +172,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 'profile@ticketList': {
                     templateUrl: "./template/html/profile/profile.support.ticket.list.html",
                     controller: "SupportTicketDetailsCtrl"
+                },
+                'support@createTicket': {
+                    templateUrl: "./template/html/profile/profile.support.ticket.create.html",
+                    controller: "SupportTicketCtrl"
                 }
             }
         })
