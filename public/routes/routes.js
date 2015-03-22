@@ -157,8 +157,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
-
-
         .state('profile.support', {
             url: '/support',
             views: {
@@ -167,9 +165,13 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: "SupportTicketCtrl",
                     resolve: {
                         objectId: ['$stateParams', function($stateParams) {
-                          return $stateParams;
+                            return $stateParams;
                         }]
                     }
+                },
+                'profile@ticketList': {
+                    templateUrl: "./template/html/profile/profile.support.ticket.list.html",
+                    controller: "SupportTicketDetailsCtrl"
                 }
             }
         })
@@ -177,23 +179,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/ticket/:objectId',
             views: {
                 'support@tickets': {
-                    templateUrl: "./template/html/profile/profile.support.ticket.html",
+                    templateUrl: "./template/html/profile/profile.support.ticket.details.html",
                     controller: "SupportTicketDetailsCtrl"
                 }
             }
         })
-        // .state('profile.support.tickets.details', {
-        //     url: '/:objectId',
-        //     views: {
-        //         'support@tickets': {
-        //             templateUrl: "./template/layout/profile/profile.support.ticket.details.html",
-        //             controller: "SupportTicketDetailsCtrl"
-        //         }
-        //     }
-        // })
-
-
-
         .state('profile.todos', {
             url: '/todos',
             views: {
@@ -212,41 +202,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
-
-        .state('products', {
-              url: '/products',
-              views: {
-                  '@': {
-                      templateUrl: "./template/test/partial.products.html",
-                      controller: 'ProductsCtrl',
-                      resolve: {
-                          objectId: ['$stateParams', function($stateParams) {
-                              return $stateParams;
-                          }]
-                      },
-                  }
-              }
-          })
-          .state('products.details', {
-              url: '/details/:objectId',
-              views: {
-                  '@': {
-                      templateUrl: "./template/test/partial.products.details.html",
-                      controller: 'ItemDetailsCtrl'
-                  }
-              }
-          })
-
-
-          .state('home.laws', {
-              url: '/laws',
-              views: {
-                  'body@': {
-                      templateUrl: "./template/html/laws/laws.html",
-                      controller: ''
-                  }
-              }
-          });
+        .state('home.laws', {
+            url: '/laws',
+            views: {
+                'body@': {
+                    templateUrl: "./template/html/laws/laws.html",
+                    controller: ''
+                }
+            }
+        });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('#');

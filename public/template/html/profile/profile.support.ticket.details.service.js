@@ -12,10 +12,9 @@ angular.module('tnApp.services')
         return data;
     });
 
-    return $resource('https://api.parse.com/1/classes/SupportTickets/:id/:userName/:params:format', {
-        id: '@id',
-        userName: '@userName',
-        params: '@params'
+    return $resource('https://api.parse.com/1/classes/SupportTickets/:objectId/:userName:format', {
+        objectId: '@objectId',
+        userName: '@userName'
     }, {
         update: {
             method: 'PUT'
@@ -25,8 +24,7 @@ angular.module('tnApp.services')
             cache: true
         },
         post: {
-            method: 'POST',
-            cache: true
+            method: 'POST'
         },
         find: {
             method: 'GET',

@@ -21,9 +21,17 @@ angular.module('tnApp.controllers')
         //     }
         // });
 
+
+        // WORKDING FAKE DATA
+        // var params = {
+        //     "objectId": 'K9ZRrggJkc',
+        //     "ticketSubject": ticketSubject,
+        //     "ticketBody": ticketBody
+        // }
+
         var params = {
             "where": {
-                "userName": Parse.User.current().get('username')
+                "postedBy": Parse.User.current().get('username')
             }
         }
 
@@ -38,17 +46,41 @@ angular.module('tnApp.controllers')
 
         $scope.createTicket = function(subject, body) {
             console.log("Subject", subject, "Body", body);
-            query.post({
-                "ticketSubject": subject,
-                "ticketBody": body
-            }, function(res) {
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            var ticketSubject = subject,
+                ticketBody = [],
+                // The ticket itself
+                body = {
+                    createdAt: today,
+                    ticketBody: body,
+                    replyFrom: Parse.User.current().get('username')
+                }
+            ticketBody.push(body);
+
+
+            var params = {
+                "postedBy": Parse.User.current().get('username'),
+                "ticketSubject": ticketSubject,
+                "ticketBody": ticketBody,
+                "ticketStatus": "open"
+            }
+
+            JSON.stringify(params);
+            console.log("Sending This DATA: ", params)
+
+            query.post(params, function(res) {
                 console.log("Post Ticket ", res)
             });
         }
 
-        console.log("Ticket Service", Ticket);
-
-        console.log("Support Tickets", $scope.supportTickets)
+        $scope.updateTicket = function(subject, body) {
+            
+        }
 
     }]);
 // console.log('Finished loading LoginCtrl');

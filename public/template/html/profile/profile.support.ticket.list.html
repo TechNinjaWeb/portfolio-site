@@ -1,0 +1,7 @@
+<li ng-repeat="ticket in supportTickets" class="ticket list-unstyled">
+    <a id="{{ ticket.ticketId }}" ui-sref="profile.support.tickets({objectId:ticket.objectId})" id="{{ ticket.objectId }}">
+        <!-- <div id="objectId">OBJECT ID {{ ticket.objectId }}</div> -->
+        <div id="ticketSubject">SUBJECT {{ ticket.ticketSubject }}</div>
+        <span id="ticketStatus">STATUS {{ ticket.ticketStatus }}</span>
+    </a>
+</li>

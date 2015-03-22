@@ -12,27 +12,13 @@
         <br/>
         <ul id="support-tickets" class="col-sm-3">
             <h3>Ticket List</h3>
-            <li ng-repeat="ticket in supportTickets" class="ticket list-unstyled">
-                <a id="{{ ticket.ticketId }}" ui-sref="profile.support.tickets({supportTicket:supportTicket.objectId})">
-                    <div id="objectId">OBJECT ID {{ ticket.objectId }}</div>
-                    <div id="ticketSubject">SUBJECT {{ ticket.ticketSubject }}</div>
-                    <span id="ticketStatus">STATUS {{ ticket.ticketStatus }}</span>
-                </a>
-            </li>
+            <div ui-view="profile@ticketList"></div>
         </ul>
         <div ng-show="supportTickets" id="message-threads" class="col-sm-9">
             <h3>Ticket Thread</h3>
+            <!-- Support Ticket Template -->
             <div ui-view="support@tickets"></div>
-            <br/>
-            <div ng-repeat="tickets in ticketThread" class="row productLink">
-                <a ui-sref="profile.support.tickets({ userName:ticket })" id="{{ tickets.ticketId }}">
-                    <div class="col-sm-2">{{ $index + 1 }}</div>
-                    <div class="col-sm-2">{{ tickets.ticketSubject }}</div>
-                    <div class="col-sm-2">{{ tickets.ticketBody }}</div>
-                </a>
-            </div>
-            <br/>
-            <br/>
+            
             <div id="create-ticket">
                 <h4>Create a Ticket</h4>
                 <div id="message-box" class="col-sm-12">

@@ -1,31 +1,23 @@
 angular.module('tnApp.controllers')
     .controller('SupportTicketDetailsCtrl', ['TicketService', '$scope', '$stateParams', function(Tickets, $scope, $stateParams) {
-        $scope.getItem = $stateParams.objectId;
+        $scope.stateParamsObjectId = $stateParams.objectId;
         $scope.message = "Product Detail Controller";
         console.log($stateParams, "State Params")
-
-        console.log("State Params, Object ID", $scope.getItem);
 
         var query = Tickets;
 
         query.get({
-            id: $scope.getItem
+            objectId: $scope.stateParamsObjectId
         }, function(res) {
             window.console.log(res, "Response From Server");
 
             $scope.data = res;
-            // UPDATE $SCOPE.THING WITH 
-            // DATA FROM PARSE.COM TO MATCH
-            // THE TABLE NAMES
-            $scope.objectId = res.objectId;
-            $scope.allTickets = res.supportTickets;
-            
         });
 
         var newQuery = Tickets;
 
         // newQuery.get({
-        //     id: $scope.getItem
+        //     id: $scope.stateParamsObjectId
         // }, function(res) {
         //     window.console.log(res, "Response From Server");
 
