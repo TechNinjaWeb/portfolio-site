@@ -151,8 +151,8 @@ button, a, input { border-radius: 0!important; }
 .xxl-pad { padding-top: 400px; padding-bottom: 400px; }
 .full { width: 100%; position:fixed; z-index:5; padding-bottom:20px; background-color:white;}
 .container-full { margin-right: auto; margin-left: auto; }
-/*.parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); } /* PARALLAX EFFECT */*/
-.logos { background-repeat: no-repeat;}
+/*.parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); } /* PARALLAX EFFECT */
+.logos { background-repeat: no-repeat; }
 .flexslider { overflow: hidden; margin-bottom: 14px; }
 .page-container { overflow-x: hidden; }
 .facebook-logo {  }
@@ -305,7 +305,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
-  filter: blur(10px);
+  /*filter: blur(10px);*/
 }
 
 #about-page #video-container:after {
@@ -316,7 +316,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
-  filter: blur(10px);
+  /*filter: blur(10px);*/
 }
 .logo-html5, .logo-css3, .logo-js, .logo-sql, .logo-ajax, .logo-jquery, .logo-json,
 .logo-php, .logo-joomla, .logo-wordpress, .logo-magento, .logo-vtiger {
@@ -473,4 +473,3 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 .profile-save-btn #save { margin-top: 30px; margin-bottom: 40px; }
 
 #profile-page #support-tickets { margin-top: 0; }
-/*#contact-page .page-container { padding-bottom: 30px; }
