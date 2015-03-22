@@ -24,11 +24,17 @@ angular.module('tnApp.services')
             method: 'GET',
             cache: true
         },
+        post: {
+            method: 'POST',
+            cache: true
+        },
         find: {
             method: 'GET',
             isArray: false,
             params: {
-                objectId: 'User Name'
+                "where": {
+                    "userName": "User Name"
+                }
             }
         },
         nab: {

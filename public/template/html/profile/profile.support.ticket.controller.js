@@ -21,24 +21,30 @@ angular.module('tnApp.controllers')
         //     }
         // });
 
+        var params = {
+            "where": {
+                "userName": Parse.User.current().get('username')
+            }
+        }
+
         var query = Messages;
-        query.nab({
-            id: "uFodfPG42N"
-        }, function(res) {
+        query.get(params, function(res) {
             console.log("Non Paginated Res = ", res)
-                $scope.supportTickets = res.results;
-                window.console.log($scope.supportTickets, "Support Ticket Data Object");
+            $scope.supportTickets = res.results;
+            $scope.ticketThread = res.results[0].supportTickets;
+            window.console.log($scope.supportTickets, "Support Ticket Data Object");
+            window.console.log("Ticket Thread: ", $scope.ticketThread);
         });
 
-
-
-        // var TicketData = new Ticket.get()
-        //     .then(function(data) {
-        //         console.log("Data", data);
-        //         data.forEach(function(val) {
-        //             $scope.supportTickets = val.attributes.supportTicket;
-        //         })
-        //     });
+        $scope.createTicket = function(subject, body) {
+            console.log("Subject", subject, "Body", body);
+            query.post({
+                "ticketSubject": subject,
+                "ticketBody": body
+            }, function(res) {
+                console.log("Post Ticket ", res)
+            });
+        }
 
         console.log("Ticket Service", Ticket);
 

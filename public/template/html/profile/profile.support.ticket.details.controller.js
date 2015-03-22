@@ -43,9 +43,7 @@ angular.module('tnApp.controllers')
             var pre = encodeURIComponent(JSON.stringify("where="));
 
             var params = {
-                username: {
-                    '$exists': Parse.User.current().get('userName')
-                }
+                "userName": "User Name"      
             };
 
             console.log("Params Object", params);

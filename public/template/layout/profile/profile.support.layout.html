@@ -14,7 +14,6 @@
             <h3>Ticket List</h3>
             <li ng-repeat="ticket in supportTickets" class="ticket list-unstyled">
                 <a id="{{ ticket.ticketId }}" ui-sref="profile.support.tickets({supportTicket:supportTicket.objectId})">
-                    {{ ticket }}
                     <div id="objectId">OBJECT ID {{ ticket.objectId }}</div>
                     <div id="ticketSubject">SUBJECT {{ ticket.ticketSubject }}</div>
                     <span id="ticketStatus">STATUS {{ ticket.ticketStatus }}</span>
@@ -25,6 +24,13 @@
             <h3>Ticket Thread</h3>
             <div ui-view="support@tickets"></div>
             <br/>
+            <div ng-repeat="tickets in ticketThread" class="row productLink">
+                <a ui-sref="profile.support.tickets({ userName:ticket })" id="{{ tickets.ticketId }}">
+                    <div class="col-sm-2">{{ $index + 1 }}</div>
+                    <div class="col-sm-2">{{ tickets.ticketSubject }}</div>
+                    <div class="col-sm-2">{{ tickets.ticketBody }}</div>
+                </a>
+            </div>
             <br/>
             <br/>
             <div id="create-ticket">
@@ -32,19 +38,11 @@
                 <div id="message-box" class="col-sm-12">
                     <div class="form-group">
                         <input type="text" id="ticketSubject" name="ticketSubject" ng-model="ticketSubject" placeholder="ticketSubject" class="form-control col-sm-12" />
-                        <textarea name="message" id="message" class="form-control" placeholder="Enter Your Message Here"></textarea>
+                        <textarea name="ticketBody" id="ticketBody" ng-model="ticketBody" class="form-control" placeholder="Enter Your Message Here"></textarea>
                     </div>
                     <div class="clearfix sm-pad"></div>
-                    <button id="message-send-btn" class="btn btn-success col-sm-4">Send</button>
+                    <button id="message-send-btn" class="btn btn-success col-sm-4" ng-click="createTicket(ticketSubject, ticketBody)">Send</button>
                 </div>
-            </div>
-            <div ng-repeat="tickets in data.supportTicket" class="row productLink">
-                <a ui-sref="profile.support.tickets({ objectId:tickets.objectId })" id="{{ tickets.ticketId }}">
-                    {{ tickets }}
-                    <div class="col-sm-2">{{ $index + 1 }}</div>
-                    <div class="col-sm-2">{{ tickets.supportTicket }}</div>
-                    <div class="col-sm-2">{{ tickets.supportTicket }}</div>
-                </a>
             </div>
         </div>
     </div>

@@ -11,15 +11,27 @@ var PORT = process.env.PORT || 3000,
 app.set('views', __dirname + '/public/template');
 app.engine('html', require('ejs').renderFile);
 
-app.set('view engine', 'html');
+app.use(compression({
+    filter: compressionFilter,
+    level: -1
+}));
 
+var compressionFilter = function(req, res) {
+    if (req.headers['x-no-compression']) {
+        // don't compress responses with this request header
+        return false
+    }
+
+    // fallback to standard filter function
+    return compression.filter(req, res)
+}
+
+app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'public/template'));
 
 app.use(express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use('/scripts', express.static(__dirname + '/bower_components'));
-
-app.use(compression());
 
 app.get('/*', function(req, res, next) {
     res.render('index.html', {
@@ -39,7 +51,7 @@ io.on('connection', function(socket) {
 
     user = {},
         user.username = [];
-        user.handshake = socket.handshake,
+    user.handshake = socket.handshake,
         user.address = socket.handshake.address,
         user.host = socket.handshake.headers.host,
         user.origin = socket.handshake.headers.origin,
