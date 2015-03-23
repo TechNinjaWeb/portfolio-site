@@ -87,7 +87,6 @@ button, a, input { border-radius: 0!important; }
 	*/
 	
 	/* FOOTER SECTION */
-	#footer-links { margin-left: 35%; }
 	i[class*='-circled'], i.icon-youtube-squared { font-size: 40px; }
 
 	/* 
@@ -121,7 +120,6 @@ button, a, input { border-radius: 0!important; }
 	*/
 	#portfolio-left { padding-top: 2.5%; }
 	/* FOOTER SECTION */
-	#footer-links { padding-left: 10%; }
 	i[class*='-circled'], i.icon-youtube-squared { font-size: 60px; }
 	
 	/* 
@@ -213,8 +211,11 @@ top: 0; z-index: -10; }
 /*  
   UNIQUE POINT SECTION
 */
-#unique-point h3 { color: #FFF; text-shadow: 1px 1px 1px black; }
-#uinique-point-left { padding-bottom: 100px; }
+/*#unique-point h3 { color: #FFF; text-shadow: 1px 1px 1px black; }*/
+#uinique-point-left {  }
+#unique-point-left-heading { color: #C5FFFE; text-shadow: 1px 1px 1px black; font-size: 40px; }
+#unique-point-right-heading { color: #333; text-shadow: 1px 1px 1px #C5FFFE; }
+
 
 /* 	
 	REPORT POINT SECTION 
@@ -279,6 +280,7 @@ h3#consultation-heading { text-shadow: 1px 1px 1px black; }
 /* 	
 	FOOTER SECTION 
 */
+#footer-links > ul { -moz-column-count: 2; -webkit-column-count: 2; column-count: 2; }
 #footer { background-color: #333; color: white; padding-bottom: 40px; border-top: 10px groove #eee; }
 #footer-contact-us-box { color: black; }
 #footer-contact-us { padding: 20px; }

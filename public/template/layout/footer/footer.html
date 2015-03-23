@@ -2,25 +2,13 @@
     <div class="container-fluid test">
         <div class="row">
             <div class="footer-links-container col-sm-4 sm-pad">
-                <!-- <div class="col-sm-6">
-                    <h4>Laws Of Conduct</h4>
-                    <hr />
-                    <small>A Tech Ninja's Word Is His Honour. Our Operatives Follow The Strictest Guidelines To Ensure The Success Of Our Missions.</small>
-                    <div class="clearfix">
-                        <br />
-                    </div>
-                    <a href="./?view=article&id=7" class="btn btn-danger btn-sm">Read The Ninja Laws</a>
-                    <div class="clearfix"></div>
-                    <br />
-                    <br />
-                </div> -->
                 <div class="col-sm-12">
                     <h4 id="footer-links-heading">
-                                Navigation Links
-                            </h4>
+                        Navigation Links
+                    </h4>
                     <hr class="white">
                     <div id="footer-links" class="col-sm-6">
-                        <ul data-ng-controller="NavCtrl" class="list-unstyled row">
+                        <ul data-ng-controller="NavCtrl" class="list-unstyled footer-links">
                             <li ng-repeat="link in urls">
                                 <a class="col-xs-12" ng-href="{{ link.url }}">{{ link.name }}</a>
                             </li>

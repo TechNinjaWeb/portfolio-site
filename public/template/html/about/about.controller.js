@@ -17,7 +17,7 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
     // Ninja Law Tooltip
     $('a[data-toggle="tooltip"]').tooltip({
         animated: 'fade',
-        placement: 'bottom',
+        placement: 'right',
     });
 
     $scope.modalPopup = function(item) {
