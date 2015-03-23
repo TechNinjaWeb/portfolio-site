@@ -75,6 +75,7 @@ button, a, input { border-radius: 0!important; }
 */
 .v-center{ margin-top:5%; }
 .jumbotron { padding: 0px!important; }
+.test-shadow, .test-shadow:after  { box-shadow: -1px -1px 2px black; }
 
 /*
 	RESPONSIVE MEDIA QUERIES
@@ -220,7 +221,7 @@ top: 0; z-index: -10; }
   UNIQUE POINT SECTION
 */
 /*#unique-point h3 { color: #FFF; text-shadow: 1px 1px 1px black; }*/
-#uinique-point-left {  }
+#unique-point { min-height: 300px; }
 #unique-point-left-heading { color: #C5FFFE; text-shadow: 1px 1px 1px black; font-size: 40px; }
 #unique-point-right-heading { color: #333; text-shadow: 1px 1px 1px #C5FFFE; }
 
@@ -238,7 +239,8 @@ top: 0; z-index: -10; }
 /* 	
 	GROWTH POINT SECTION 
 */
-#growth-point { background-color: #85daef; color: black; padding-top: 100px; padding-bottom: 100px; text-shadow: 1px 1px 1px #fff; box-shadow: 2px 2px 2px lightblue; }
+#growth-point { background-color: #85daef; color: black; padding-top: 100px; padding-bottom: 100px; text-shadow: 1px 1px 1px #fff; box-shadow: 2px 2px 2px lightblue; 
+box-shadow: 1px 1px 1px black; }
 #growth-point h3 { color: #433B67; }
 #growth-point-left, #growth-point-right { padding: 2% 10% 0 10%; }
 #growth-point-image { max-height: 500px; }
@@ -252,7 +254,7 @@ top: 0; z-index: -10; }
 /*#portfolio h2{ color: #F8982F; }*/
 #portfolio-heading { color: #333; text-shadow: 1px 1px 1px #bbb; }
 #portfolio-body { padding-left: 50px; padding-right: 50px; }
-#portfolio-left { /*background:rgba(108, 181, 232, 1);*/ }
+#portfolio-left { padding-bottom: 50px; }
 #portfolio-right { padding-left: 40px; padding-right: 40px; }
 #portfolio-message { line-height: 1.3em; }
 /* 	
