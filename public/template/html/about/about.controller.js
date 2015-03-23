@@ -54,4 +54,36 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
 
         // console.log(modalBody)
     });
+
+    // LAZY LOAD TWITTER
+    var $window = $(window),
+        didScroll = false,
+        fired = 0,
+        skillsTop = $('#slogan').offset().top - 1000; //the point at which we will create the chart
+
+    $window.on('scroll', function() {
+        //detected a scroll event, you want to minimize the code here because this event can be thrown A LOT!
+        didScroll = true;
+    });
+
+    //check every 250ms if user has scrolled to the skills section
+    var watch = setInterval(function() {
+        if (fired <= 0 && didScroll && $('#twitter-feed').is(":visible") == true) {
+            didScroll = false;
+            if ($window.scrollTop() >= skillsTop) {
+                createChart();
+                fired++;
+                clearInterval(watch);
+            }
+        }
+    }, 250);
+
+    function createChart() {
+        // $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
+        console.log("Creating Chart")
+        setTimeout(function() {
+            twttr.widgets.load()
+        }, 300)
+
+    };
 });
