@@ -21,20 +21,4 @@ angular.module('tnApp.controllers', ['tnApp.services']).controller('AppCtrl', fu
     $scope.alert = function() {
         alert("You've Hit the AppCtrl Alert Button");
     };
-
-    // SOCKET IO SNIPPET
-    // $scope.$watch('question', function(newValue, oldValue) {
-    //     if (newValue != oldValue) {
-    //         io.emit({
-    //             item: 'question',
-    //             newValue: newValue,
-    //             oldValue: oldValue
-    //         });
-    //     }
-    // });
-
-    // io.watch('answer', function(data) {
-    //     $scope.answer = data.value;
-    //     $scope.$apply();
-    // });
 });

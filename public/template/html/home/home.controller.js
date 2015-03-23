@@ -5,7 +5,8 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
     $scope.test = "This is the main controller";
 
     /*
-        Basic workflow example
+        MANDITORY TO ENABLE WOW EFFECTS 
+        SITE WIDE - PLEASE LEAVE
     */
 
     var wow = new WOW({
@@ -18,7 +19,10 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
 
     wow.init();
 
-    // HOMEPAGE CONTENT
+    // HOME PAGE PARALLAX
+    $('#teaser-window').parallax("50%", .4);
+    $('#consultation').parallax("50%", .4);
+
 
     // TRUNCATE TESTIMONY QUOTES
     var testimonial = $('.testimony-slide'),
@@ -45,6 +49,7 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
         move: 0,
         useCSS: true
     });
+
     $('#testimony-slideshow').flexslider({
         animation: "slide",
         animationSpeed: 1000,
@@ -131,7 +136,7 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
     var $window = $(window),
         didScroll = false,
         fired = 0,
-        skillsTop = $('#toolbelt').offset().top - 50; //the point at which we will create the chart
+        skillsTop = $('#reports-point-right').offset().top - 600; //the point at which we will create the chart
 
     $window.on('scroll', function() {
         //detected a scroll event, you want to minimize the code here because this event can be thrown A LOT!
@@ -152,11 +157,10 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
 
     function createChart() {
         // $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
-        console.log("Fired!")
-            // alert("Fired");
+        console.log("Creating Chart")
         setTimeout(function() {
             $('#reports-chart').highcharts(barOptions);
-        }, 500)
+        }, 300)
 
     };
 
