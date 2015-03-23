@@ -1,0 +1,1 @@
+angular.module('tnApp.services',[]).service("Socket",['$state','$rootScope','$window','$q',function($state,$rootScope,$window,$q){return io.connect('https://tech-ninja.herokuapp.com');}]);
