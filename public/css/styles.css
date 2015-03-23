@@ -339,7 +339,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 }
 .logo-html5, .logo-css3, .logo-js, .logo-sql, .logo-ajax, .logo-jquery, .logo-json,
 .logo-php, .logo-joomla, .logo-wordpress, .logo-magento, .logo-vtiger {
-  background-image: url(/assets/Banners/Coding-960x100.png);
+  background-image: url(/assets/banners/Coding-960x100.png);
   background-repeat: no-repeat;
 }
 #short-portfolio { margin-bottom: 40px; }
