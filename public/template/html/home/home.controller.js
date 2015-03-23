@@ -20,8 +20,8 @@ angular.module('tnApp.controllers').controller('HomeCtrl', function($scope) {
     wow.init();
 
     // HOME PAGE PARALLAX
-    $('#teaser-window').parallax("50%", .4);
-    $('#consultation').parallax("50%", .4);
+    $('#teaser-window').parallax("30%", .4, {});
+    $('#consultation').parallax("50%", .4, {});
 
 
     // TRUNCATE TESTIMONY QUOTES

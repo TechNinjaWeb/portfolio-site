@@ -5,6 +5,10 @@ angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope
     $scope.test = "This is the main controller";
 
     $scope.urls = [{
+        sref: 'home',
+        url: '/home',
+        name: 'Home'
+    }, {
         sref: 'home.about',
         url: '/about',
         name: 'About'

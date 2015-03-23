@@ -167,6 +167,7 @@ button, a, input { border-radius: 0!important; }
 #navigation #menu-links, .navbar-brand { margin-top: 6px; }
 #navigation #menu-links a { color: #EEE; }
 #navigation #menu-links a:hover { color: #F8982F; }
+#navigation #home-item { display: none; }
 #copyright .navbar { z-index: 5; }
 #navigation .navbar { margin-bottom:0; min-height: 57px; border-radius:0; }
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
@@ -190,24 +191,23 @@ top: 0; z-index: -10; }
 	height: 750px; 
 	top: 0;
   left: 0;
-  text-shadow: 1px 1px 1px black;
 	/*-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;*/
 }
 
-#teaser-heading { font-size: 50px; }
-#teaser-message { font-size: 25px; margin-bottom: 33.5px; }
+#teaser-heading { color: #C5FFFE; font-size: 50px; text-shadow: 1px 1px 1px black; }
+#teaser-message { color: #555; font-size: 30px; margin-bottom: 33.5px; text-shadow: 1px 1px 1px #60FDFD; }
 
 /* 	
 	TOOLBELT SECTION
 */
 #toolbelt { overflow-x: hidden; background-color: #333; box-shadow: 2px 2px 1px #555;}
 #toolbelt ul { margin-top: 0; margin-bottom: 0; }
-.toolbelt a { color: #C5FFFE; }
+.toolbelt a { color: #C5FFFE; text-shadow: 1px 1px #111; }
 /*.toolbelt:hover { background-color: blue; }*/
-.toolbelt a:hover { color: #F8982F; /* #3A89C3 */ }
+.toolbelt a:hover { color: #F8982F; text-shadow: 1px 1px #333; }
 .toolbelt-icon { font-size: 30px; }
 
 /*  
