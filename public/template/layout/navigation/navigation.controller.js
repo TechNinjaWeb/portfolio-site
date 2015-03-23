@@ -38,6 +38,10 @@ angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope
         })
     }
 
+    $('#menu-links').on('click', function(e){
+        $('.navbar-toggle').click(); 
+    })
+
     $scope.logOut = function() {
         console.log("Session User", $rootScope.sessionUser);
         Socket.disconnect();
