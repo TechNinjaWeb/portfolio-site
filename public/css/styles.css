@@ -222,7 +222,7 @@ top: 0; z-index: -10; }
 */
 /*#unique-point h3 { color: #FFF; text-shadow: 1px 1px 1px black; }*/
 #unique-point { min-height: 300px; }
-#unique-point-left-heading { color: #C5FFFE; text-shadow: 1px 1px 1px black; font-size: 40px; }
+#unique-point-left-heading { color: #C5FFFE; text-shadow: 1px 1px 1px black; font-size: 40px; margin-top: 7%; }
 #unique-point-right-heading { color: #333; text-shadow: 1px 1px 1px #C5FFFE; }
 
 
@@ -290,8 +290,6 @@ h2#consultation-heading { font-size: 80px; text-shadow: 1px 1px 1px black; paddi
 /* 	
 	FOOTER SECTION 
 */
-/*#footer-links > ul, #footer-links > li { -moz-columns: 50px 2; -webkit-columns: 50px 2; columns: 50px 2; }*/
-
 #footer-links > ul > li{ width: 50%; line-height:1em; float:left; display:inline; }
 #footer { background-color: #333; color: white; padding-bottom: 40px; border-top: 10px groove #eee; }
 #footer-contact-us-box { color: black; }

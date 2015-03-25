@@ -38,8 +38,11 @@ angular.module('tnApp.controllers').controller('NavCtrl', ['$scope', '$rootScope
         })
     }
 
+    // CLOSE COLLAPSED MENU UPON A REF CLICK
     $('#menu-links').on('click', function(e){
-        $('.navbar-toggle').click(); 
+        if (window.innerWidth < 768) {
+            $('.navbar-toggle').click(); 
+        }
     })
 
     $scope.logOut = function() {
