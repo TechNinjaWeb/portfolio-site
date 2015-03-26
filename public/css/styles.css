@@ -177,8 +177,8 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 #navigation #menu-links a { color: #EEE; }
 #navigation #menu-links a:hover { color: #F8982F; }
 #navigation #home-item { display: none; }
-#copyright .navbar { box-shadow: -1px -1px 2px #111; z-index: 5; }
-#navigation .navbar { margin-bottom:0; min-height: 57px; border-radius:0; box-shadow: 1px 1px 7px #333; }
+#copyright .navbar { z-index: 5; }
+#navigation .navbar { margin-bottom:0; min-height: 57px; border-radius:0; }
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
 .collapsed {  }
 #signin { margin-top: 3px; margin-bottom: 0; }
@@ -258,7 +258,7 @@ box-shadow: 1px 1px 1px black; }
 #portfolio-body { padding-left: 50px; padding-right: 50px; }
 #portfolio-left { padding-bottom: 50px; }
 #portfolio-right { padding-left: 40px; padding-right: 40px; }
-#portfolio-message { padding-bottom: 30px; line-height: 1.3em; }
+#portfolio-message { line-height: 1.3em; }
 /* 	
 	TESTIMONY SECTION 
 */
