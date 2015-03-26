@@ -18,7 +18,9 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 #profile-page { padding-top:65px; }
 #portfolio-page { padding-top: 28px; }
 #home-page { margin-top:-56px; }
-/* ANGULAR ANIMATIONS*/
+/* WOW ANIMATION FIX */
+.page-container { overflow-x: hidden; }
+/* ANGULAR ANIMATIONS */
 [data-ui-view="body"].ng-enter, [data-ui-view="body"].ng-leave {
   /*position: absolute;*/
  
