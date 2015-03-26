@@ -388,7 +388,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 */
 /*#portfolio-page .page-container { padding-bottom: 30px; }*/
 #portfolio-page ::-webkit-scrollbar { -webkit-appearance: none; display: none; }
-#portfolio-right h2 { padding-top: 10px; }
+#portfolio-right h2 { padding-top: 10px; padding-bottom: 25px; }
 #portfolio-page .container-fluid {
     position: relative;
     margin-left: -15px;
