@@ -71,16 +71,16 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
         if (fired <= 0 && didScroll && $('#twitter-feed').is(":visible") == true) {
             didScroll = false;
             if ($window.scrollTop() >= skillsTop) {
-                createChart();
+                loadTwitter();
                 fired++;
                 clearInterval(watch);
             }
         }
-    }, 250);
+    }, 1000);
 
-    function createChart() {
-        // $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
-        console.log("Creating Chart")
+    function loadTwitter() {
+        $window.off('scroll'); //remove listener that will create chart, this ensures the chart will be created only once
+        // console.log("Loading Twitter Widget")
         setTimeout(function() {
             twttr.widgets.load()
         }, 300)

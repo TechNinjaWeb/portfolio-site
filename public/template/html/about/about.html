@@ -1,7 +1,10 @@
 <div id="about-page" class="content page">
     <div class="page-container wow fadeIn">
         <div id="video-container" class="">
-            <video id="video-ad" class="container-full" src="http://tech-ninja.ca/media/mp4/tn-about.mp4" allowfullscreen autoplay></video>
+            <video id="video-ad" class="container-full" allowfullscreen autoplay muted controls="true" loop>
+                <source src="http://tech-ninja.ca/media/mp4/tn-about.mp4" type="video/mp4">
+            </video>
+            <!-- <iframe id="video-ad" class="container-full" src="//www.youtube.com/embed/4BunoRNTJIg?autoplay=0&amp;showinfo=0&amp;controls=0" allowfullscreen></iframe> -->
         </div>
         <br>
         <div id="feature" class="text-center md-pad">
@@ -204,11 +207,11 @@
                 </div>
             </p>
         </div>
-        <div id="team" class="text-center lg-pad">
+        <!-- <div id="team" class="text-center lg-pad">
             <h2 id="team-heading" class="wow fadeIn">MEET THE HEAD NINJA</h2>
             <br>
             <p id="team-body" class="container-small wow fadeIn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elementum augue, ultricies pharetra nisi. Curabitur ultricies leo metus, ac fermentum nibh accumsan a. Nunc.</p>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>
@@ -219,7 +222,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="about-modalLabel">HEADER TITLE</h4>
+                <h4 class="modal-title" id="about-modalLabel"></h4>
             </div>
             <div class="modal-body">
             </div>
