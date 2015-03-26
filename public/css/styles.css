@@ -249,6 +249,7 @@ box-shadow: 1px 1px 1px black; }
 #growth-point h3 { color: #433B67; }
 #growth-point-left, #growth-point-right { padding: 2% 10% 0 10%; }
 #growth-point-image { max-height: 500px; }
+#growth-point-image { margin-top: 80px; }
 #growth-point-heading { margin-top: 40%; }
 
 /* 	
