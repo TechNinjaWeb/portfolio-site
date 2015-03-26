@@ -210,7 +210,8 @@ top: 0; z-index: -10; }
 	background-size: cover;*/
 }
 
-#teaser-heading { color: #C5FFFE; font-size: 50px; text-shadow: 1px 1px 1px black; }
+#teaser-heading { color: #C5FFFE; text-shadow: 1px 1px 1px black; }
+h1#teaser-heading { font-size: 50px; }
 #teaser-message { color: #555; font-size: 30px; margin-bottom: 33.5px; text-shadow: 1px 1px 1px #60FDFD; }
 
 /* 	
