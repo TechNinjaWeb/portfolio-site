@@ -8,6 +8,8 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'open_sansbold'; }
 p { font-family: 'proxima-nova'; font-size: 18px; }
 button, a, input { border-radius: 0!important; }
+button.btn-primary { background-color: #555; color: white; }
+button.btn-primary:hover, button.btn-primary:focus { background-color: black; color: #EAF6FE; }
 
 /* NAVIGATION FIX */
 #about-page, #contact-page { padding-top:42px; } 
@@ -335,6 +337,25 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   -ms-filter: blur(10px);
   /*filter: blur(10px);*/
 }
+
+#about-page #controls button:focus { outline: none; }
+#about-page #controls button:hover { border: 1px solid #FFAE56; color: #FFAE56; }
+#about-page #controls button:active, #about-page #controls i { color: #F8982F; }
+#about-page #controls:after {
+  display: block;
+  position: absolute;
+  content: '';
+  background-color: rgba( 3, 3, 3, 0.4);
+  top: 380px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
+}
+#about-page .play-controls, #about-page .volume-controls { position: absolute; z-index: 1; }
+#about-page .play-controls { top: 390px; right: 15px; }
+#about-page .volume-controls { top: 390px; left: 15px; }
+#about-page #controls button { background-color: black; color: #3A89C3; }
 .logo-html5, .logo-css3, .logo-js, .logo-sql, .logo-ajax, .logo-jquery, .logo-json,
 .logo-php, .logo-joomla, .logo-wordpress, .logo-magento, .logo-vtiger {
   background-image: url(/assets/banners/Coding-960x100.png);

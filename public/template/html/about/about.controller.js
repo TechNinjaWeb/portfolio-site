@@ -14,6 +14,35 @@ angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $lo
         }, 500)
     };
 
+    $('.video-container').click(function () {
+        // console.log("Clicked video container")
+        vidPlaying = !vidPlaying;
+        if (vidPlaying) $("video").get(0).play();
+        else $("video").get(0).pause();
+    });
+
+    $('#video-ad').get(0).volume = 0.05;
+    var volume = $("#video-ad"),
+        volMuted = false,
+        vidPlaying = true,
+        increment = 0.2;
+    $('#playButton').click(function () {
+        // console.log("Clicked playButton")
+        document.getElementById('video-ad').play()
+    });
+
+    $('#pauseButton').click(function () {
+        // console.log("Clicked pauseButton")
+        document.getElementById('video-ad').pause()
+    });
+
+    $('#volume-off').click(function () {
+        // console.log("Clicked volume-mute")
+        volMuted = !volMuted;
+        if (volMuted)  $("video").prop('muted', true);
+        else $("video").prop('muted', false);
+    });
+
     // Ninja Law Tooltip
     $('a[data-toggle="tooltip"]').tooltip({
         animated: 'fade',
