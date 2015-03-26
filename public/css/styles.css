@@ -192,6 +192,7 @@ a.profile { text-decoration: none !important; font-size: 10px; }
 #home-page:before { position: fixed; content: ''; background: url(/assets/bg/bg-japan-opac.jpg) fixed; 
 opacity: .6; background-position: -200px 1150px; display:block; width: 100%; height: 100%; 
 top: 0; z-index: -10; }
+#home-page h1, #home-page h2, #home-page h3 { font-size: 30px; }
 /* 	
 	TESER SECTION 
 */
@@ -238,6 +239,7 @@ top: 0; z-index: -10; }
 #reports-point h3 { color: #3A89C3; text-shadow: 1px 1px 1px #ddd; }
 #reports-point p { text-shadow: 1px 1px 1px #ccc; }
 #reports-point-right { padding: 0% 5% 0 5%; }
+#reports-point-left { margin-top: 20px; }
 #reports-chart { padding-bottom: 100px; }
 #reports-point-heading {  }
 
@@ -395,7 +397,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 	PORTFOLIO PAGE 
 */
 #portfolio-page ::-webkit-scrollbar { -webkit-appearance: none; display: none; }
-#portfolio-right h2 { padding-top: 10px; }
+#portfolio-right h2 { padding-top: 25px; padding-bottom: 15px; }
 #portfolio-page .container-fluid {
     position: relative;
     margin-left: -15px;
