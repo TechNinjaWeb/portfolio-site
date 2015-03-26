@@ -91,7 +91,7 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 	/* 
 		HOME PAGE 
 	*/
-  #teaser-window .center-teaser { margin-top: 50%; }
+  #teaser-window .center-teaser { margin-top: 34%; }
 	
 	/* FOOTER SECTION */
 	i[class*='-circled'], i.icon-youtube-squared { font-size: 40px; }
@@ -114,7 +114,7 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 	/* 
     HOME PAGE 
   */
-  #teaser-window .center-teaser { margin-top: 30%; }
+  #teaser-window .center-teaser { margin-top: 25%; }
 
   #portfolio-left { padding-top: 3%; }
 	/* 
@@ -131,7 +131,7 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 	/* 
 		HOME PAGE 
 	*/
-  #teaser-window .center-teaser { margin-top: 20%; }
+  #teaser-window .center-teaser { margin-top: 16%; }
 	#portfolio-left { padding-top: 2.5%; }
 	/* FOOTER SECTION */
 	i[class*='-circled'], i.icon-youtube-squared { font-size: 60px; }
