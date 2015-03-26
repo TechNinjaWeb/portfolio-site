@@ -1,64 +1,62 @@
-<div id="footer">
+<div id="footer" class="col-sm-12">
     <div class="container-fluid test">
-        <div class="row">
-            <div class="footer-links-container col-sm-4 sm-pad wow fadeIn">
-                <div class="col-sm-12">
-                    <h4 id="footer-links-heading">
+        <div class="footer-links-container col-sm-4 sm-pad wow fadeIn">
+            <div class="col-sm-12">
+                <h4 id="footer-links-heading">
                         Navigation Links
                     </h4>
-                    <hr class="white">
-                    <div id="footer-links" class="col-sm-6">
-                        <ul data-ng-controller="NavCtrl" class="list-unstyled footer-links">
-                            <li ng-repeat="link in urls">
-                                <a class="col-xs-12" ng-href="{{ link.url }}">{{ link.name }}</a>
-                            </li>
-                            <div class="clearfix"></div>
-                        </ul>
-                    </div>
+                <hr class="white">
+                <div id="footer-links" class="col-sm-6">
+                    <ul data-ng-controller="NavCtrl" class="list-unstyled footer-links">
+                        <li ng-repeat="link in urls">
+                            <a class="col-xs-12" ng-href="{{ link.url }}">{{ link.name }}</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
                 </div>
             </div>
-            <div class="col-sm-4 text-left sm-pad wow fadeIn">
-                <h4 id="footer-social-media-heading">
+        </div>
+        <div class="col-sm-4 text-left sm-pad wow fadeIn">
+            <h4 id="footer-social-media-heading">
                     Connect With Us
                 </h4>
-                <hr class="white">
-                <div id="footer-social-media-icons" class="list-unstyled list-inline text-center row">
-                    <div class="col-xs-3"><a href="https://facebook.com/4UmNinja" onclick="window.open(this.href,'_blank');return false;"><i class="icon-facebook-circled"></i></a>
-                    </div>
-                    <div class="col-xs-3"><a href="https://twitter.com/phreelyfe" onclick="window.open(this.href,'_blank');return false;"><i class="icon-twitter-circled"></i></a>
-                    </div>
-                    <div class="col-xs-3"><a href="//www.youtube.com/user/PhreeLyfe/videos" onclick="window.open(this.href,'_blank');return false;"><i class="icon-youtube-squared"></i></a>
-                    </div>
-                    <div class="col-xs-3"><a href="mailto:info@tech-ninja.ca" onclick="window.open(this.href,'_blank');return false;"><i class="icon-mail-circled"></i></a>
-                    </div>
+            <hr class="white">
+            <div id="footer-social-media-icons" class="list-unstyled list-inline text-center row">
+                <div class="col-xs-3"><a href="https://facebook.com/4UmNinja" onclick="window.open(this.href,'_blank');return false;"><i class="icon-facebook-circled"></i></a>
+                </div>
+                <div class="col-xs-3"><a href="https://twitter.com/phreelyfe" onclick="window.open(this.href,'_blank');return false;"><i class="icon-twitter-circled"></i></a>
+                </div>
+                <div class="col-xs-3"><a href="//www.youtube.com/user/PhreeLyfe/videos" onclick="window.open(this.href,'_blank');return false;"><i class="icon-youtube-squared"></i></a>
+                </div>
+                <div class="col-xs-3"><a href="mailto:info@tech-ninja.ca" onclick="window.open(this.href,'_blank');return false;"><i class="icon-mail-circled"></i></a>
                 </div>
             </div>
-            <div class="col-sm-4 wow fadeIn">
-                <div id="footer-contact-us" class="">
-                    <h4 id="footer-contact-us-heading" class="text-center">Well.. You've Made It This Far!</h4>
-                    <hr class="white">
-                    <p id="footer-contact-us-body" class="text-center">
-                        At least send us a message.
-                    </p>
-                    <div id="footer-contact-us-form-container">
-                        <form id="footer-contact-us-form" class="row">
-                            <div class="form-group">
-                                <div class="col-sm-6">
-                                    <input type="text" id="footer-contact-us-name" class="form-control" placeholder="Full Name" required />
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="email" id="footer-contact-us-email" class="form-control" placeholder="Email" required />
-                                </div>
+        </div>
+        <div class="col-sm-4 wow fadeIn">
+            <div id="footer-contact-us" class="">
+                <h4 id="footer-contact-us-heading" class="text-center">Well.. You've Made It This Far!</h4>
+                <hr class="white">
+                <p id="footer-contact-us-body" class="text-center">
+                    At least send us a message.
+                </p>
+                <div id="footer-contact-us-form-container">
+                    <form id="footer-contact-us-form" class="row">
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <input type="text" id="footer-contact-us-name" class="form-control" placeholder="Full Name" required />
                             </div>
-                            <div class="clearfix"></div>
+                            <div class="col-sm-6">
+                                <input type="email" id="footer-contact-us-email" class="form-control" placeholder="Email" required />
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <div id="footer-contact-us-box" class="form-group col-sm-12">
+                            <textarea id="footer-contact-us-message" name="footer-contact-us-message" class="form-control" cols="30" rows="3" placeholder="Tell Us Whats On Your Mind ..." required></textarea>
                             <br>
-                            <div id="footer-contact-us-box" class="form-group col-sm-12">
-                                <textarea id="footer-contact-us-message" name="footer-contact-us-message" class="form-control" cols="30" rows="3" placeholder="Tell Us Whats On Your Mind ..." required></textarea>
-                                <br>
-                                <button id="footer-contact-us-submit" class="btn btn-danger col-xs-12">SEND</button>
-                            </div>
-                        </form>
-                    </div>
+                            <button id="footer-contact-us-submit" class="btn btn-danger col-xs-12">SEND</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

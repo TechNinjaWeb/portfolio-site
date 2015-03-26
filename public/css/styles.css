@@ -12,8 +12,9 @@ button.btn-primary { background-color: #555; color: white; }
 button.btn-primary:hover, button.btn-primary:focus { background-color: black; color: #EAF6FE; }
 
 /* NAVIGATION FIX */
-#about-page, #contact-page { padding-top:42px; } 
-#create-account-page, #login-page { padding-top:65px; }
+.page-container { padding-top: 60px; }
+#portfolio-page .page-container { padding-top: 46px; }
+#create-account-page, #login-page { padding-top: 65px; }
 #profile-page { padding-top:65px; }
 #portfolio-page { padding-top: 28px; }
 #home-page { margin-top:-56px; }
@@ -104,7 +105,7 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 	/*#support-page { margin-top: 36px; }*/
 
 	/* PORTFOLIO PAGE */
-	#portfolio-page .page-container { padding-top: 14px; }
+	
 
 }
 @media (min-width: 768px) and (max-width: 992px) { /* EVERYTHING IN BETWEEN */
@@ -143,7 +144,7 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 	/* 
 		PORTFOLIO PAGE 
 	*/
-	#portfolio-page .page-container { padding-top: 14px; }
+	
 
 	/* SUPPORT PAGE */
 	/*#support-page { overflow-x: hidden; margin-top:42px; }*/
@@ -152,9 +153,9 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 /*
 	HELPER STYLES 
 */
+.tech, .ninja { text-shadow: 1px 1px 1px #444; }
 .tech { color: #3A89C3; }
 .ninja { color: #F8982F; }
-.testing { background-color: #FFE545; }
 .sm-pad { margin-top: 20px; margin-bottom: 20px; }
 .md-pad { margin-top: 50px; margin-bottom: 50px; }
 .lg-pad { margin-top: 100px; margin-bottom: 100px; }
@@ -165,7 +166,6 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 /*.parallax { color: white!important; position:relative;z-index:1; -webkit-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75); } /* PARALLAX EFFECT */
 .logos { background-repeat: no-repeat; }
 .flexslider { overflow: hidden; margin-bottom: 14px; }
-.page-container { overflow-x: hidden; }
 .facebook-logo {  }
 .github-logo {  }
 .google-hangouts-logo {  }
@@ -174,14 +174,15 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 	NAVIGATION 
 */
 #navigation #menu-links, .navbar-brand { margin-top: 6px; }
-#navigation #menu-links a { color: #EEE; }
+#navigation #menu-links a { font-size: 16px; color: #EEE; text-shadow: 1px 1px 1px #444; }
 #navigation #menu-links a:hover { color: #F8982F; }
 #navigation #home-item { display: none; }
 #copyright .navbar { z-index: 5; }
 #navigation .navbar { margin-bottom:0; min-height: 57px; border-radius:0; }
+#nav-container, #copyright-nav-container { box-shadow: 1px 1px 8px black; }
 #nav-login { margin: 0; margin-top: 3px; padding-left: 5px; padding-right: 5px;}
 .collapsed {  }
-#signin { margin-top: 3px; margin-bottom: 0; }
+#signin { margin-top: 14px; margin-bottom: 0; }
 a.not-a-member { text-decoration: none !important; font-size: 10px; cursor: help; }
 a.profile { text-decoration: none !important; font-size: 10px; }
 
@@ -232,7 +233,7 @@ top: 0; z-index: -10; }
 	REPORT POINT SECTION 
 */
 #reports-point { background-color: white; padding-top: 150px; padding-bottom: 150px; }
-#reports-point h3 { color: #3A89C3; text-shadow: 1px 1px 1px #ccc; }
+#reports-point h3 { color: #3A89C3; text-shadow: 1px 1px 1px #ddd; }
 #reports-point p { text-shadow: 1px 1px 1px #ccc; }
 #reports-point-right { padding: 0% 5% 0 5%; }
 #reports-chart { padding-bottom: 100px; }
@@ -252,9 +253,10 @@ box-shadow: 1px 1px 1px black; }
 	PORTFOLIO SECTION 
 */
 #portfolio { background: rgba(255,229,69, 1); padding-top: 100px; padding-bottom: 100px; }
-#portfolio p, #portfolio-right h2{ text-shadow: 1px 1px 1px #fff; }
+#portfolio p, #portfolio h2, #portfolio h3 { text-shadow: 1px 1px 1px #fff; }
+#portfolio p { color: #294027; }
 /*#portfolio h2{ color: #F8982F; }*/
-#portfolio-heading { color: #333; text-shadow: 1px 1px 1px #bbb; }
+#portfolio-heading { color: #333; }
 #portfolio-body { padding-left: 50px; padding-right: 50px; }
 #portfolio-left { padding-bottom: 50px; }
 #portfolio-right { padding-left: 40px; padding-right: 40px; }
@@ -278,25 +280,29 @@ box-shadow: 1px 1px 1px black; }
 	padding-bottom: 250px;
 	box-shadow: -1px -1px 2px black;
 }
-h2#consultation-heading { font-size: 80px; text-shadow: 1px 1px 1px black; padding-bottom: 50px; }
+h2#consultation-heading { font-size: 80px; color: white; text-shadow: 1px 1px 1px black; padding-bottom: 50px; }
 #consultation-button { background-color: #3A89C3; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
 #consultation-button-alt { background-color: #C0392B; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
 #consultation-button:hover { color: #EEE; border: 3px solid #EEE; }
 #consultation-button-alt:hover { background-color: #3A89C3; color: white; border: 3px solid #eee; box-shadow: 1px 1px 5px black;}
 
 .top-anchor { position: fixed; display: block; 
-  float: right; padding: 5px; bottom: 1.3%; right: 3%; z-index: 10; background-color: #F8982F;
+  float: right; padding: 5px; bottom: 1.8%; right: 3%; z-index: 10; background-color: #F8982F;
   font-size: 10px; opacity: 0.5; }
 .top-anchor:hover { color: black; opacity: 1; }
 
 /* 	
 	FOOTER SECTION 
 */
+#footer h1, #footer h2, #footer h3, #footer h4, #footer h5 { color: #eee; }
 #footer-links > ul > li{ width: 50%; line-height:1em; float:left; display:inline; }
 #footer { background-color: #333; color: white; padding-bottom: 40px; border-top: 10px groove #eee; }
+#footer-contact-us-form-container input, textarea#footer-contact-us-message { border: 2px solid #555; }
 #footer-contact-us-box { color: black; }
 #footer-contact-us { padding: 20px; }
-#copyright-label, #copyright-label a { padding-top: 15px; text-decoration: none !important; }
+#copyright-label a { color: black; text-shadow: 1px 1px 1px #C5FFFE; }
+#copyright-label a:hover { color: #F8982F; text-shadow: 1px 1px 1px #294027; }
+#copyright-label, #copyright-label a { padding-top: 26px; text-decoration: none !important; }
 /*	FOOTER ICONS */
 #footer-social-media-icons { padding-top: 10px; }
 #footer a { color: #eee; }
@@ -306,7 +312,7 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 /* 	
 	ABOUT PAGE 
 */
-#about-page .page-container { padding-top: 14px; /*padding-bottom: 30px;*/ }
+
 #about-page .item a { text-decoration: none; cursor: pointer; }
 #about-page #video-container:before, #video-container:after {
   z-index: -1; 
@@ -374,19 +380,17 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 .logo-wordpress { width: 85px; height: 72px; background-position: -684px -8px; }
 .logo-magento { width: 70px; height: 72px; background-position: -774px -8px; }
 .logo-vtiger { width: 110px; height: 60px; background-position: -844px -18px; }
-/*#about-page div#footer { margin-top: 320px; }*/
+#about-page .open-source-tools { margin-bottom: 40px; }
 
 /* 
   SERVICE PAGE 
 */
-#services-page .page-container { padding-top: 50px; /*padding-bottom: 30px;*/ }
 #services-page a:hover { text-decoration: none; }
 #services-page .dm-message p { font-size: 14px; }
 
 /* 	
 	PORTFOLIO PAGE 
 */
-/*#portfolio-page .page-container { padding-bottom: 30px; }*/
 #portfolio-page ::-webkit-scrollbar { -webkit-appearance: none; display: none; }
 #portfolio-right h2 { padding-top: 10px; }
 #portfolio-page .container-fluid {
@@ -472,12 +476,11 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
 /*  
   SERVICES PAGE 
 */
-#services-page .page-container { padding-top:60px; }
+
 
 /* 	
 	SUPPORT PAGE 
 */
-#support-page .page-container { padding-top:56px; }
 #support-page { overflow-y: hidden; }
 #support-page #message-box, #chat, #users { border: 1px solid black; }
 #chat { min-height: 100%; }
@@ -495,10 +498,11 @@ i.icon-youtube-squared:hover, i[class*='-circled']:hover { color: #F8982F; curso
   CONTACT PAGE 
 */
 
+#contact-page input, #contact-page textarea { border: 2px solid #ddd; }
+
 /*  
   LAWS PAGE 
 */
-#laws-page .page-container { padding-top:60px; }
 
 /* 	
 	PROFILE PAGE 
