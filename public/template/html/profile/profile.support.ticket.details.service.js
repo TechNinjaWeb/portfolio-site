@@ -12,9 +12,10 @@ angular.module('tnApp.services')
         return data;
     });
 
-    return $resource('https://api.parse.com/1/classes/SupportTickets/:objectId/:userName:format', {
+    return $resource('https://api.parse.com/1/classes/SupportTickets/:objectId/:userName/:reply:format', {
         objectId: '@objectId',
-        userName: '@userName'
+        userName: '@userName',
+        reply: '@reply'
     }, {
         update: {
             method: 'PUT'
@@ -33,6 +34,9 @@ angular.module('tnApp.services')
         nab: {
             method: 'GET',
             isArray: false
+        },
+        reply: {
+            method: 'PUT'
         }
     });
 }])

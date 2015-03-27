@@ -5,10 +5,10 @@ angular.module('tnApp.controllers').controller('FooterCtrl', function($scope, $l
     $scope.test = "This is the main controller";
 
     $scope.scrollTo = function(id) {
-        console.log("Clicked ScrollTo")
+        // console.log("Clicked ScrollTo")
         $location.hash('');
         $anchorScroll(id);
-        console.log("ID", id)
+        // console.log("ID", id)
     };
 
     // FOOTER CONTACT FORM
@@ -35,11 +35,19 @@ angular.module('tnApp.controllers').controller('FooterCtrl', function($scope, $l
                 leadEmail: footerContactEmail.val(),
                 message: footerContactMessage.val()
             }).then(function(res) {
-                console.log("Response", res);
+                // console.log("Response", res);
                 window.location.reload();
             })
         }
     })
 
+    $('#top-anchor-button').click(function() {
+        var target = $('#top-anchor')
+
+        $('html,body').animate({
+            scrollTop: target.offset().top
+        }, 1500);
+        return false;
+    });
 
 });

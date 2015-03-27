@@ -166,6 +166,24 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $urlM
                     resolve: {
                         objectId: ['$stateParams', function($stateParams) {
                             return $stateParams;
+                        }],
+                        allTickets: ['TicketService', function(ticketList) {
+                            var params = {
+                                "where": {
+                                    "postedBy": Parse.User.current().get('username')
+                                }
+                            }
+                            var allTickets;
+
+                            var query = ticketList;
+                            query.get(params, function(res) {
+                                console.log("ROUTE GET RES", res)
+                                allTickets = res.results;
+                            });
+
+                            console.log("ROUTE TICKETS", allTickets)
+
+                            return;
                         }]
                     }
                 },
@@ -226,9 +244,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $urlM
 
         // check to see if the path already has a slash where it should be
         if (path[path.length - 1] === '/' || path.indexOf('/?') > -1) {
-            console.log($locationProvider);
-            alert("Yo! First Bubble")
-            return;
+            var newPath = path.slice(0, path.length - 1)
+            return newPath;
         }
 
         if (path.indexOf('?') > -1) {

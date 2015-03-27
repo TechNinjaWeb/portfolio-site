@@ -1,15 +1,36 @@
-<div id="ticket-data">
-	<div class="col-sm-3">OBJECT ID: <br>{{ data.objectId }} </div>
-	<div class="col-sm-3">POSTED BY: <br>{{ data.postedBy }} </div>
-	<div class="col-sm-3">CREATED AT: <br>{{ data.ticketBody[0].createdAt }} </div>
-	<br>
-	<br>
-	<br>
-	<div class="col-sm-3">REPLY FROM: <br>{{ data.ticketBody[0].replyFrom }} </div>
-	<div class="col-sm-9">TICKET BODY: <br>{{ data.ticketBody[0].ticketBody }} </div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<div class="ticket-heading" style="padding:25px 20px;">
+    <div class="col-sm-3" style="margin-left: 20px;">OBJECT ID:
+        <br>
+        <div id="objectId" ng-bind="data.objectId"></div>
+    </div>
+    <div class="col-sm-3">POSTED BY:
+        <br>
+        <div id="postedBy" ng-bind="data.postedBy"></div>
+    </div>
+    <div class="col-sm-3">CREATED AT:
+        <br>
+        <div id="data.ticketBody[0].createdAt" ng-bind="data.ticketBody[0].createdAt"></div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="ticket-container col-sm-12" style="padding:25px 20px;">
+    <div id="ticket-data" class="" style="padding: 35px 20px; margin-bottom:50px;background-color:rgba(155,155,155,0.5);" ng-repeat="item in data.ticketBody">
+        <div class="ticket-thread">
+            <div class="col-sm-12">
+                REPLY FROM:
+                <br><div id="item-replyFrom" ng-bind="item.replyFrom"></div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-sm-12">
+                TICKET BODY:
+                <br><div id="item-ticketBody" ng-bind="item.ticketBody"></div>
+            </div>
+            <br>
+            <br>
+            <button ng-click="deleteReply($index)">DELETE REPLY</button>
+        </div>
+    </div>
 </div>

@@ -21,4 +21,5 @@ angular.module('tnApp.controllers', ['tnApp.services']).controller('AppCtrl', fu
     $scope.alert = function() {
         alert("You've Hit the AppCtrl Alert Button");
     };
+
 });

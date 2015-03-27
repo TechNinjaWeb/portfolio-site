@@ -1,29 +1,27 @@
 <ul id="ticket-menu" class="text-right ticket-menu list-unstyled list-inline">
     <li>
-        <a id="createTicket" class='fa fa-2x fa-pencil-square-o modal-btn' data-toggle='modal' data-target='#message-box-modal'>
+        <a ng-hide="!ticketInView()" id="replyToTicket" data-toggle='modal' data-target='#replyModal' class='fa fa-2x fa-mail-reply modal-btn'>
         </a>
     </li>
+    <li>
+        <a id="createTicket" class='fa fa-2x fa-pencil-square-o modal-btn' data-toggle='modal' data-target='#createzModal'>
+        </a>
+    </li>
+    
     <li>
         <a ng-hide="!ticketInView()" id="deleteTicket" ng-click="deleteTicket()" class='fa fa-2x fa-trash-o modal-btn'>
         </a>
     </li>
 </ul>
-<!-- <div id="message-box" class="col-sm-12">
-    <div class="form-group">
-        <input type="text" id="ticketSubject" name="ticketSubject" ng-model="ticketSubject" placeholder="ticketSubject" class="form-control col-sm-12" />
-        <textarea name="ticketBody" id="ticketBody" ng-model="ticketBody" class="form-control" placeholder="Enter Your Message Here"></textarea>
-    </div>
-    <div class="clearfix sm-pad"></div>
-    <button id="message-send-btn" class="btn btn-success col-sm-4" ng-click="createTicket(ticketSubject, ticketBody)">Send</button>
-</div> -->
-<!-- Modal -->
-<div class="modal fade" id="message-box-modal" tabindex="-1" role="dialog" aria-labelledby="message-box-modalLabel" aria-hidden="true">
+
+
+<div class="modal fade" id="createzModal" tabindex="-1" role="dialog" aria-labelledby="createzModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="message-box-modalLabel">Create A Ticket</h4>
+                <h4 class="modal-title" id="createzModalLabel">Create A Ticket</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -33,6 +31,26 @@
             </div>
             <div class="modal-footer">
                 <button id="message-send-btn" class="btn btn-success col-sm-4" ng-click="createTicket(ticketSubject, ticketBody)">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="SOMETHING" class="modal-container"></div>
+<div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="replyModalLabel">Reply To Ticket</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <textarea name="ticketReply" id="ticketReply" ng-model="ticketReply" class="form-control" placeholder="Enter Your Message Here"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="message-send-btn" class="btn btn-success col-sm-4" ng-click="replyToTicket(ticketReply)">Send</button>
             </div>
         </div>
     </div>
