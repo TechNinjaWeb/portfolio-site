@@ -8,6 +8,8 @@ angular.module('tnApp.controllers').controller('SupportCtrl', ['$scope', '$rootS
         return location;
     };
 
+    console.warn("SUPPORT CTRL IO OBJECT", IO)
+
     $scope.alias = 'SupportCtrl';
     $scope.title = 'Support Controller';
     $scope.message = "Can You Believe I'm Using Angular!";
@@ -90,23 +92,23 @@ angular.module('tnApp.controllers').controller('SupportCtrl', ['$scope', '$rootS
         });
 
         // Socket Events
-        IO.on('connect', function(message) {
-            IO.emit('adduser', userName);
-            // TEST DATA INITIATION
-            setTimeout(function() {
-                console.log("Emit Add User", userName);
-            }, 1500)
+        // IO.on('connect', function(message) {
+        //     IO.emit('adduser', userName);
+        //     // TEST DATA INITIATION
+        //     setTimeout(function() {
+        //         console.log("Emit Add User", userName);
+        //     }, 1500)
 
-            IO.emit('getAll');
-            console.log("==========\nEmit getAll\n==========");
+        //     IO.emit('getAll');
+        //     console.log("==========\nEmit getAll\n==========");
 
-            IO.on('disconnect', function(message) {
-                console.warn("Disconnected from host with message: ", message);
-                var userContainer = $("#" + userName.replace(/[^A-Z0-9]/ig, ""));
-                console.log("DELETING YOUR STATUS CONTAINER", userContainer);
-                userContainer.remove();
-            });
-        })
+        //     IO.on('disconnect', function(message) {
+        //         console.warn("Disconnected from host with message: ", message);
+        //         var userContainer = $("#" + userName.replace(/[^A-Z0-9]/ig, ""));
+        //         console.log("DELETING YOUR STATUS CONTAINER", userContainer);
+        //         userContainer.remove();
+        //     });
+        // })
 
         IO.on('listAll', function(all) {
             console.log(all, "All Data from server");

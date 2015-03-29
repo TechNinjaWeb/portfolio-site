@@ -153,7 +153,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $urlM
             views: {
                 'profile@video': {
                     templateUrl: "./template/html/profile/profile.messages.video.html",
-                    controller: "ProfileCtrl"
+                    controller: "VideoCtrl"
                 }
             }
         })

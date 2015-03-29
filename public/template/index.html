@@ -4,16 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="initial-scale=1">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Tech Ninja | Web &amp; IT</title>
     <meta name="description" content="Tech Ninja | Web &amp; IT Advanced Web Applications" />
     <meta name="author" content="4UmNinja" />
     <base href="/" />
     <link rel="shortcut icon" type="image/png" href="/assets/tn-logo-icon.png">
-
     <link rel="stylesheet" href="./css/styles.css?v=1.0" />
-    
     <!-- <link href="//fonts.googleapis.com/css?family=Montserrat:400normal,700normal" rel="stylesheet" type="text/css"> -->
     <!-- Portfolio Page Fix -->
     <link rel="stylesheet" href="./vendor/portfolio/css/normalize.css">
@@ -30,7 +28,6 @@
     <!-- ANIMATE.CSS -->
     <link rel="stylesheet" href="scripts/animate.css/animate.min.css" />
     <!-- END OF CSS INCLUDES -->
-
     <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -50,13 +47,27 @@
     <div id="footer-view" data-ui-view="footer"></div>
     <!-- Copyright Template Container -->
     <div id="copyright-view" data-ui-view="copyright"></div>
-
     <div id="scripts">
         <!-- JQUERY -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="application/javascript" src="./vendor/jquery/jquery.2.1.1.js"></script>
         <!-- SOCKET.IO -->
         <script type="application/javascript" src="./vendor/socket.io/socket.io.js"></script>
+        <script src="/socket.io/socket.io.js">
+        </script>
+        <!-- WEBRTC -->
+        <script src="./vendor/webrtc/js/RTCMultiConnection-v1.7.js">
+        </script>
+        <script src="./vendor/webrtc/js/linkify.js">
+        </script>
+        <script src="./vendor/webrtc/js/conference.js">
+        </script>
+        <script src="./vendor/webrtc/js/getMediaElement.min.js">
+        </script>
+        <!-- script used to display custom notification bar! -->
+        <script src="./vendor/webrtc/js/navigator.customGetUserMediaBar.js">
+        </script>
+        <!-- END WEBRTC PLUGINS -->
         <!-- PARSE -->
         <script src="./vendor/parse/parse-1.3.4.min.js"></script>
         <!-- BOOTSTRAP -->
@@ -75,8 +86,12 @@
         <!-- Services -->
         <script type="application/javascript" src="./services/ParseServices.js"></script>
         <script type="application/javascript" src="./services/socket.io.service.js"></script>
-        <script type="application/javascript" src="./template/html/profile/profile.support.ticket.service.js"></script>
-        <script type="application/javascript" src="./template/html/profile/profile.support.ticket.details.service.js"></script>
+        <script src="./services/webrtc.uimain.service.js"></script>
+        <script src="./services/webrtc.uipeer.connection.service.js"></script>
+        <script src="./services/webrtc.uishare.files.service.js"></script>
+        <script src="./services/webrtc.uiusers.list.service.js"></script>
+        <script src="./services/webrtc.uisettings.service.js"></script>
+        <script src="./services/webrtc.config.service.js"></script>
         <!-- Controllers -->
         <script type="application/javascript" src="./controllers/app.controller.js"></script>
         <script type="application/javascript" src="./template/layout/navigation/navigation.controller.js"></script>
@@ -90,7 +105,11 @@
         <script type="application/javascript" src="./template/html/support/support.controller.js"></script>
         <script type="application/javascript" src="./template/html/contact/contact.controller.js"></script>
         <script type="application/javascript" src="./template/html/login/login.controller.js"></script>
+        <!-- Profile Page Files -->
+        <script type="application/javascript" src="./template/html/profile/profile.support.ticket.service.js"></script>
+        <script type="application/javascript" src="./template/html/profile/profile.support.ticket.details.service.js"></script>
         <script type="application/javascript" src="./template/layout/profile/profile.controller.js"></script>
+        <script type="application/javascript" src="./template/html/profile/profile.messages.video.controller.js"></script>
         <script type="application/javascript" src="./template/html/profile/profile.support.ticket.controller.js"></script>
         <script type="application/javascript" src="./template/html/profile/profile.support.ticket.details.controller.js"></script>
         <!-- Directives -->

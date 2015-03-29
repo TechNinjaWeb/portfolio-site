@@ -5,7 +5,18 @@ var PORT = process.env.PORT || 3000,
     compression = require('compression'),
     server = require('http').createServer(app),
     io = require('socket.io')(server),
-    sio = io.listen(server)
+    sio = io.listen(server, {
+        log: true,
+        origins: '*:*'
+    })
+
+io.set('transports', ['websocket', 
+    'flashsocket', 
+    'htmlfile', 
+    'xhr-polling', 
+    'jsonp-polling', 
+    'polling'
+]);
 
 
 app.set('views', __dirname + '/public/template');
@@ -33,30 +44,85 @@ app.use(express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use('/scripts', express.static(__dirname + '/bower_components'));
 
-app.get('/*', function(req, res, next) {
-    res.render('index.html', {
-        controller: 'AppCtrl'
-    });
-});
-
 var userList = {},
     roomsList = {};
 roomsList.default = 'NinjaLounge';
+roomsList[roomsList.default] = roomsList.default;
 
 io.on('connection', function(socket) {
     // console.log("USER CONNECTED:",socket);
+    // WEBRTC INTEGRATION
+    var initiatorChannel = '';
+    if (!io.isConnected) {
+        io.isConnected = true;
+    }
+
+    socket.on('new-channel', function(data) {
+        console.log("NEW-CHANNEL DATA", data);
+        if (!roomsList[data.channel]) {
+            initiatorChannel = data.channel;
+        }
+        console.log("SERVER DATA", data)
+        roomsList[data.channel] = data.channel;
+        onNewNamespace(data.channel, data.sender);
+    });
+
+    socket.on('presence', function(channel) {
+        var isChannelPresent = !!roomsList[channel];
+        socket.emit('presence', isChannelPresent);
+        console.log("isChannelPresent?", isChannelPresent)
+        console.log("Channel in", channel)
+    });
+
+    socket.on('disconnect', function(channel) {
+        console.log("User Left", channel);
+        if (initiatorChannel) {
+            delete roomsList[initiatorChannel];
+        }
+    });
+
+    function onNewNamespace(channel, sender) {
+        console.log("ONNEWNAMESPACE -- Client Calling for new channel, channel & sender", channel, sender)
+        io.of('/' + channel).on('connection', function(socket) {
+            var username;
+            if (io.isConnected) {
+                io.isConnected = false;
+                socket.emit('connect', true);
+            }
+
+            socket.on('message', function(data) {
+                if (data.sender == sender) {
+                    if (!username) username = data.data.sender;
+
+                    socket.broadcast.emit('message', data.data);
+                }
+            });
+
+            socket.on('disconnect', function() {
+                if (username) {
+                    socket.broadcast.emit('user-left', username);
+                    username = null;
+                }
+            });
+        });
+    }
+
+    // TECHNINJA IO CODE
     socket.join('NinjaLounge');
+
     var handshake, address,
         headers, host, origin;
 
     user = {},
         user.username = [];
-    user.handshake = socket.handshake,
+        user.handshake = socket.handshake,
         user.address = socket.handshake.address,
         user.host = socket.handshake.headers.host,
         user.origin = socket.handshake.headers.origin,
         user.rooms = socket.rooms;
 
+    // JOIN ROOM WITH HANDSHAKE ID
+    socket.join(handshake);
     // SEND MESSAGE TO CLIENT ON CONNECT
     var print = [user.address,
         user.host,
@@ -137,14 +203,13 @@ io.on('connection', function(socket) {
         socket.broadcast.to(username).emit(message);
         console.log("Private Message to: " + username);
     })
-
-    // DISCONNECT EVENT LISTENER
-    socket.on('disconnect', function(message) {
-        console.log("User Left", message);
-    });
 });
 
-
+app.get('/*', function(req, res, next) {
+    res.render('index.html', {
+        controller: 'AppCtrl'
+    });
+});
 
 server.listen(PORT, function() {
     console.log("Socket & Express Server Started on port %d in %s mode", this.address().port, app.settings.env)
