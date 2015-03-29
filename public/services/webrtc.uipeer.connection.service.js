@@ -1,11 +1,9 @@
-angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', '$window', '$q', function($state, Socket, $window, $q) {
+app.webrtc.service("UIPeerConnection", ['$state', 'Socket', '$window', '$q', function($state, Socket, $window, $q) {
 
     var UIPeerConnection = {};
     // https://www.webrtc-experiment.com:12034/
 
     UIPeerConnection.rtcMultiConnection = new RTCMultiConnection();
-
-    console.log("Opening New RTCMultiConnection with new contstructor", UIPeerConnection.rtcMultiConnection);
 
     UIPeerConnection.rtcMultiConnection.session = {
         data: true
@@ -19,7 +17,7 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
     UIPeerConnection.rtcMultiConnection.customStreams = {};
 
     /*
-    // http://www.rtcmulticonnection.org/docs/fakeDataChannels/
+    // http://www.UIPeerConnection.rtcmulticonnection.org/docs/fakeDataChannels/
     UIPeerConnection.rtcMultiConnection.fakeDataChannels = true;
     if(UIPeerConnection.rtcMultiConnection.UA.Firefox) {
     UIPeerConnection.rtcMultiConnection.session.data = true;
@@ -29,16 +27,15 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
     UIPeerConnection.rtcMultiConnection.autoTranslateText = false;
 
     UIPeerConnection.rtcMultiConnection.onopen = function(e) {
-        console.log("UIPEERCONNECTION - ONOPEN FUNC - ATTEMPTING TO OPEN RTCMULTICONNECTION", e)
-        UIMain.getElement('#allow-webcam').disabled = false;
-        UIMain.getElement('#allow-mic').disabled = false;
-        UIMain.getElement('#share-files').disabled = false;
-        UIMain.getElement('#allow-screen').disabled = false;
+        getElement('#allow-webcam').disabled = false;
+        getElement('#allow-mic').disabled = false;
+        getElement('#share-files').disabled = false;
+        getElement('#allow-screen').disabled = false;
 
         addNewMessage({
             header: e.extra.username,
             message: 'Data connection is opened between you and ' + e.extra.username + '.',
-            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
+            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
             color: e.extra.color
         });
 
@@ -62,16 +59,16 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
         addNewMessage({
             header: e.extra.username,
             message: 'Text message from ' + e.extra.username + ':<br /><br />' + (UIPeerConnection.rtcMultiConnection.autoTranslateText ? linkify(e.data) + ' ( ' + linkify(e.original) + ' )' : linkify(e.data)),
-            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[e.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
+            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[e.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
             color: e.extra.color
         });
         document.title = e.data;
     };
 
-    UIPeerConnection.sessions = {};
+    var sessions = {};
     UIPeerConnection.rtcMultiConnection.onNewSession = function(session) {
-        if (UIPeerConnection.sessions[session.sessionid]) return;
-        UIPeerConnection.sessions[session.sessionid] = session;
+        if (sessions[session.sessionid]) return;
+        sessions[session.sessionid] = session;
 
         session.join();
 
@@ -108,7 +105,7 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
                 color: message.extra.color,
                 callback: function(div) {
                     div.querySelector('#preview').onclick = function() {
-                        UIPeerConnection.disabled = true;
+                        this.disabled = true;
 
                         message.session.oneway = true;
                         UIPeerConnection.rtcMultiConnection.sendMessage({
@@ -119,7 +116,7 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
                     };
 
                     div.querySelector('#share-your-cam').onclick = function() {
-                        UIPeerConnection.disabled = true;
+                        this.disabled = true;
 
                         if (!message.hasScreen) {
                             var session = {
@@ -156,7 +153,7 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
                 color: message.extra.color,
                 callback: function(div) {
                     div.querySelector('#listen').onclick = function() {
-                        UIPeerConnection.disabled = true;
+                        this.disabled = true;
                         message.session.oneway = true;
                         UIPeerConnection.rtcMultiConnection.sendMessage({
                             renegotiate: true,
@@ -166,7 +163,7 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
                     };
 
                     div.querySelector('#share-your-mic').onclick = function() {
-                        UIPeerConnection.disabled = true;
+                        this.disabled = true;
 
                         var session = {
                             audio: true
@@ -226,55 +223,11 @@ angular.module('tnApp.webrtc').service("UIPeerConnection", ['$state', 'Socket', 
         addNewMessage({
             header: event.extra.username,
             message: event.extra.username + ' left the room.',
-            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[event.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
+            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[event.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
             color: e.extra.color
         });
     };
 
-    UIPeerConnection.rtcMultiConnection.onFileStart = function(file) {
-        addNewMessage({
-            header: UIPeerConnection.rtcMultiConnection.extra.username,
-            message: 'onFileStart: ' + file.name + ' ( ' + bytesToSize(file.size) + ' )',
-            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/share-files.png'),
-            callback: function(div) {
-                var innerDiv = document.createElement('div');
-                innerDiv.title = file.name;
-                innerDiv.innerHTML = '<label>0%</label><progress></progress>';
-                div.querySelector('.message').appendChild(innerDiv);
-                UIShareFiles.progressHelper[file.uuid] = {
-                    div: innerDiv,
-                    progress: innerDiv.querySelector('progress'),
-                    label: innerDiv.querySelector('label')
-                };
-                UIShareFiles.progressHelper[file.uuid].progress.max = file.maxChunks;
-            }
-        });
-    };
-    UIPeerConnection.rtcMultiConnection.onFileProgress = function(chunk) {
-        var helper = UIShareFiles.progressHelper[chunk.uuid];
-        if (!helper) return;
-        helper.progress.value = chunk.currentPosition || chunk.maxChunks || helper.progress.max;
-        updateLabel(helper.progress, helper.label);
-    };
-
-    // www.RTCMultiConnection.org/docs/onFileEnd/
-    UIPeerConnection.rtcMultiConnection.onFileEnd = function(file) {
-        if (!UIShareFiles.progressHelper[file.uuid]) {
-            console.error('No such progress-helper element exists.', file);
-            return;
-        }
-        var div = UIShareFiles.progressHelper[file.uuid].div;
-        if (file.type.indexOf('image') != -1) {
-            div.innerHTML = '<a href="' + file.url + '" download="' + file.name + '">Download ' + file.name + ' </a><br /><img src="' + file.url + '" title="' + file.name + '">';
-        } else {
-            div.innerHTML = '<a href="' + file.url + '" download="' + file.name + '">Download ' + file.name + ' </a><br /><iframe src="' + file.url + '" title="' + file.name + '" style="width: 69%;border: 0;border-left: 1px solid black;height: inherit;"></iframe>';
-        }
-
-        setTimeout(function() {
-            div = div.parentNode.parentNode.parentNode;
-            div.querySelector('.user-info').style.height = div.querySelector('.user-activity').clientHeight + 'px';
-        }, 10);
-    };
 
     console.log("FROM PEER CONNECTION SERVICE", UIPeerConnection)
     return UIPeerConnection;

@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers')
+app.controllers
     .controller('SupportTicketDetailsCtrl', ['TicketService', '$scope', '$stateParams', '$timeout', '$rootScope', function(Tickets, $scope, $stateParams, $timeout, $rootScope) {
         $scope.stateParamsObjectId = $stateParams.objectId;
         $scope.message = "Product Detail Controller";

@@ -1,5 +1,5 @@
 // -- See AppCtrl Comment for usage description -- //
-angular.module('tnApp.controllers').controller('PortfolioCtrl', ['$scope', 'portfolioList', function($scope, PortfolioList) {
+app.controllers.controller('PortfolioCtrl', ['$scope', 'portfolioList', function($scope, PortfolioList) {
     $scope.alias = 'PortfolioCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";

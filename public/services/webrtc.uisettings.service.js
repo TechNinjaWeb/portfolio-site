@@ -1,4 +1,4 @@
-angular.module('tnApp.webrtc').service("UISettings", ['UIPeerConnection', 'UIMain', '$state', '$rootScope', '$window', '$q', function(UIPeerConnection, UIMain, $state, $rootScope, $window, $q) {
+app.webrtc.service("UISettings", ['UIPeerConnection', 'UIMain', '$state', '$rootScope', '$window', '$q', function(UIPeerConnection, UIMain, $state, $rootScope, $window, $q) {
 
     var UISettings = {};
     /// https://www.webrtc-experiment.com:12034/

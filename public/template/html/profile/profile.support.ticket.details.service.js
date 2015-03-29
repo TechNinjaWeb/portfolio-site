@@ -1,4 +1,4 @@
-angular.module('tnApp.services')
+app.services
     .factory('TicketService', ['$http', '$q', '$resource', '$templateCache', function($http, $q, $resource, $templateCache) {
     // 'use strict';
 

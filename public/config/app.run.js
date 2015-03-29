@@ -1,4 +1,4 @@
-angular.module('tnApp')
+app
     .run(function($rootScope, $window, $timeout) {
 
         // DETECT USERS BROWSER

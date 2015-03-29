@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers').controller('AboutCtrl', function($scope, $location, $anchorScroll, $timeout, portfolioList) {
+app.controllers.controller('AboutCtrl', function($scope, $location, $anchorScroll, $timeout, portfolioList) {
     $scope.alias = 'AboutCtrl';
     $scope.title = 'Nav Controller';
     $scope.message = "Can You Believe It's Almost Christmas!";

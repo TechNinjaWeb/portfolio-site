@@ -2,7 +2,7 @@
 // This is test code to integrate Parse into Angular.
 // Elements will be reusable in this mannor by allowing us
 // to pass ParseServices as a dependency in any of our controllers
-angular.module('ParseServices', [])
+app.parse
     .factory("LoginService", ['$state', '$rootScope', '$window', function($state, $rootScope, $window) {
         var Login = {};
 

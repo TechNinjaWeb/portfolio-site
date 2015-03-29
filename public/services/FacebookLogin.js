@@ -2,7 +2,7 @@
 // This is test code to integrate Parse into Angular.
 // Elements will be reusable in this mannor by allowing us
 // to pass ParseServices as a dependency in any of our controllers
-angular.module('FacebookLogin', [])
+app.fbLogin
     .factory("FBLogin", ['$rootScope', function($rootScope) {
         
         var FBLogin = {};

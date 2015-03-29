@@ -1,5 +1,5 @@
 // -- See AppCtrl Comment for usage description -- //
-angular.module('tnApp.controllers')
+app.controllers
     .controller('SupportTicketCtrl', ['$scope', '$state', '$rootScope', '$timeout', 'ngTableParams', 'TicketService', function($scope, $state, $rootScope, $timeout, Table, Messages) {
 
         

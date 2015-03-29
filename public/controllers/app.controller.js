@@ -1,4 +1,4 @@
-angular.module('tnApp.controllers', ['tnApp.services']).controller('AppCtrl', function($scope) {
+app.controllers.controller('AppCtrl', function($scope) {
     $scope.alias = 'Tech Ninja App';
     $scope.test = "I can't think of anything cool to put here";
     $scope.title = "The Greatest App I Ever Wrote";

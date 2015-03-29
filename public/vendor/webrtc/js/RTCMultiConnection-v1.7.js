@@ -19,12 +19,14 @@
 
 (function () {
     // www.RTCMultiConnection.org/docs/constructor/
-    window.RTCMultiConnection = function (channel) {
+    window.RTCMultiConnection = function (channel, userid) {
         // a reference to your constructor!
         var connection = this;
 
         // www.RTCMultiConnection.org/docs/channel-id/
         connection.channel = channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
+        console.log("RTCMULTICONNECTION.1.7.JS - CONNECTION.CHANNEL", connection.channel)
+        connection.userid = userid || channel;
 
         var rtcMultiSession; // a reference to backbone object i.e. RTCMultiSession!
 
@@ -74,6 +76,7 @@
                 session: connection.session,
                 extra: connection.extra
             };
+            console.log("INSIDE RTC.JS - CONNECTION SESSION ID = CONNECTION CHANNEL", connection.sessionDescription)
 
             if (!connection.stats.sessions[connection.sessionDescription.sessionid]) {
                 connection.stats.numberOfSessions++;
@@ -82,10 +85,13 @@
 
             // verify to see if "openSignalingChannel" exists!
             prepareSignalingChannel(function () {
+                console.log("Preparing Singalling Channel")
                 // connect with signaling channel
                 initRTCMultiSession(function () {
+                    alert("Init RTC Multi Session")
                     // for session-initiator, user-media is captured as soon as "open" is invoked.
                     captureUserMedia(function () {
+                        alert("Capture User Media")
                         rtcMultiSession.initSession({
                             sessionDescription: connection.sessionDescription,
                             dontTransmit: dontTransmit
@@ -164,7 +170,7 @@
 
         function prepareSignalingChannel(callback) {
             if (connection.openSignalingChannel) return callback();
-
+            alert("PrepareSigChan Func")
             // make sure firebase.js is loaded before using their JavaScript API
             if (!window.Firebase) {
                 return loadScript('https://www.webrtc-experiment.com/firebase.js', function () {
@@ -209,8 +215,9 @@
         function initRTCMultiSession(onSignalingReady) {
             // RTCMultiSession is the backbone object;
             // this object MUST be initialized once!
-            if (rtcMultiSession) return onSignalingReady();
 
+            if (rtcMultiSession) return onSignalingReady();
+            alert("Return Failed, no rtcMultiSess")
             // your everything is passed over RTCMultiSession constructor!
             rtcMultiSession = new RTCMultiSession(connection, onSignalingReady);
         }
@@ -3688,7 +3695,8 @@ console.log("RTCMULTICONNECTION-V1.7.js -- OPTIONS.MEDIA", options.media)
         };
 
         // www.RTCMultiConnection.org/docs/userid/
-        connection.userid = connection.token();
+        // connection.userid = connection.token();
+        // TECHNINJA EDIT
 
         // www.RTCMultiConnection.org/docs/peers/
         connection.peers = {};

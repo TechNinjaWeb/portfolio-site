@@ -1,4 +1,4 @@
-angular.module('tnApp.services', []).service("Socket", ['$state', '$rootScope', '$window', '$q', function($state, $rootScope, $window, $q) {
+app.services.service("Socket", ['$state', '$rootScope', '$window', '$q', function($state, $rootScope, $window, $q) {
     
     var Socket = io.connect('http://localhost:3000');
 

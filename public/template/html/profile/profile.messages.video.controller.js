@@ -1,5 +1,5 @@
 // -- See AppCtrl Comment for usage description -- //
-angular.module('tnApp.controllers')
+app.controllers
     .controller('VideoCtrl', ['$scope', '$state', '$rootScope', '$timeout','Socket', 'RTCConfig', function($scope, $state, $rootScope, $timeout, WebRTC, RTCConfig) {
 
         $scope.alias = 'Support Ticket Controller';

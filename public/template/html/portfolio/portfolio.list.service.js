@@ -1,4 +1,4 @@
-angular.module('tnApp.services')
+app.services
     .service("portfolioList", function() {
     
     var portfolioList = [{

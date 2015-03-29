@@ -1,13 +1,13 @@
-angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$window', '$q', function(Socket, UIPeerConnection, $rootScope, $window, $q) {
+app.webrtc.service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$window', '$q', function(Socket, UIPeerConnection, $rootScope, $window, $q) {
 
     var UIMain = {};
     // https://www.webrtc-experiment.com:12034/
 
-    UIMain.getElement = function(selector) {
+    UIMain.getElement = function (selector) {
         return document.querySelector(selector);
     }
 
-    UIMain.main = UIMain.getElement('.main');
+    var main = UIMain.getElement('.main');
 
     UIMain.getRandomColor = function () {
         var letters = '0123456789ABCDEF'.split('');
@@ -19,7 +19,6 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
     }
 
     UIMain.addNewMessage = function (args) {
-        console.log("ADDNEW MESSAGE - ARGS", args)
         var newMessageDIV = document.createElement('div');
         newMessageDIV.className = 'new-message';
 
@@ -27,7 +26,7 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
         userinfoDIV.className = 'user-info';
         userinfoDIV.innerHTML = args.userinfo || '<img src="//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/user.png">';
 
-        userinfoDIV.style.background = args.color || UIPeerConnection.rtcMultiConnection.extra.color || UIMain.getRandomColor();
+        userinfoDIV.style.background = args.color || UIPeerConnection.rtcMultiConnection.extra.color || getRandomColor();
 
         newMessageDIV.appendChild(userinfoDIV);
 
@@ -43,7 +42,7 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
 
         newMessageDIV.appendChild(userActivityDIV);
 
-        UIMain.main.insertBefore(newMessageDIV, UIMain.main.firstChild);
+        main.insertBefore(newMessageDIV, main.firstChild);
 
         userinfoDIV.style.height = newMessageDIV.clientHeight + 'px';
 
@@ -54,7 +53,11 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
         document.querySelector('#message-sound').play();
     }
 
-    UIMain.main.querySelector('button').onclick = function() {
+
+    main.querySelector('button').onclick = function() {
+        // var input = this.parentNode.querySelector('input');
+        // input.disabled = this.disabled = true;
+
         var username = Parse.User.current().get('username') || 'Anonymous';
 
         UIPeerConnection.rtcMultiConnection.extra = {
@@ -68,54 +71,49 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
             userinfo: '<img src="//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/action-needed.png">'
         });
 
-        UIMain.nsp = '/';
+        var SIGNALING_SERVER = '/';
+        var channel = io().id
+        console.log("Socket ID", channel);
+        // var socket = io.connect(SIGNALING_SERVER);
         var socket = Socket;
 
         socket.on('presence', function(isChannelPresent) {
-            console.warn("ISCHANNELPRESENT? -- SHould be -- ", isChannelPresent)
             if (!isChannelPresent) {
                 UIMain.addNewMessage({
                     header: username,
                     message: 'No room found. Creating new room...<br /><br />You can share following link with your friends:<br /><a href="' + location.href + '">' + location.href + '</a>',
                     userinfo: '<img src="//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/action-needed.png">'
                 });
-                socket.open(socket.id);
+                UIPeerConnection.rtcMultiConnection.open('/', channel);
             } else {
                 UIMain.addNewMessage({
                     header: username,
                     message: 'Room found. Joining the room...',
                     userinfo: '<img src="//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/action-needed.png">'
                 });
-                socket.connect();
+                UIPeerConnection.rtcMultiConnection.connect();
             }
         });
-        socket.emit('presence', socket.id);
-
-        console.log("EMIT PRESENCE", socket.id)
-        console.log("SOCKET ID", socket.id)
+        console.warn("Emit Connect to ", channel)
+        socket.emit('presence', UIPeerConnection.rtcMultiConnection.channel);
+        console.warn("Emit Presence with chan", UIPeerConnection.rtcMultiConnection.channel)
 
         UIPeerConnection.rtcMultiConnection.openSignalingChannel = function(config) {
-            var channel = config.channel || UIMain.channel;
+            var channel = config.channel || this.channel;
 
-            io.connect(UIMain.nsp).emit('new-channel', {
+            io.connect(SIGNALING_SERVER).emit('new-channel', {
                 channel: channel,
-                sender: 'NinjaLounge' // Replace with Handshake ID
+                sender: UIPeerConnection.rtcMultiConnection.userid
             });
 
-            var socket = io.connect(UIMain.nsp + channel);
+            var socket = io.connect(SIGNALING_SERVER + channel);
             socket.channel = channel;
 
             socket.on('connect', function() {
-                console.log("ON CONNECT HANDLER")
                 if (config.callback) config.callback(socket);
             });
 
             socket.send = function(message) {
-                console.log("EMITTING MESSAGE", message, "also sending this -->", {
-                    sender: UIPeerConnection.rtcMultiConnection.userid,
-                    data: message
-                })
-
                 socket.emit('message', {
                     sender: UIPeerConnection.rtcMultiConnection.userid,
                     data: message
@@ -130,20 +128,20 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
         return blobURL ? '<video src="' + blobURL + '" autoplay></vide>' : '<img src="' + imageURL + '">';
     }
 
-    UIMain.isShiftKeyPressed = false;
+    var isShiftKeyPressed = false;
 
     UIMain.getElement('.main-input-box textarea').onkeydown = function(e) {
         if (e.keyCode == 16) {
-            UIMain.isShiftKeyPressed = true;
+            isShiftKeyPressed = true;
         }
     };
 
-    UIMain.numberOfKeys = 0;
+    var numberOfKeys = 0;
     UIMain.getElement('.main-input-box textarea').onkeyup = function(e) {
-        UIMain.numberOfKeys++;
-        if (UIMain.numberOfKeys > 3) UIMain.numberOfKeys = 0;
+        numberOfKeys++;
+        if (numberOfKeys > 3) numberOfKeys = 0;
 
-        if (!UIMain.numberOfKeys) {
+        if (!numberOfKeys) {
             if (e.keyCode == 8) {
                 return UIPeerConnection.rtcMultiConnection.send({
                     stoppedTyping: true
@@ -155,9 +153,9 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
             });
         }
 
-        if (UIMain.isShiftKeyPressed) {
+        if (isShiftKeyPressed) {
             if (e.keyCode == 16) {
-                UIMain.isShiftKeyPressed = false;
+                isShiftKeyPressed = false;
             }
             return;
         }
@@ -167,18 +165,18 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
 
         UIMain.addNewMessage({
             header: UIPeerConnection.rtcMultiConnection.extra.username,
-            message: 'Your Message:<br /><br />' + linkify(UIMain.value),
-            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
+            message: 'Your Message:<br /><br />' + linkify(this.value),
+            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
             color: UIPeerConnection.rtcMultiConnection.extra.color
         });
 
-        UIPeerConnection.rtcMultiConnection.send(UIMain.value);
+        UIPeerConnection.rtcMultiConnection.send(this.value);
 
-        UIMain.value = '';
+        this.value = '';
     };
 
     UIMain.getElement('#allow-webcam').onclick = function() {
-        UIMain.disabled = true;
+        this.disabled = true;
 
         var session = {
             audio: true,
@@ -198,7 +196,7 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
     };
 
     UIMain.getElement('#allow-mic').onclick = function() {
-        UIMain.disabled = true;
+        this.disabled = true;
         var session = {
             audio: true
         };
@@ -216,7 +214,7 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
     };
 
     UIMain.getElement('#allow-screen').onclick = function() {
-        UIMain.disabled = true;
+        this.disabled = true;
         var session = {
             screen: true
         };
@@ -238,7 +236,7 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
         file.type = 'file';
 
         file.onchange = function() {
-            UIPeerConnection.rtcMultiConnection.send(UIMain.files[0]);
+            UIPeerConnection.rtcMultiConnection.send(this.files[0]);
         };
         fireClickEvent(file);
     };
@@ -261,6 +259,8 @@ angular.module('tnApp.webrtc', ['tnApp.services']).service("UIMain", ['Socket', 
         var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
         return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
     }
+
+    console.warn("UIMAIN", UIMain)
 
     return UIMain;
 

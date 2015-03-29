@@ -1,4 +1,4 @@
-angular.module('tnApp.services')
+app.services
   .service('SupportTickets', ['$http', '$q', '$resource', function($http, $q, $resource) {
     var Ticket = {};
 

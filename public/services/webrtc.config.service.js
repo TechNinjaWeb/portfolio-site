@@ -1,4 +1,4 @@
-angular.module('tnApp.webrtc').service("RTCConfig", ['Socket', '$state', '$rootScope', '$window', '$q', 'UIPeerConnection', 'UIMain', 'UISettings', 'UIShareFiles', 'UIUsersList', function(socket, $state, $rootScope, $window, $q, UIPeerConnection, UIMain, UISettings, UIShareFiles, UIUsersList) {
+app.webrtc.service("RTCConfig", ['Socket', '$state', '$rootScope', '$window', '$q', 'UIPeerConnection', 'UIMain', 'UISettings', 'UIShareFiles', 'UIUsersList', function(socket, $state, $rootScope, $window, $q, UIPeerConnection, UIMain, UISettings, UIShareFiles, UIUsersList) {
 
     var RTCConfig = {};
 

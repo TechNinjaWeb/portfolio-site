@@ -1,5 +1,5 @@
 // -- See AppCtrl Comment for usage description -- //
-angular.module('tnApp.controllers')
+app.controllers
     .controller('ProfileCtrl', ['$scope', '$state', '$rootScope', 'LoginService', function($scope, $state, $rootScope, User) {
 
         $scope.alias = 'Profile Controller';

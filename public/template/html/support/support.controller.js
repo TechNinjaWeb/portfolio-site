@@ -1,5 +1,5 @@
 // console.log("Support Loaded")
-angular.module('tnApp.controllers').controller('SupportCtrl', ['$scope', '$rootScope', 'Socket', function($scope, $rootScope, IO) {
+app.controllers.controller('SupportCtrl', ['$scope', '$rootScope', 'Socket', function($scope, $rootScope, IO) {
     var plusPlus = 0
 
     $scope.getLocation = function() {
