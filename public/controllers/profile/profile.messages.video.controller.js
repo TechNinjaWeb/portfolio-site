@@ -1,6 +1,6 @@
 // -- See AppCtrl Comment for usage description -- //
 app.controllers
-    .controller('VideoCtrl', ['$scope', '$state', '$rootScope', '$timeout','Socket', 'RTCConfig', function($scope, $state, $rootScope, $timeout, WebRTC, RTCConfig) {
+    .controller('VideoCtrl', ['$scope', '$state', '$rootScope', '$timeout','Socket', function($scope, $state, $rootScope, $timeout, WebRTC) {
 
         $scope.alias = 'Support Ticket Controller';
 

@@ -153,7 +153,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $urlM
             views: {
                 'profile@video': {
                     templateUrl: "./template/html/profile/profile.messages.video.html",
-                    controller: "ProfileCtrl"
+                    controller: "VideoCtrl"
                 }
             }
         })
@@ -230,6 +230,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $urlM
                 'body@': {
                     templateUrl: "./template/html/laws/laws.html",
                     controller: ''
+                }
+            }
+        })
+        .state('home.video', {
+            url: '/video',
+            views: {
+                'body@': {
+                    templateUrl: "./test/partials/temp.video.template.html",
+                    controller: 'AppCtrl'
                 }
             }
         });

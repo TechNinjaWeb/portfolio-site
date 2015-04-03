@@ -8,12 +8,10 @@ var app = angular.module('tnApp'
 		, 'highcharts-ng'
 		, 'ngAnimate'
 		, 'ParseServices'
-		, 'tnApp.webrtc'
+		// , 'tnApp.webrtc'
 	])
 
 app.services = angular.module('tnApp.services', [])
-
-app.controllers = angular.module('tnApp.controllers', ['tnApp.services'])
 
 app.parse = angular.module('ParseServices', [])
 
@@ -23,3 +21,4 @@ app.fbLogin = angular.module('FacebookLogin', [])
 
 app.phonecatFilter = angular.module('phonecatFilters', [])
 
+app.controllers = angular.module('tnApp.controllers', ['tnApp.services'])

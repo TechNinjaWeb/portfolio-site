@@ -12,6 +12,7 @@ button.btn-primary { background-color: #555; color: white; }
 button.btn-primary:hover, button.btn-primary:focus { background-color: black; color: #EAF6FE; }
 
 /* NAVIGATION FIX */
+.nav-fix { margin-top: 65px; }
 #about-page, #contact-page { padding-top:42px; } 
 #create-account-page, #login-page { padding-top:65px; }
 #profile-page { padding-top:65px; }

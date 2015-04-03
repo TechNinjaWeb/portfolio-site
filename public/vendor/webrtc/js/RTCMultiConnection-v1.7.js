@@ -88,10 +88,10 @@
                 console.log("Preparing Singalling Channel")
                 // connect with signaling channel
                 initRTCMultiSession(function () {
-                    alert("Init RTC Multi Session")
+                    console.log("Init RTC Multi Session")
                     // for session-initiator, user-media is captured as soon as "open" is invoked.
                     captureUserMedia(function () {
-                        alert("Capture User Media")
+                        console.log("Attmpting To Capture User Media")
                         rtcMultiSession.initSession({
                             sessionDescription: connection.sessionDescription,
                             dontTransmit: dontTransmit
@@ -125,6 +125,7 @@
 
         // www.RTCMultiConnection.org/docs/send/
         this.send = function (data, _channel) {
+            console.log("Attempting To Send - data, _channel", data, _channel)
             // send file/data or /text
             if (!data)
                 throw 'No file, data or text message to share.';
@@ -217,7 +218,7 @@
             // this object MUST be initialized once!
 
             if (rtcMultiSession) return onSignalingReady();
-            alert("Return Failed, no rtcMultiSess")
+            console.warn("Return Failed, RTCMultCon no initrtcMultiSess - Ln: 220")
             // your everything is passed over RTCMultiSession constructor!
             rtcMultiSession = new RTCMultiSession(connection, onSignalingReady);
         }
@@ -1946,14 +1947,17 @@
             function transmit() {
                 if (defaultSocket && getLength(participants) < connection.maxParticipantsAllowed && !rtcMultiSession.isOwnerLeaving) {
                     defaultSocket.send(connection.sessionDescription);
+                    console.warn("Sending Session Description", connection.sessionDescription);
                 }
 
                 if (!connection.transmitRoomOnce && !rtcMultiSession.isOwnerLeaving)
                     setTimeout(transmit, connection.interval || 3000);
+                
             }
 
             // todo: test and fix next line.
             if (!args.dontTransmit /* || connection.transmitRoomOnce */ ) transmit();
+
         };
 
         // join existing session
@@ -3025,6 +3029,7 @@ console.log("RTCMULTICONNECTION-V1.7.js -- OPTIONS.MEDIA", options.media)
 
     var TextSender = {
         send: function (config) {
+            console.warn("CONFIG FROM SEND TEXT", config)
             var connection = config.connection;
 
             var channel = config.channel,

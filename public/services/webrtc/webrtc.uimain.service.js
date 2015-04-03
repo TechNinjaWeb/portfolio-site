@@ -71,11 +71,14 @@ app.webrtc.service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$wind
             userinfo: '<img src="//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/action-needed.png">'
         });
 
-        var SIGNALING_SERVER = '/';
-        var channel = io().id
-        console.log("Socket ID", channel);
-        // var socket = io.connect(SIGNALING_SERVER);
         var socket = Socket;
+        var SIGNALING_SERVER = socket.io.uri;
+        var channel = UIPeerConnection.rtcMultiConnection.channel = socket.id;
+        UIPeerConnection.rtcMultiConnection.userid = Parse.User.current().id;
+
+        console.log("Signaling Server",SIGNALING_SERVER, "Socket ID", channel);
+        // var socket = io.connect(SIGNALING_SERVER);
+        
 
         socket.on('presence', function(isChannelPresent) {
             if (!isChannelPresent) {
@@ -84,7 +87,7 @@ app.webrtc.service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$wind
                     message: 'No room found. Creating new room...<br /><br />You can share following link with your friends:<br /><a href="' + location.href + '">' + location.href + '</a>',
                     userinfo: '<img src="//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/action-needed.png">'
                 });
-                UIPeerConnection.rtcMultiConnection.open('/', channel);
+                UIPeerConnection.rtcMultiConnection.open(channel);
             } else {
                 UIMain.addNewMessage({
                     header: username,
@@ -166,7 +169,7 @@ app.webrtc.service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$wind
         UIMain.addNewMessage({
             header: UIPeerConnection.rtcMultiConnection.extra.username,
             message: 'Your Message:<br /><br />' + linkify(this.value),
-            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
+            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
             color: UIPeerConnection.rtcMultiConnection.extra.color
         });
 
@@ -176,7 +179,7 @@ app.webrtc.service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$wind
     };
 
     UIMain.getElement('#allow-webcam').onclick = function() {
-        this.disabled = true;
+        // this.disabled = true;
 
         var session = {
             audio: true,
@@ -196,7 +199,7 @@ app.webrtc.service("UIMain", ['Socket', 'UIPeerConnection', '$rootScope', '$wind
     };
 
     UIMain.getElement('#allow-mic').onclick = function() {
-        this.disabled = true;
+        // this.disabled = true;
         var session = {
             audio: true
         };

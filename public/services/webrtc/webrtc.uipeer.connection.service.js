@@ -35,7 +35,7 @@ app.webrtc.service("UIPeerConnection", ['$state', 'Socket', '$window', '$q', fun
         addNewMessage({
             header: e.extra.username,
             message: 'Data connection is opened between you and ' + e.extra.username + '.',
-            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
+            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[UIPeerConnection.rtcMultiConnection.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
             color: e.extra.color
         });
 
@@ -59,7 +59,7 @@ app.webrtc.service("UIPeerConnection", ['$state', 'Socket', '$window', '$q', fun
         addNewMessage({
             header: e.extra.username,
             message: 'Text message from ' + e.extra.username + ':<br /><br />' + (UIPeerConnection.rtcMultiConnection.autoTranslateText ? linkify(e.data) + ' ( ' + linkify(e.original) + ' )' : linkify(e.data)),
-            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[e.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
+            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[e.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/chat-message.png'),
             color: e.extra.color
         });
         document.title = e.data;
@@ -223,7 +223,7 @@ app.webrtc.service("UIPeerConnection", ['$state', 'Socket', '$window', '$q', fun
         addNewMessage({
             header: event.extra.username,
             message: event.extra.username + ' left the room.',
-            userinfo: getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[event.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
+            userinfo: UIMain.getUserinfo(UIPeerConnection.rtcMultiConnection.blobURLs[event.userid], '//www.webrtc-experiment.com/RTCMultiConnection/MultiRTC/images/info.png'),
             color: e.extra.color
         });
     };

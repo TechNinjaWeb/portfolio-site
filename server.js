@@ -88,9 +88,11 @@ io.on('connection', function(socket) {
             if (io.isConnected) {
                 io.isConnected = false;
                 socket.emit('connect', true);
-            }
+                console.log("User Is Now Connected To: ")
+            } else console.log("User Not Connected Socket: ", socket)
 
             socket.on('message', function(data) {
+                console.log("Message Event - With Data: ", data)
                 if (data.sender == sender) {
                     if (!username) username = data.data.sender;
 

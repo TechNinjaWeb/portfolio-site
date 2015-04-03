@@ -61,6 +61,7 @@ app.webrtc.service("UISettings", ['UIPeerConnection', 'UIMain', '$state', '$root
     UISettings.videoDeviecs = UIMain.getElement('#video-devices');
 
     UIPeerConnection.rtcMultiConnection.getDevices(function(devices) {
+        console.warn("APPENDING DEVICES", devices)
         for (var device in devices) {
             device = devices[device];
             UISettings.appendDevice(device);
