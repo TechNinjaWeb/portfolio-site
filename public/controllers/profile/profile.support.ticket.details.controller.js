@@ -1,36 +1,30 @@
 app.controllers
-    .controller('SupportTicketDetailsCtrl', ['TicketService', '$scope', '$stateParams', '$timeout', '$rootScope', function(Tickets, $scope, $stateParams, $timeout, $rootScope) {
+    .controller('SupportTicketDetailsCtrl', ['TicketService', '$scope', '$stateParams', '$timeout', '$q', function(Tickets, $scope, $stateParams, $timeout, $q) {
         $scope.stateParamsObjectId = $stateParams.objectId;
         $scope.message = "Product Detail Controller";
 
-        $scope.deleteReply = function(index) {
-            console.log("Current Ticket", index);
+        var deferred = $q.defer();
 
-            var innerQuery = Tickets;
-            innerQuery.get({objectId: $(objectId).text()}, function(res) {
-                console.log("Reply Get Response", res)
-                res.ticketBody.splice(index, 1);
-                res.$update()
-                $timeout(function(){
-                    $rootScope.reloadWindow()
-                },200);
-            })
-        }
-    
-        console.log("Clicked!");
+
+        console.log("Deferred", deferred);
         var query = Tickets;
 
-        query.get({
+        $scope.data = query.get({
             objectId: $scope.stateParamsObjectId,
             postedBy: Parse.User.current().get('username')
         }, function(res) {
             window.console.log(res, "Got Ticket Details");
 
-            $scope.data = res;
 
-        });
+            // $scope.data = res;
+            deferred.resolve(res);
+
+            return deferred.promise;
+
+        })
 
         $scope.replyToTicket = function(body) {
+            var currentId = $(objectId).text();
             var today = new Date();
             var dd = today.getDate();
             var mm = today.getMonth() + 1; //January is 0!
@@ -42,25 +36,49 @@ app.controllers
                 "ticketBody": body
             }
 
-            console.log("Ticket To Send as Reply", reply, "ObjectID", $(objectId).text());
+            console.log("Ticket To Send as Reply", reply, "ObjectID", currentId);
 
-            var innerQuery = Tickets;
-            innerQuery.get({objectId: $(objectId).text()}, function(res) {
-                console.log("Reply Get Response", res)
-                res.ticketBody.push(reply);
-                console.log("Updated Res", res)
-                res.$update()
-                $timeout(function(){
-                    $rootScope.reloadWindow()
-                },200);
-                
-                
+            console.log("Current Scope Data", $scope.data, "Index", "Null");
+            $scope.data.results.forEach(function(e, i, a) {
+                if (e.hasOwnProperty('objectId') && e.objectId == currentId) {
+                    console.log("Update This Body", $scope.data);
+                    // $scope.data.$update({objectId: currentId},function(res){console.log("res", res)}, function(err){console.log("Err", err)});
 
+                    // $scope.data.$update();
+
+                    // var innerQuery = Tickets;
+                    // innerQuery.get({objectId: currentId}, function(res) {
+                    //     console.log("Reply Get Response", res)
+                    //     res.ticketBody.push(reply);
+                    //     res.$update({}, function(res){console.log("Res", res)}, function(res){console.log("Err", err)})
+                    //     $timeout(function(){
+                    //         // $rootScope.reloadWindow()
+                    //         $scope.data = res;
+                    //     },200);
+                    // })
+                    console.log("E", e, "I", i, "A", a);
+                    console.warn("obj in arr", $scope.data[e]);
+                    console.warn("idx in arra", $scope.data[i]);
+                    $scope.data.$update({objectId: currentId}, function(res){console.log("Res", res)}, function(res){console.log("Err", err)})
+
+                }
             })
+
+            // $scope.data.ticketBody.push(reply);
+
+
+        }
+
+        $scope.deleteReply = function(index) {
+            console.log("Current Ticket", index);
+            console.log("Current Scope Data", $scope.data);
+            $scope.data.ticketBody.splice($scope.data.ticketBody[index+1], 1);
+            $scope.data.$update();
+
         }
 
 
         console.log("Stateparams.objectId", $scope.stateParamsObjectId)
-    
+
 
     }])
