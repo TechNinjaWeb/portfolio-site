@@ -15,7 +15,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="tn-nav-collapse">
                     <ul id="menu-links" class="nav navbar-nav">
-                        <li id="{{ link.name | lowercase }}-item" class="url-links" ng-repeat="link in urls">
+                        <li id="{{ link.name | lowercase }}-item" ui-sref-active="active" class="url-links" ng-repeat="link in urls">
                           <a id="{{ link.name | lowercase }}-anchor" ui-sref="{{ link.sref }}" ng-href="{{ link.url }}" >{{ link.name }} <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>

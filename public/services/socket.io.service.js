@@ -1,6 +1,6 @@
 app.services.service("Socket", ['$state', '$rootScope', '$window', '$q', function($state, $rootScope, $window, $q) {
     
-    var Socket = io.connect('http://localhost:3000');
+    var Socket = io.connect('https://tech-ninja.herokuapp.com/');
 
     return Socket
     // return io.connect('https://tech-ninja.herokuapp.com');

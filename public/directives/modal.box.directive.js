@@ -12,5 +12,3 @@ app.directive('modalbox', function() {
         }
     };
 });
-
-

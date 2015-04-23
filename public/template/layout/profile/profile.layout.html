@@ -17,15 +17,15 @@
                 <img src="http://lorempixel.com/1200/300/" class="img-responsive" alt="Banner Image" />
             </div>
             <ul id="user-profile-navigation" class="nav nav-pills list-unstyled list-inline">
-                <li id="user-messages" role="presentation" class="active"><span class="sr-only">(current)</span><a ui-sref="profile.main">Home</a>
+                <li id="user-messages" role="presentation" ui-sref-active="active"><span class="sr-only">(current)</span><a ui-sref="profile.main">Home</a>
                 </li>
-                <li role="presentation"><a ui-sref="profile.messages">Messages</a>
+                <li role="presentation"><a ui-sref="profile.messages" ui-sref-active="active">Messages</a>
                 </li>
-                <li role="presentation"><a ui-sref="profile.support">Support Tickets</a>
+                <li role="presentation"><a ui-sref="profile.support" ui-sref-active="active">Support Tickets</a>
                 </li>
-                <li role="presentation"><a ui-sref="profile.todos">To Do's</a>
+                <li role="presentation"><a ui-sref="profile.todos" ui-sref-active="active">To Do's</a>
                 </li>
-                <li role="presentation"><a ui-sref="profile.settings">Settings</a>
+                <li role="presentation"><a ui-sref="profile.settings" ui-sref-active="active">Settings</a>
                 </li>
             </ul>
         </div>

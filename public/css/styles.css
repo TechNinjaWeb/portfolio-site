@@ -176,7 +176,7 @@ button.btn-primary:hover, button.btn-primary:focus { background-color: black; co
 */
 #navigation #menu-links, .navbar-brand { margin-top: 6px; }
 #navigation #menu-links a { color: #EEE; }
-#navigation #menu-links a:hover { color: #F8982F; }
+#navigation #menu-links a:hover, #navigation #menu-links li.active > a { color: #F8982F; }
 #navigation #home-item { display: none; }
 #copyright .navbar { z-index: 5; }
 #navigation .navbar { margin-bottom:0; min-height: 57px; border-radius:0; }
