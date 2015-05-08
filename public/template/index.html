@@ -32,18 +32,18 @@
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <script>
-      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      // ga('create', 'UA-43662210-1', 'auto');
-      // ga('send', 'pageview');
+      ga('create', 'UA-43662210-1', 'auto');
+      ga('send', 'pageview');
 
     </script>                
     <!-- Start Open Web Analytics Tracker -->
     <script type="text/javascript">
-
+        //<![CDATA[
         var owa_baseUrl = 'http://tech-ninja.ca/analytics/';
         var owa_cmds = owa_cmds || [];
         owa_cmds.push(['setSiteId', '616579e961da576491bbcd803075fd08']);
@@ -57,7 +57,7 @@
             _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
             var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
         }());
-
+        //]]>
     </script>
     <!-- End Open Web Analytics Code -->
                 
